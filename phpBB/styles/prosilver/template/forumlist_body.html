@@ -35,7 +35,10 @@
 					<!-- IF forumrow.MODERATORS -->
 						<br /><strong>{forumrow.L_MODERATOR_STR}:</strong> {forumrow.MODERATORS}
 					<!-- ENDIF -->
-					<!-- IF forumrow.SUBFORUMS and forumrow.S_LIST_SUBFORUMS --><br /><strong>{forumrow.L_SUBFORUM_STR}</strong> {forumrow.SUBFORUMS}<!-- ENDIF -->
+					<!-- IF forumrow.S_LIST_SUBFORUMS -->
+						<!-- IF forumrow.SUBFORUMS --><br /><strong>{forumrow.L_SUBFORUM_STR}</strong> {forumrow.SUBFORUMS}<!-- ENDIF -->
+						<!-- IF forumrow.SUBFORUMS_LINKS --><br /><strong>{forumrow.L_SUBFORUM_LINK_STR}</strong> {forumrow.SUBFORUMS_LINKS}<!-- ENDIF -->
+					<!-- ENDIF -->
 				</dt>
 				<!-- IF forumrow.CLICKS -->
 					<dd class="redirect"><span>{L_REDIRECTS}: {forumrow.CLICKS}</span></dd>

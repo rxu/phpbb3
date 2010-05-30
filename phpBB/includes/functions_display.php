@@ -221,6 +221,10 @@ function display_forums($root_data = '', $display_moderators = true, $return_mod
 			$subforums[$parent_id][$forum_id]['name'] = $row['forum_name'];
 			$subforums[$parent_id][$forum_id]['orig_forum_last_post_time'] = $row['forum_last_post_time'];
 			$subforums[$parent_id][$forum_id]['children'] = array();
+			$subforums[$parent_id][$forum_id]['type'] = $row['forum_type'];
+			$subforums[$parent_id][$forum_id]['flags'] = $row['forum_flags'];
+			$subforums[$parent_id][$forum_id]['password'] = $row['forum_password'];
+			$subforums[$parent_id][$forum_id]['link'] = $row['forum_link'];
 
 			if (isset($subforums[$parent_id][$row['parent_id']]) && !$row['display_on_index'])
 			{
@@ -328,7 +332,7 @@ function display_forums($root_data = '', $display_moderators = true, $return_mod
 			$forum_unread = true;
 		}
 
-		$folder_image = $folder_alt = $l_subforums = '';
+		$folder_image = $folder_alt = $l_subforums = $l_subforums_links = '';
 		$subforums_list = array();
 
 		// Generate list of subforums if we need to
@@ -353,10 +357,28 @@ function display_forums($root_data = '', $display_moderators = true, $return_mod
 
 				if ($subforum_row['display'] && $subforum_row['name'])
 				{
+					if ($subforum_row['type'] != FORUM_LINK)
+					{
+						$link = append_sid("{$phpbb_root_path}viewforum.$phpEx", 'f=' . $subforum_id);
+					}
+					else
+					{
+						// If the forum is a link and we count redirects we need to visit it
+						// If the forum is having a password or no read access we do not expose the link, but instead handle it in viewforum
+						if (($subforum_row['flags'] & FORUM_FLAG_LINK_TRACK) || $subforum_row['password'] || !$auth->acl_get('f_read', $subforum_id))
+						{
+							$link = append_sid("{$phpbb_root_path}viewforum.$phpEx", 'f=' . $subforum_id);
+						}
+						else
+						{
+							$link = $subforum_row['link'];
+						}
+					}
 					$subforums_list[] = array(
-						'link'		=> append_sid("{$phpbb_root_path}viewforum.$phpEx", 'f=' . $subforum_id),
+						'link'		=> $link,
 						'name'		=> $subforum_row['name'],
 						'unread'	=> $subforum_unread,
+						'type'		=> $subforum_row['type'],
 					);
 				}
 				else
@@ -371,7 +393,6 @@ function display_forums($root_data = '', $display_moderators = true, $return_mod
 				}
 			}
 
-			$l_subforums = (sizeof($subforums[$forum_id]) == 1) ? $user->lang['SUBFORUM'] . ': ' : $user->lang['SUBFORUMS'] . ': ';
 			$folder_image = ($forum_unread) ? 'forum_unread_subforum' : 'forum_read_subforum';
 		}
 		else
@@ -422,12 +443,27 @@ function display_forums($root_data = '', $display_moderators = true, $return_mod
 		$l_post_click_count = ($row['forum_type'] == FORUM_LINK) ? 'CLICKS' : 'POSTS';
 		$post_click_count = ($row['forum_type'] != FORUM_LINK || $row['forum_flags'] & FORUM_FLAG_LINK_TRACK) ? $row['forum_posts'] : '';
 
-		$s_subforums_list = array();
-		foreach ($subforums_list as $subforum)
+		// Build the list of subforums here. Show regular subforums and link type subforums separately
+		$s_subforums_list = $s_subforums_links_list = array();
+		if (sizeof($subforums_list))
 		{
-			$s_subforums_list[] = '<a href="' . $subforum['link'] . '" class="subforum ' . (($subforum['unread']) ? 'unread' : 'read') . '" title="' . (($subforum['unread']) ? $user->lang['NEW_POSTS'] : $user->lang['NO_NEW_POSTS']) . '">' . $subforum['name'] . '</a>';
+			foreach ($subforums_list as $subforum)
+			{
+				if ($subforum['type'] != FORUM_LINK)
+				{
+					$s_subforums_list[] = '<a href="' . $subforum['link'] . '" class="subforum ' . (($subforum['unread']) ? 'unread' : 'read') . '" title="' . (($subforum['unread']) ? $user->lang['NEW_POSTS'] : $user->lang['NO_NEW_POSTS']) . '">' . $subforum['name'] . '</a>';
+				}
+				else
+				{
+					$s_subforums_links_list[] = '<a href="' . $subforum['link'] . '" class="subforum read">' . $subforum['name'] . '</a>';
+				}
+			}
+			$l_subforums = (sizeof($s_subforums_list) == 1) ? $user->lang['SUBFORUM'] . ': ' : $user->lang['SUBFORUMS'] . ': ';
+			$l_subforums_links = (sizeof($s_subforums_links_list) == 1) ? $user->lang['LINK'] . ': ' : $user->lang['LINKS'] . ': ';
+			$s_subforums_list = (string) implode(', ', $s_subforums_list);
+			$s_subforums_links_list = (string) implode(', ', $s_subforums_links_list);
 		}
-		$s_subforums_list = (string) implode(', ', $s_subforums_list);
+
 		$catless = ($row['parent_id'] == $root_data['forum_id']) ? true : false;
 
 		if ($row['forum_type'] != FORUM_LINK)
@@ -475,8 +511,10 @@ function display_forums($root_data = '', $display_moderators = true, $return_mod
 			'LAST_POSTER_FULL'		=> get_username_string('full', $row['forum_last_poster_id'], $row['forum_last_poster_name'], $row['forum_last_poster_colour']),
 			'MODERATORS'			=> $moderators_list,
 			'SUBFORUMS'				=> $s_subforums_list,
+			'SUBFORUMS_LINKS'		=> $s_subforums_links_list,
 
 			'L_SUBFORUM_STR'		=> $l_subforums,
+			'L_SUBFORUM_LINK_STR'	=> $l_subforums_links,
 			'L_FORUM_FOLDER_ALT'	=> $folder_alt,
 			'L_MODERATOR_STR'		=> $l_moderator,
 

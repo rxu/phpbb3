@@ -48,8 +48,9 @@
 				<!-- IF forumrow.MODERATORS -->
 					<p class="forumdesc"><strong>{forumrow.L_MODERATOR_STR}:</strong> {forumrow.MODERATORS}</p>
 				<!-- ENDIF -->
-				<!-- IF forumrow.SUBFORUMS and forumrow.S_LIST_SUBFORUMS -->
-					<p class="forumdesc"><strong>{forumrow.L_SUBFORUM_STR}</strong> {forumrow.SUBFORUMS}</p>
+				<!-- IF forumrow.S_LIST_SUBFORUMS -->
+					<!-- IF forumrow.SUBFORUMS --><p class="forumdesc"><strong>{forumrow.L_SUBFORUM_STR}</strong> {forumrow.SUBFORUMS}</p><!-- ENDIF -->
+					<!-- IF forumrow.SUBFORUMS_LINKS --><p class="forumdesc"><strong>{forumrow.L_SUBFORUM_LINK_STR}</strong> {forumrow.SUBFORUMS_LINKS}</p><!-- ENDIF -->
 				<!-- ENDIF -->
 			</td>
 			<td class="row2" align="center"><p class="topicdetails">{forumrow.TOPICS}</p></td>
