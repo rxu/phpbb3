@@ -1683,7 +1683,9 @@ function change_database_data(&$no_updates, $version)
 				}
 			}
 			$db->sql_freeresult($result);
-
+			
+			// Unread posts search load switch
+			set_config('load_unreads_search', '1');
 
 			$no_updates = false;
 		break;
