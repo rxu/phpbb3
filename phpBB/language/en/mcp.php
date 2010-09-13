@@ -196,7 +196,7 @@ $lang = array_merge($lang, array(
 
 	'MCP_QUEUE'								=> 'Moderation queue',
 	'MCP_QUEUE_APPROVE_DETAILS'				=> 'Approve details',
-	'MCP_QUEUE_RECONSIDER'					=> 'Some of posts you have selected to moderate have been already considered. You can return to moderation control panel to reconsider moderation queue.',
+	'MCP_QUEUE_RECONSIDER'					=> 'Some posts you have selected to moderate have been already considered. You can return to moderation control panel to reconsider moderation queue.',
 	'MCP_QUEUE_UNAPPROVED_POSTS'			=> 'Posts awaiting approval',
 	'MCP_QUEUE_UNAPPROVED_POSTS_EXPLAIN'	=> 'This is a list of all posts which require approving before they will be visible to users.',
 	'MCP_QUEUE_UNAPPROVED_TOPICS'			=> 'Topics awaiting approval',

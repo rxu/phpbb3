@@ -1012,28 +1012,29 @@ function disapprove_post($post_id_list, $id, $mode)
 /**
 * Check if a post (or at least one post in array) is approved
 */
-function check_approved($posts_ids)
+function check_approved($post_ids)
 {
 	global $db;
 
-	if (isset($posts_ids) && !is_array($posts_ids))
+	if (isset($post_ids) && !is_array($post_ids))
 	{
-		$posts_ids = array($posts_ids);
+		$post_ids = array($post_ids);
 	}
-	
-	if (empty($posts_ids))
+
+	if (empty($post_ids))
 	{
 		return false;
 	}
 
 	$sql = 'SELECT post_approved 
 		FROM ' . POSTS_TABLE . '
-		WHERE ' . $db->sql_in_set('post_id', $posts_ids);
+		WHERE ' . $db->sql_in_set('post_id', $post_ids) . '
+			AND post_approved = 1';
 	$result = $db->sql_query_limit($sql, 1);
-	$check = (string) $db->sql_fetchfield('post_approved');
+	$check = (bool) $db->sql_fetchfield('post_approved');
 	$db->sql_freeresult($result);
 	
-	return ($check == '1') ? true : false;
+	return $check;
 }
 
 ?>
