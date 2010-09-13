@@ -486,6 +486,14 @@ function approve_post($post_id_list, $id, $mode)
 
 	if (confirm_box(true))
 	{
+		if (check_approved($post_id_list))
+		{
+			$redirect = request_var('redirect', "index.$phpEx");
+			$redirect = reapply_sid($redirect);
+			meta_refresh(5, $redirect);
+			trigger_error($user->lang['MCP_QUEUE_RECONSIDER'] . '<br /><br />' . sprintf($user->lang['RETURN_PAGE'], "<a href=\"$redirect\">", '</a>'));
+		}
+
 		$notify_poster = (isset($_REQUEST['notify_poster'])) ? true : false;
 
 		// If Topic -> total_topics = total_topics+1, total_posts = total_posts+1, forum_topics = forum_topics+1, forum_posts = forum_posts+1
@@ -799,6 +807,14 @@ function disapprove_post($post_id_list, $id, $mode)
 
 	if (confirm_box(true))
 	{
+		if (check_approved($post_id_list))
+		{
+			$redirect = request_var('redirect', "index.$phpEx");
+			$redirect = reapply_sid($redirect);
+			meta_refresh(5, $redirect);
+			trigger_error($user->lang['MCP_QUEUE_RECONSIDER'] . '<br /><br />' . sprintf($user->lang['RETURN_PAGE'], "<a href=\"$redirect\">", '</a>'));
+		}
+
 		$disapprove_log = $disapprove_log_topics = $disapprove_log_posts = array();
 		$topic_replies_real = $post_disapprove_list = array();
 
@@ -991,6 +1007,33 @@ function disapprove_post($post_id_list, $id, $mode)
 		meta_refresh(3, $redirect);
 		trigger_error($user->lang[$success_msg] . '<br /><br />' . sprintf($user->lang['RETURN_PAGE'], "<a href=\"$redirect\">", '</a>'));
 	}
+}
+
+/**
+* Check if a post (or at least one post in array) is approved
+*/
+function check_approved($posts_ids)
+{
+	global $db;
+
+	if (isset($posts_ids) && !is_array($posts_ids))
+	{
+		$posts_ids = array($posts_ids);
+	}
+	
+	if (empty($posts_ids))
+	{
+		return false;
+	}
+
+	$sql = 'SELECT post_approved 
+		FROM ' . POSTS_TABLE . '
+		WHERE ' . $db->sql_in_set('post_id', $posts_ids);
+	$result = $db->sql_query_limit($sql, 1);
+	$check = (string) $db->sql_fetchfield('post_approved');
+	$db->sql_freeresult($result);
+	
+	return ($check == '1') ? true : false;
 }
 
 ?>
