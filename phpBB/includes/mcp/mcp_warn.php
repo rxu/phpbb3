@@ -270,7 +270,6 @@ class mcp_warn
 
 		if ($warning && $action == 'add_warning')
 		{
-
 			if (check_form_key('mcp_warn'))
 			{
 				include_once($phpbb_root_path . 'includes/functions_mcp.' . $phpEx);
