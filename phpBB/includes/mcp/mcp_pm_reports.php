@@ -58,7 +58,7 @@ class mcp_pm_reports
 
 				if (!function_exists('close_report'))
 				{
-					include($phpbb_root_path . 'includes/mcp/mcp_reports.' . $phpEx);
+					include($phpbb_root_path . 'includes/functions_mcp.' . $phpEx);
 				}
 
 				close_report($report_id_list, $mode, $action, true);

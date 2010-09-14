@@ -270,8 +270,10 @@ class mcp_warn
 
 		if ($warning && $action == 'add_warning')
 		{
+
 			if (check_form_key('mcp_warn'))
 			{
+				include_once($phpbb_root_path . 'includes/functions_mcp.' . $phpEx);
 				add_warning($user_row, $warning, $notify, $post_id);
 				$msg = $user->lang['USER_WARNING_ADDED'];
 			}
@@ -395,6 +397,7 @@ class mcp_warn
 		{
 			if (check_form_key('mcp_warn'))
 			{
+				include_once($phpbb_root_path . 'includes/functions_mcp.' . $phpEx);
 				add_warning($user_row, $warning, $notify);
 				$msg = $user->lang['USER_WARNING_ADDED'];
 			}
@@ -438,74 +441,6 @@ class mcp_warn
 
 		return $user_id;
 	}
-}
-
-/**
-* Insert the warning into the database
-*/
-function add_warning($user_row, $warning, $send_pm = true, $post_id = 0)
-{
-	global $phpEx, $phpbb_root_path, $config;
-	global $template, $db, $user, $auth;
-
-	if ($send_pm)
-	{
-		include_once($phpbb_root_path . 'includes/functions_privmsgs.' . $phpEx);
-		include_once($phpbb_root_path . 'includes/message_parser.' . $phpEx);
-
-		$user_row['user_lang'] = (file_exists($phpbb_root_path . 'language/' . $user_row['user_lang'] . "/mcp.$phpEx")) ? $user_row['user_lang'] : $config['default_lang'];
-		include($phpbb_root_path . 'language/' . basename($user_row['user_lang']) . "/mcp.$phpEx");
-
-		$message_parser = new parse_message();
-
-		$message_parser->message = sprintf($lang['WARNING_PM_BODY'], $warning);
-		$message_parser->parse(true, true, true, false, false, true, true);
-
-		$pm_data = array(
-			'from_user_id'			=> $user->data['user_id'],
-			'from_user_ip'			=> $user->ip,
-			'from_username'			=> $user->data['username'],
-			'enable_sig'			=> false,
-			'enable_bbcode'			=> true,
-			'enable_smilies'		=> true,
-			'enable_urls'			=> false,
-			'icon_id'				=> 0,
-			'bbcode_bitfield'		=> $message_parser->bbcode_bitfield,
-			'bbcode_uid'			=> $message_parser->bbcode_uid,
-			'message'				=> $message_parser->message,
-			'address_list'			=> array('u' => array($user_row['user_id'] => 'to')),
-		);
-
-		submit_pm('post', $lang['WARNING_PM_SUBJECT'], $pm_data, false);
-	}
-
-	add_log('admin', 'LOG_USER_WARNING', $user_row['username']);
-	$log_id = add_log('user', $user_row['user_id'], 'LOG_USER_WARNING_BODY', $warning);
-
-	$sql_ary = array(
-		'user_id'		=> $user_row['user_id'],
-		'post_id'		=> $post_id,
-		'log_id'		=> $log_id,
-		'warning_time'	=> time(),
-	);
-
-	$db->sql_query('INSERT INTO ' . WARNINGS_TABLE . ' ' . $db->sql_build_array('INSERT', $sql_ary));
-
-	$sql = 'UPDATE ' . USERS_TABLE . '
-		SET user_warnings = user_warnings + 1,
-			user_last_warning = ' . time() . '
-		WHERE user_id = ' . $user_row['user_id'];
-	$db->sql_query($sql);
-
-	// We add this to the mod log too for moderators to see that a specific user got warned.
-	$sql = 'SELECT forum_id, topic_id
-		FROM ' . POSTS_TABLE . '
-		WHERE post_id = ' . $post_id;
-	$result = $db->sql_query($sql);
-	$row = $db->sql_fetchrow($result);
-	$db->sql_freeresult($result);
-
-	add_log('mod', $row['forum_id'], $row['topic_id'], 'LOG_USER_WARNING', $user_row['username']);
 }
 
 ?>
