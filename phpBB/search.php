@@ -83,7 +83,7 @@ switch ($search_id)
 	break;
 	
 	default:
-		// There's notning to do here for now ;)
+		// There's nothing to do here for now ;)
 	break;
 }
 
