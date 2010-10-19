@@ -399,7 +399,7 @@ class acp_groups
 					// which is the lowest amongst DBMSes supported by phpBB3
 					if ($max_recipients_error = validate_data($submit_ary, array('max_recipients' => array('num', false, 0, 16777215))))
 					{
-						// Replace "error" string with their real, localised form
+						// Replace "error" string with it's real, localised form
 						$max_recipients_error = preg_replace('#^([A-Z_]+)$#e', "(!empty(\$user->lang['\\1'])) ? \$user->lang['\\1'] : '\\1'", $max_recipients_error);
 						$error = array_merge($error, $max_recipients_error);
 					}
