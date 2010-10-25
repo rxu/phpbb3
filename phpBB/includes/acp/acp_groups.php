@@ -400,8 +400,7 @@ class acp_groups
 					if ($max_recipients_error = validate_data($submit_ary, array('max_recipients' => array('num', false, 0, 16777215))))
 					{
 						// Replace "error" string with its real, localised form
-						$max_recipients_error = preg_replace('#^([A-Z_]+)$#e', "(!empty(\$user->lang['\\1'])) ? \$user->lang['\\1'] : '\\1'", $max_recipients_error);
-						$error = array_merge($error, $max_recipients_error);
+						$error = array_merge($error, array_map(array(&$user, 'lang'), $max_recipients_error));
 					}
 
 					if (!sizeof($error))
