@@ -3440,11 +3440,6 @@ function get_censor_preg_expression($word)
 {
 	static $unicode = null;
 
-	if (empty($word))
-	{
-		return '';
-	}
-
 	// Check whether PHP version supports unicode properties
 	if (is_null($unicode))
 	{
