@@ -562,6 +562,34 @@ EOT
 		$this->assertEquals($expect, str_replace(array("\n", "\r", "\t"), '', $this->display('test')), 'Ensuring S_NUM_ROWS is correct after modification');
 	}
 
+	public function assign_block_vars_array_data()
+	{
+		$block_vars_array = array(
+			array('VARIABLE' => '1st iteration',),
+			array('VARIABLE' => '2nd iteration',),
+			array('VARIABLE' => '3rd iteration',),
+		);
+
+		return array(
+			array('outer.middle', $block_vars_array),
+		);
+	}
+
+	/**
+	* @dataProvider assign_block_vars_array_data
+	*/
+	public function test_assign_block_vars_array($blockname, array $block_vars_array)
+	{
+		$this->template->set_filenames(array('test' => 'loop_nested.html'));
+
+		// Initialize wrapper block for the nested loop first
+		$this->template->assign_block_vars('outer', array('VARIABLE' => 'Test assigning block vars array loop:'));
+
+		$this->template->assign_block_vars_array($blockname, $block_vars_array);
+
+		$this->assertEquals("outer - 0 - Test assigning block vars array loop:middle - 0 - 1st iterationmiddle - 1 - 2nd iterationmiddle - 2 - 3rd iteration", $this->display('test'), 'Ensuring assigning block vars array to template is working correctly');
+	}
+
 	/**
 	* @expectedException Twig_Error_Syntax
 	*/
