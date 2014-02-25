@@ -564,30 +564,36 @@ EOT
 
 	public function assign_block_vars_array_data()
 	{
-		$block_vars_array = array(
-			array('VARIABLE' => '1st iteration',),
-			array('VARIABLE' => '2nd iteration',),
-			array('VARIABLE' => '3rd iteration',),
-		);
-
 		return array(
-			array('outer.middle', $block_vars_array),
+			array(
+				array(
+					'outer' => array(
+						array('VARIABLE' => 'Test assigning block vars array loop 0:'),
+						array('VARIABLE' => 'Test assigning block vars array loop 1:'),
+					),
+					'outer.middle' => array(
+						array('VARIABLE' => '1st iteration',),
+						array('VARIABLE' => '2nd iteration',),
+						array('VARIABLE' => '3rd iteration',),
+					),
+				)
+			)
 		);
 	}
 
 	/**
 	* @dataProvider assign_block_vars_array_data
 	*/
-	public function test_assign_block_vars_array($blockname, array $block_vars_array)
+	public function test_assign_block_vars_array($block_data)
 	{
 		$this->template->set_filenames(array('test' => 'loop_nested.html'));
 
-		// Initialize wrapper block for the nested loop first
-		$this->template->assign_block_vars('outer', array('VARIABLE' => 'Test assigning block vars array loop:'));
+		foreach ($block_data as $blockname => $block_vars_array)
+		{
+			$this->template->assign_block_vars_array($blockname, $block_vars_array);
+		}
 
-		$this->template->assign_block_vars_array($blockname, $block_vars_array);
-
-		$this->assertEquals("outer - 0 - Test assigning block vars array loop:middle - 0 - 1st iterationmiddle - 1 - 2nd iterationmiddle - 2 - 3rd iteration", $this->display('test'), 'Ensuring assigning block vars array to template is working correctly');
+		$this->assertEquals("outer - 0 - Test assigning block vars array loop 0:outer - 1 - Test assigning block vars array loop 1:middle - 0 - 1st iterationmiddle - 1 - 2nd iterationmiddle - 2 - 3rd iteration", $this->display('test'), 'Ensuring assigning block vars array to template is working correctly');
 	}
 
 	/**

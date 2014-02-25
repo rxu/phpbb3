@@ -493,10 +493,14 @@ function display_forums($root_data = '', $display_moderators = true, $return_mod
 		$l_post_click_count = ($row['forum_type'] == FORUM_LINK) ? 'CLICKS' : 'POSTS';
 		$post_click_count = ($row['forum_type'] != FORUM_LINK || $row['forum_flags'] & FORUM_FLAG_LINK_TRACK) ? $row['forum_posts'] : '';
 
-		$s_subforums_list = array();
+		$s_subforums_list = $subforum_row = array();
 		foreach ($subforums_list as $subforum)
 		{
 			$s_subforums_list[] = '<a href="' . $subforum['link'] . '" class="subforum ' . (($subforum['unread']) ? 'unread' : 'read') . '" title="' . (($subforum['unread']) ? $user->lang['UNREAD_POSTS'] : $user->lang['NO_UNREAD_POSTS']) . '">' . $subforum['name'] . '</a>';
+			$subforum_row[] = array(
+				'U_SUBFORUM'	=> $subforum['link'],
+				'SUBFORUM_NAME'	=> $subforum['name'],
+				'S_UNREAD'		=> $subforum['unread']);
 		}
 		$s_subforums_list = (string) implode($user->lang['COMMA_SEPARATOR'], $s_subforums_list);
 		$catless = ($row['parent_id'] == $root_data['forum_id']) ? true : false;
@@ -570,20 +574,13 @@ function display_forums($root_data = '', $display_moderators = true, $return_mod
 		* @var	array	row				The data of the forum
 		* @since 3.1-A1
 		*/
-		$vars = array('forum_row', 'row');
+		$vars = array('forum_row', 'row', 'subforum_row');
 		extract($phpbb_dispatcher->trigger_event('core.display_forums_modify_template_vars', compact($vars)));
 
 		$template->assign_block_vars('forumrow', $forum_row);
 
 		// Assign subforums loop for style authors
-		foreach ($subforums_list as $subforum)
-		{
-			$template->assign_block_vars('forumrow.subforum', array(
-				'U_SUBFORUM'	=> $subforum['link'],
-				'SUBFORUM_NAME'	=> $subforum['name'],
-				'S_UNREAD'		=> $subforum['unread'])
-			);
-		}
+		$template->assign_block_vars_array('forumrow.subforum', $subforum_row);
 
 		$last_catless = $catless;
 	}
