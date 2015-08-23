@@ -1,0 +1,6374 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="phpbb30">
+	<table_data name="phpbb_acl_groups">
+	<row>
+		<field name="group_id">1</field>
+		<field name="forum_id">0</field>
+		<field name="auth_option_id">85</field>
+		<field name="auth_role_id">0</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="group_id">1</field>
+		<field name="forum_id">0</field>
+		<field name="auth_option_id">93</field>
+		<field name="auth_role_id">0</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="group_id">1</field>
+		<field name="forum_id">0</field>
+		<field name="auth_option_id">110</field>
+		<field name="auth_role_id">0</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="group_id">5</field>
+		<field name="forum_id">0</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">5</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="group_id">5</field>
+		<field name="forum_id">0</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">1</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="group_id">2</field>
+		<field name="forum_id">0</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">6</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="group_id">3</field>
+		<field name="forum_id">0</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">6</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="group_id">4</field>
+		<field name="forum_id">0</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">5</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="group_id">4</field>
+		<field name="forum_id">0</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">10</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="group_id">1</field>
+		<field name="forum_id">1</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">17</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="group_id">2</field>
+		<field name="forum_id">1</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">17</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="group_id">3</field>
+		<field name="forum_id">1</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">17</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="group_id">6</field>
+		<field name="forum_id">1</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">17</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="group_id">1</field>
+		<field name="forum_id">2</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">17</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="group_id">2</field>
+		<field name="forum_id">2</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">15</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="group_id">3</field>
+		<field name="forum_id">2</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">15</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="group_id">4</field>
+		<field name="forum_id">2</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">21</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="group_id">5</field>
+		<field name="forum_id">2</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">14</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="group_id">5</field>
+		<field name="forum_id">2</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">10</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="group_id">6</field>
+		<field name="forum_id">2</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">19</field>
+		<field name="auth_setting">0</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_acl_options">
+	<row>
+		<field name="auth_option_id">1</field>
+		<field name="auth_option">f_</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">2</field>
+		<field name="auth_option">f_announce</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">3</field>
+		<field name="auth_option">f_attach</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">4</field>
+		<field name="auth_option">f_bbcode</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">5</field>
+		<field name="auth_option">f_bump</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">6</field>
+		<field name="auth_option">f_delete</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">7</field>
+		<field name="auth_option">f_download</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">8</field>
+		<field name="auth_option">f_edit</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">9</field>
+		<field name="auth_option">f_email</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">10</field>
+		<field name="auth_option">f_flash</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">11</field>
+		<field name="auth_option">f_icons</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">12</field>
+		<field name="auth_option">f_ignoreflood</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">13</field>
+		<field name="auth_option">f_img</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">14</field>
+		<field name="auth_option">f_list</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">15</field>
+		<field name="auth_option">f_noapprove</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">16</field>
+		<field name="auth_option">f_poll</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">17</field>
+		<field name="auth_option">f_post</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">18</field>
+		<field name="auth_option">f_postcount</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">19</field>
+		<field name="auth_option">f_print</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">20</field>
+		<field name="auth_option">f_read</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">21</field>
+		<field name="auth_option">f_reply</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">22</field>
+		<field name="auth_option">f_report</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">23</field>
+		<field name="auth_option">f_search</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">24</field>
+		<field name="auth_option">f_sigs</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">25</field>
+		<field name="auth_option">f_smilies</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">26</field>
+		<field name="auth_option">f_sticky</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">27</field>
+		<field name="auth_option">f_subscribe</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">28</field>
+		<field name="auth_option">f_user_lock</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">29</field>
+		<field name="auth_option">f_vote</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">30</field>
+		<field name="auth_option">f_votechg</field>
+		<field name="is_global">0</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">31</field>
+		<field name="auth_option">m_</field>
+		<field name="is_global">1</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">32</field>
+		<field name="auth_option">m_approve</field>
+		<field name="is_global">1</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">33</field>
+		<field name="auth_option">m_chgposter</field>
+		<field name="is_global">1</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">34</field>
+		<field name="auth_option">m_delete</field>
+		<field name="is_global">1</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">35</field>
+		<field name="auth_option">m_edit</field>
+		<field name="is_global">1</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">36</field>
+		<field name="auth_option">m_info</field>
+		<field name="is_global">1</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">37</field>
+		<field name="auth_option">m_lock</field>
+		<field name="is_global">1</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">38</field>
+		<field name="auth_option">m_merge</field>
+		<field name="is_global">1</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">39</field>
+		<field name="auth_option">m_move</field>
+		<field name="is_global">1</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">40</field>
+		<field name="auth_option">m_report</field>
+		<field name="is_global">1</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">41</field>
+		<field name="auth_option">m_split</field>
+		<field name="is_global">1</field>
+		<field name="is_local">1</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">42</field>
+		<field name="auth_option">m_ban</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">43</field>
+		<field name="auth_option">m_warn</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">44</field>
+		<field name="auth_option">a_</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">45</field>
+		<field name="auth_option">a_aauth</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">46</field>
+		<field name="auth_option">a_attach</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">47</field>
+		<field name="auth_option">a_authgroups</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">48</field>
+		<field name="auth_option">a_authusers</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">49</field>
+		<field name="auth_option">a_backup</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">50</field>
+		<field name="auth_option">a_ban</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">51</field>
+		<field name="auth_option">a_bbcode</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">52</field>
+		<field name="auth_option">a_board</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">53</field>
+		<field name="auth_option">a_bots</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">54</field>
+		<field name="auth_option">a_clearlogs</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">55</field>
+		<field name="auth_option">a_email</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">56</field>
+		<field name="auth_option">a_fauth</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">57</field>
+		<field name="auth_option">a_forum</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">58</field>
+		<field name="auth_option">a_forumadd</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">59</field>
+		<field name="auth_option">a_forumdel</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">60</field>
+		<field name="auth_option">a_group</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">61</field>
+		<field name="auth_option">a_groupadd</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">62</field>
+		<field name="auth_option">a_groupdel</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">63</field>
+		<field name="auth_option">a_icons</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">64</field>
+		<field name="auth_option">a_jabber</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">65</field>
+		<field name="auth_option">a_language</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">66</field>
+		<field name="auth_option">a_mauth</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">67</field>
+		<field name="auth_option">a_modules</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">68</field>
+		<field name="auth_option">a_names</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">69</field>
+		<field name="auth_option">a_phpinfo</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">70</field>
+		<field name="auth_option">a_profile</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">71</field>
+		<field name="auth_option">a_prune</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">72</field>
+		<field name="auth_option">a_ranks</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">73</field>
+		<field name="auth_option">a_reasons</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">74</field>
+		<field name="auth_option">a_roles</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">75</field>
+		<field name="auth_option">a_search</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">76</field>
+		<field name="auth_option">a_server</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">77</field>
+		<field name="auth_option">a_styles</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">78</field>
+		<field name="auth_option">a_switchperm</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">79</field>
+		<field name="auth_option">a_uauth</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">80</field>
+		<field name="auth_option">a_user</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">81</field>
+		<field name="auth_option">a_userdel</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">82</field>
+		<field name="auth_option">a_viewauth</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">83</field>
+		<field name="auth_option">a_viewlogs</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">84</field>
+		<field name="auth_option">a_words</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">85</field>
+		<field name="auth_option">u_</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">86</field>
+		<field name="auth_option">u_attach</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">87</field>
+		<field name="auth_option">u_chgavatar</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">88</field>
+		<field name="auth_option">u_chgcensors</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">89</field>
+		<field name="auth_option">u_chgemail</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">90</field>
+		<field name="auth_option">u_chggrp</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">91</field>
+		<field name="auth_option">u_chgname</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">92</field>
+		<field name="auth_option">u_chgpasswd</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">93</field>
+		<field name="auth_option">u_download</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">94</field>
+		<field name="auth_option">u_hideonline</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">95</field>
+		<field name="auth_option">u_ignoreflood</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">96</field>
+		<field name="auth_option">u_masspm</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">97</field>
+		<field name="auth_option">u_pm_attach</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">98</field>
+		<field name="auth_option">u_pm_bbcode</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">99</field>
+		<field name="auth_option">u_pm_delete</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">100</field>
+		<field name="auth_option">u_pm_download</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">101</field>
+		<field name="auth_option">u_pm_edit</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">102</field>
+		<field name="auth_option">u_pm_emailpm</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">103</field>
+		<field name="auth_option">u_pm_flash</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">104</field>
+		<field name="auth_option">u_pm_forward</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">105</field>
+		<field name="auth_option">u_pm_img</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">106</field>
+		<field name="auth_option">u_pm_printpm</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">107</field>
+		<field name="auth_option">u_pm_smilies</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">108</field>
+		<field name="auth_option">u_readpm</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">109</field>
+		<field name="auth_option">u_savedrafts</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">110</field>
+		<field name="auth_option">u_search</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">111</field>
+		<field name="auth_option">u_sendemail</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">112</field>
+		<field name="auth_option">u_sendim</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">113</field>
+		<field name="auth_option">u_sendpm</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">114</field>
+		<field name="auth_option">u_sig</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">115</field>
+		<field name="auth_option">u_viewonline</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	<row>
+		<field name="auth_option_id">116</field>
+		<field name="auth_option">u_viewprofile</field>
+		<field name="is_global">1</field>
+		<field name="is_local">0</field>
+		<field name="founder_only">0</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_acl_roles">
+	<row>
+		<field name="role_id">1</field>
+		<field name="role_name">ROLE_ADMIN_STANDARD</field>
+		<field name="role_description">ROLE_DESCRIPTION_ADMIN_STANDARD</field>
+		<field name="role_type">a_</field>
+		<field name="role_order">1</field>
+	</row>
+	<row>
+		<field name="role_id">2</field>
+		<field name="role_name">ROLE_ADMIN_FORUM</field>
+		<field name="role_description">ROLE_DESCRIPTION_ADMIN_FORUM</field>
+		<field name="role_type">a_</field>
+		<field name="role_order">3</field>
+	</row>
+	<row>
+		<field name="role_id">3</field>
+		<field name="role_name">ROLE_ADMIN_USERGROUP</field>
+		<field name="role_description">ROLE_DESCRIPTION_ADMIN_USERGROUP</field>
+		<field name="role_type">a_</field>
+		<field name="role_order">4</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="role_name">ROLE_ADMIN_FULL</field>
+		<field name="role_description">ROLE_DESCRIPTION_ADMIN_FULL</field>
+		<field name="role_type">a_</field>
+		<field name="role_order">2</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="role_name">ROLE_USER_FULL</field>
+		<field name="role_description">ROLE_DESCRIPTION_USER_FULL</field>
+		<field name="role_type">u_</field>
+		<field name="role_order">3</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="role_name">ROLE_USER_STANDARD</field>
+		<field name="role_description">ROLE_DESCRIPTION_USER_STANDARD</field>
+		<field name="role_type">u_</field>
+		<field name="role_order">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="role_name">ROLE_USER_LIMITED</field>
+		<field name="role_description">ROLE_DESCRIPTION_USER_LIMITED</field>
+		<field name="role_type">u_</field>
+		<field name="role_order">2</field>
+	</row>
+	<row>
+		<field name="role_id">8</field>
+		<field name="role_name">ROLE_USER_NOPM</field>
+		<field name="role_description">ROLE_DESCRIPTION_USER_NOPM</field>
+		<field name="role_type">u_</field>
+		<field name="role_order">4</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="role_name">ROLE_USER_NOAVATAR</field>
+		<field name="role_description">ROLE_DESCRIPTION_USER_NOAVATAR</field>
+		<field name="role_type">u_</field>
+		<field name="role_order">5</field>
+	</row>
+	<row>
+		<field name="role_id">10</field>
+		<field name="role_name">ROLE_MOD_FULL</field>
+		<field name="role_description">ROLE_DESCRIPTION_MOD_FULL</field>
+		<field name="role_type">m_</field>
+		<field name="role_order">3</field>
+	</row>
+	<row>
+		<field name="role_id">11</field>
+		<field name="role_name">ROLE_MOD_STANDARD</field>
+		<field name="role_description">ROLE_DESCRIPTION_MOD_STANDARD</field>
+		<field name="role_type">m_</field>
+		<field name="role_order">1</field>
+	</row>
+	<row>
+		<field name="role_id">12</field>
+		<field name="role_name">ROLE_MOD_SIMPLE</field>
+		<field name="role_description">ROLE_DESCRIPTION_MOD_SIMPLE</field>
+		<field name="role_type">m_</field>
+		<field name="role_order">2</field>
+	</row>
+	<row>
+		<field name="role_id">13</field>
+		<field name="role_name">ROLE_MOD_QUEUE</field>
+		<field name="role_description">ROLE_DESCRIPTION_MOD_QUEUE</field>
+		<field name="role_type">m_</field>
+		<field name="role_order">4</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="role_name">ROLE_FORUM_FULL</field>
+		<field name="role_description">ROLE_DESCRIPTION_FORUM_FULL</field>
+		<field name="role_type">f_</field>
+		<field name="role_order">7</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="role_name">ROLE_FORUM_STANDARD</field>
+		<field name="role_description">ROLE_DESCRIPTION_FORUM_STANDARD</field>
+		<field name="role_type">f_</field>
+		<field name="role_order">5</field>
+	</row>
+	<row>
+		<field name="role_id">16</field>
+		<field name="role_name">ROLE_FORUM_NOACCESS</field>
+		<field name="role_description">ROLE_DESCRIPTION_FORUM_NOACCESS</field>
+		<field name="role_type">f_</field>
+		<field name="role_order">1</field>
+	</row>
+	<row>
+		<field name="role_id">17</field>
+		<field name="role_name">ROLE_FORUM_READONLY</field>
+		<field name="role_description">ROLE_DESCRIPTION_FORUM_READONLY</field>
+		<field name="role_type">f_</field>
+		<field name="role_order">2</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="role_name">ROLE_FORUM_LIMITED</field>
+		<field name="role_description">ROLE_DESCRIPTION_FORUM_LIMITED</field>
+		<field name="role_type">f_</field>
+		<field name="role_order">3</field>
+	</row>
+	<row>
+		<field name="role_id">19</field>
+		<field name="role_name">ROLE_FORUM_BOT</field>
+		<field name="role_description">ROLE_DESCRIPTION_FORUM_BOT</field>
+		<field name="role_type">f_</field>
+		<field name="role_order">9</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="role_name">ROLE_FORUM_ONQUEUE</field>
+		<field name="role_description">ROLE_DESCRIPTION_FORUM_ONQUEUE</field>
+		<field name="role_type">f_</field>
+		<field name="role_order">8</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="role_name">ROLE_FORUM_POLLS</field>
+		<field name="role_description">ROLE_DESCRIPTION_FORUM_POLLS</field>
+		<field name="role_type">f_</field>
+		<field name="role_order">6</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="role_name">ROLE_FORUM_LIMITED_POLLS</field>
+		<field name="role_description">ROLE_DESCRIPTION_FORUM_LIMITED_POLLS</field>
+		<field name="role_type">f_</field>
+		<field name="role_order">4</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_acl_roles_data">
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">44</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">46</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">47</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">48</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">50</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">51</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">52</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">56</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">57</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">58</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">59</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">60</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">61</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">62</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">63</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">66</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">68</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">70</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">71</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">72</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">73</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">79</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">80</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">81</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">82</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">83</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">1</field>
+		<field name="auth_option_id">84</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">2</field>
+		<field name="auth_option_id">44</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">2</field>
+		<field name="auth_option_id">47</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">2</field>
+		<field name="auth_option_id">48</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">2</field>
+		<field name="auth_option_id">56</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">2</field>
+		<field name="auth_option_id">57</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">2</field>
+		<field name="auth_option_id">58</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">2</field>
+		<field name="auth_option_id">59</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">2</field>
+		<field name="auth_option_id">66</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">2</field>
+		<field name="auth_option_id">71</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">2</field>
+		<field name="auth_option_id">79</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">2</field>
+		<field name="auth_option_id">82</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">2</field>
+		<field name="auth_option_id">83</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">3</field>
+		<field name="auth_option_id">44</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">3</field>
+		<field name="auth_option_id">47</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">3</field>
+		<field name="auth_option_id">48</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">3</field>
+		<field name="auth_option_id">50</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">3</field>
+		<field name="auth_option_id">60</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">3</field>
+		<field name="auth_option_id">61</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">3</field>
+		<field name="auth_option_id">62</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">3</field>
+		<field name="auth_option_id">72</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">3</field>
+		<field name="auth_option_id">79</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">3</field>
+		<field name="auth_option_id">80</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">3</field>
+		<field name="auth_option_id">82</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">3</field>
+		<field name="auth_option_id">83</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">44</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">45</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">46</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">47</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">48</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">49</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">50</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">51</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">52</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">53</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">54</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">55</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">56</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">57</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">58</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">59</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">60</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">61</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">62</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">63</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">64</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">65</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">66</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">67</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">68</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">69</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">70</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">71</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">72</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">73</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">74</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">75</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">76</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">77</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">78</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">79</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">80</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">81</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">82</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">83</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">4</field>
+		<field name="auth_option_id">84</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">85</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">86</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">87</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">88</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">89</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">90</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">91</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">92</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">93</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">94</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">95</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">96</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">97</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">98</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">99</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">100</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">101</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">102</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">103</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">104</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">105</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">106</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">107</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">108</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">109</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">110</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">111</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">112</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">113</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">114</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">115</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">5</field>
+		<field name="auth_option_id">116</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">85</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">86</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">87</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">88</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">89</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">92</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">93</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">94</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">96</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">97</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">98</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">99</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">100</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">101</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">102</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">105</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">106</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">107</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">108</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">109</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">110</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">111</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">112</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">113</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">114</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">6</field>
+		<field name="auth_option_id">116</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">85</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">87</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">88</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">89</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">92</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">93</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">94</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">96</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">98</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">99</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">100</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">101</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">104</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">105</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">106</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">107</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">108</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">113</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">114</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">7</field>
+		<field name="auth_option_id">116</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">8</field>
+		<field name="auth_option_id">85</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">8</field>
+		<field name="auth_option_id">87</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">8</field>
+		<field name="auth_option_id">88</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">8</field>
+		<field name="auth_option_id">89</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">8</field>
+		<field name="auth_option_id">92</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">8</field>
+		<field name="auth_option_id">93</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">8</field>
+		<field name="auth_option_id">94</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">8</field>
+		<field name="auth_option_id">96</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="role_id">8</field>
+		<field name="auth_option_id">108</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="role_id">8</field>
+		<field name="auth_option_id">113</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="role_id">8</field>
+		<field name="auth_option_id">114</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">8</field>
+		<field name="auth_option_id">116</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">85</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">87</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">88</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">89</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">92</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">93</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">94</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">96</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">98</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">99</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">100</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">101</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">104</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">105</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">106</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">107</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">108</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">113</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">114</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">9</field>
+		<field name="auth_option_id">116</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">10</field>
+		<field name="auth_option_id">31</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">10</field>
+		<field name="auth_option_id">32</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">10</field>
+		<field name="auth_option_id">33</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">10</field>
+		<field name="auth_option_id">34</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">10</field>
+		<field name="auth_option_id">35</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">10</field>
+		<field name="auth_option_id">36</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">10</field>
+		<field name="auth_option_id">37</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">10</field>
+		<field name="auth_option_id">38</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">10</field>
+		<field name="auth_option_id">39</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">10</field>
+		<field name="auth_option_id">40</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">10</field>
+		<field name="auth_option_id">41</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">10</field>
+		<field name="auth_option_id">42</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">10</field>
+		<field name="auth_option_id">43</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">11</field>
+		<field name="auth_option_id">31</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">11</field>
+		<field name="auth_option_id">32</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">11</field>
+		<field name="auth_option_id">34</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">11</field>
+		<field name="auth_option_id">35</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">11</field>
+		<field name="auth_option_id">36</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">11</field>
+		<field name="auth_option_id">37</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">11</field>
+		<field name="auth_option_id">38</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">11</field>
+		<field name="auth_option_id">39</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">11</field>
+		<field name="auth_option_id">40</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">11</field>
+		<field name="auth_option_id">41</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">11</field>
+		<field name="auth_option_id">43</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">12</field>
+		<field name="auth_option_id">31</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">12</field>
+		<field name="auth_option_id">34</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">12</field>
+		<field name="auth_option_id">35</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">12</field>
+		<field name="auth_option_id">36</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">12</field>
+		<field name="auth_option_id">40</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">13</field>
+		<field name="auth_option_id">31</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">13</field>
+		<field name="auth_option_id">32</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">13</field>
+		<field name="auth_option_id">35</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">1</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">2</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">3</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">4</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">5</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">6</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">7</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">8</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">9</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">10</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">11</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">12</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">13</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">14</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">15</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">16</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">17</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">18</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">19</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">20</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">21</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">22</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">23</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">24</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">25</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">26</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">27</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">28</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">29</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">14</field>
+		<field name="auth_option_id">30</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">1</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">3</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">4</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">5</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">6</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">7</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">8</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">9</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">11</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">13</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">14</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">15</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">17</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">18</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">19</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">20</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">21</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">22</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">23</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">24</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">25</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">27</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">29</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">15</field>
+		<field name="auth_option_id">30</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">16</field>
+		<field name="auth_option_id">1</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="role_id">17</field>
+		<field name="auth_option_id">1</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">17</field>
+		<field name="auth_option_id">7</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">17</field>
+		<field name="auth_option_id">14</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">17</field>
+		<field name="auth_option_id">19</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">17</field>
+		<field name="auth_option_id">20</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">17</field>
+		<field name="auth_option_id">23</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">17</field>
+		<field name="auth_option_id">27</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">1</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">4</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">7</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">8</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">9</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">13</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">14</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">15</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">17</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">18</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">19</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">20</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">21</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">22</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">23</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">24</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">25</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">27</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">18</field>
+		<field name="auth_option_id">29</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">19</field>
+		<field name="auth_option_id">1</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">19</field>
+		<field name="auth_option_id">7</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">19</field>
+		<field name="auth_option_id">14</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">19</field>
+		<field name="auth_option_id">19</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">19</field>
+		<field name="auth_option_id">20</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">1</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">3</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">4</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">7</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">8</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">9</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">13</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">14</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">15</field>
+		<field name="auth_setting">0</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">17</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">18</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">19</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">20</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">21</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">22</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">23</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">24</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">25</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">27</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">20</field>
+		<field name="auth_option_id">29</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">1</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">3</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">4</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">5</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">6</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">7</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">8</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">9</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">11</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">13</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">14</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">15</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">16</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">17</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">18</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">19</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">20</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">21</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">22</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">23</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">24</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">25</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">27</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">29</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">21</field>
+		<field name="auth_option_id">30</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">1</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">4</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">7</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">8</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">9</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">13</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">14</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">15</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">16</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">17</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">18</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">19</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">20</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">21</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">22</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">23</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">24</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">25</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">27</field>
+		<field name="auth_setting">1</field>
+	</row>
+	<row>
+		<field name="role_id">22</field>
+		<field name="auth_option_id">29</field>
+		<field name="auth_setting">1</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_acl_users">
+	<row>
+		<field name="user_id">2</field>
+		<field name="forum_id">0</field>
+		<field name="auth_option_id">0</field>
+		<field name="auth_role_id">5</field>
+		<field name="auth_setting">0</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_attachments">
+	</table_data>
+	<table_data name="phpbb_banlist">
+	</table_data>
+	<table_data name="phpbb_bbcodes">
+	</table_data>
+	<table_data name="phpbb_bookmarks">
+	</table_data>
+	<table_data name="phpbb_bots">
+	</table_data>
+	<table_data name="phpbb_config">
+	<row>
+		<field name="config_name">active_sessions</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_attachments</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_autologin</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_avatar_local</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_avatar_remote</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_avatar_upload</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_bbcode</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_birthdays</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_bookmarks</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_emailreuse</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_forum_notify</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_mass_pm</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_name_chars</field>
+		<field name="config_value">USERNAME_CHARS_ANY</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_namechange</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_nocensors</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_pm_attach</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_post_flash</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_post_links</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_privmsg</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_sig</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_sig_bbcode</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_sig_flash</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_sig_img</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_sig_links</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_sig_pm</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_sig_smilies</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_smilies</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">allow_topic_notify</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">attachment_quota</field>
+		<field name="config_value">52428800</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">auth_bbcode_pm</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">auth_flash_pm</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">auth_img_pm</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">auth_method</field>
+		<field name="config_value">db</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">auth_smilies_pm</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">avatar_filesize</field>
+		<field name="config_value">6144</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">avatar_gallery_path</field>
+		<field name="config_value">images/avatars/gallery</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">avatar_max_height</field>
+		<field name="config_value">90</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">avatar_max_width</field>
+		<field name="config_value">90</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">avatar_min_height</field>
+		<field name="config_value">20</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">avatar_min_width</field>
+		<field name="config_value">20</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">avatar_path</field>
+		<field name="config_value">images/avatars/upload</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">avatar_salt</field>
+		<field name="config_value">phpbb_avatar</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">board_contact</field>
+		<field name="config_value">contact@yourdomain.tld</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">board_disable</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">board_disable_msg</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">board_dst</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">board_email</field>
+		<field name="config_value">address@yourdomain.tld</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">board_email_form</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">board_email_sig</field>
+		<field name="config_value">{L_CONFIG_BOARD_EMAIL_SIG}</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">board_hide_emails</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">board_timezone</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">browser_check</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">bump_interval</field>
+		<field name="config_value">10</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">bump_type</field>
+		<field name="config_value">d</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">cache_gc</field>
+		<field name="config_value">7200</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">cache_last_gc</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">captcha_gd</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">captcha_gd_foreground_noise</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">captcha_gd_x_grid</field>
+		<field name="config_value">25</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">captcha_gd_y_grid</field>
+		<field name="config_value">25</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">check_dnsbl</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">chg_passforce</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">cookie_domain</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">cookie_name</field>
+		<field name="config_value">phpbb3</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">cookie_path</field>
+		<field name="config_value">/</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">cookie_secure</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">coppa_enable</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">coppa_fax</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">coppa_mail</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">cron_lock</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">database_gc</field>
+		<field name="config_value">604800</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">database_last_gc</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">default_dateformat</field>
+		<field name="config_value">D M d, Y g:i a</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">default_style</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">display_last_edited</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">display_order</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">edit_time</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">email_check_mx</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">email_enable</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">email_function_name</field>
+		<field name="config_value">mail</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">email_package_size</field>
+		<field name="config_value">50</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">enable_confirm</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">enable_pm_icons</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">enable_post_confirm</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">flood_interval</field>
+		<field name="config_value">15</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">force_server_vars</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">form_token_lifetime</field>
+		<field name="config_value">7200</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">form_token_mintime</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">form_token_sid_guests</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">forward_pm</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">forwarded_for_check</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">full_folder_action</field>
+		<field name="config_value">2</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">fulltext_mysql_max_word_len</field>
+		<field name="config_value">254</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">fulltext_mysql_min_word_len</field>
+		<field name="config_value">4</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">fulltext_native_common_thres</field>
+		<field name="config_value">5</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">fulltext_native_load_upd</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">fulltext_native_max_chars</field>
+		<field name="config_value">14</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">fulltext_native_min_chars</field>
+		<field name="config_value">3</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">gzip_compress</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">hot_threshold</field>
+		<field name="config_value">25</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">icons_path</field>
+		<field name="config_value">images/icons</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">img_create_thumbnail</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">img_display_inlined</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">img_imagick</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">img_link_height</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">img_link_width</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">img_max_height</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">img_max_thumb_width</field>
+		<field name="config_value">400</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">img_max_width</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">img_min_thumb_filesize</field>
+		<field name="config_value">12000</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">ip_check</field>
+		<field name="config_value">3</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">jab_enable</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">jab_host</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">jab_package_size</field>
+		<field name="config_value">20</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">jab_password</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">jab_port</field>
+		<field name="config_value">5222</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">jab_use_ssl</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">jab_username</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">last_queue_run</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">ldap_base_dn</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">ldap_email</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">ldap_password</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">ldap_port</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">ldap_server</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">ldap_uid</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">ldap_user</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">ldap_user_filter</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">limit_load</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">limit_search_load</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">load_anon_lastread</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">load_birthdays</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">load_cpf_memberlist</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">load_cpf_viewprofile</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">load_cpf_viewtopic</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">load_db_lastread</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">load_db_track</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">load_jumpbox</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">load_moderators</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">load_online</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">load_online_guests</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">load_online_time</field>
+		<field name="config_value">5</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">load_onlinetrack</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">load_search</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">load_tplcompile</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">load_user_activity</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_attachments</field>
+		<field name="config_value">3</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_attachments_pm</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_autologin_time</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_filesize</field>
+		<field name="config_value">262144</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_filesize_pm</field>
+		<field name="config_value">262144</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_login_attempts</field>
+		<field name="config_value">3</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_name_chars</field>
+		<field name="config_value">20</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_pass_chars</field>
+		<field name="config_value">30</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_poll_options</field>
+		<field name="config_value">10</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_post_chars</field>
+		<field name="config_value">60000</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_post_font_size</field>
+		<field name="config_value">200</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_post_img_height</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_post_img_width</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_post_smilies</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_post_urls</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_quote_depth</field>
+		<field name="config_value">3</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_reg_attempts</field>
+		<field name="config_value">5</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_sig_chars</field>
+		<field name="config_value">255</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_sig_font_size</field>
+		<field name="config_value">200</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_sig_img_height</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_sig_img_width</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_sig_smilies</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">max_sig_urls</field>
+		<field name="config_value">5</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">min_name_chars</field>
+		<field name="config_value">3</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">min_pass_chars</field>
+		<field name="config_value">6</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">min_search_author_chars</field>
+		<field name="config_value">3</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">min_time_reg</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">min_time_terms</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">newest_user_colour</field>
+		<field name="config_value">AA0000</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">newest_user_id</field>
+		<field name="config_value">2</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">newest_username</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">num_files</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">num_posts</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">num_topics</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">num_users</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">override_user_style</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">pass_complex</field>
+		<field name="config_value">PASS_TYPE_ANY</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">pm_edit_time</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">pm_max_boxes</field>
+		<field name="config_value">4</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">pm_max_msgs</field>
+		<field name="config_value">50</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">posts_per_page</field>
+		<field name="config_value">10</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">print_pm</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">queue_interval</field>
+		<field name="config_value">600</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">rand_seed</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">rand_seed_last_update</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">ranks_path</field>
+		<field name="config_value">images/ranks</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">record_online_date</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">record_online_users</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">require_activation</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">script_path</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">search_anonymous_interval</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">search_block_size</field>
+		<field name="config_value">250</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">search_gc</field>
+		<field name="config_value">7200</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">search_indexing_state</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">search_interval</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">search_last_gc</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">search_store_results</field>
+		<field name="config_value">1800</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">search_type</field>
+		<field name="config_value">fulltext_native</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">secure_allow_deny</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">secure_allow_empty_referer</field>
+		<field name="config_value">1</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">secure_downloads</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">server_name</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">server_port</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">server_protocol</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">session_gc</field>
+		<field name="config_value">3600</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">session_last_gc</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">session_length</field>
+		<field name="config_value">3600</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">site_desc</field>
+		<field name="config_value">{L_CONFIG_SITE_DESC}</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">sitename</field>
+		<field name="config_value">{L_CONFIG_SITENAME}</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">smilies_path</field>
+		<field name="config_value">images/smilies</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">smtp_auth_method</field>
+		<field name="config_value">PLAIN</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">smtp_delivery</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">smtp_host</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">smtp_password</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">smtp_port</field>
+		<field name="config_value">25</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">smtp_username</field>
+		<field name="config_value"></field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">topics_per_page</field>
+		<field name="config_value">25</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">tpl_allow_php</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">upload_dir_size</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	<row>
+		<field name="config_name">upload_icons_path</field>
+		<field name="config_value">images/upload_icons</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">upload_path</field>
+		<field name="config_value">files</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">version</field>
+		<field name="config_value">3.0.0</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">warnings_expire_days</field>
+		<field name="config_value">90</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">warnings_gc</field>
+		<field name="config_value">14400</field>
+		<field name="is_dynamic">0</field>
+	</row>
+	<row>
+		<field name="config_name">warnings_last_gc</field>
+		<field name="config_value">0</field>
+		<field name="is_dynamic">1</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_confirm">
+	</table_data>
+	<table_data name="phpbb_disallow">
+	</table_data>
+	<table_data name="phpbb_drafts">
+	</table_data>
+	<table_data name="phpbb_extension_groups">
+	<row>
+		<field name="group_id">1</field>
+		<field name="group_name">{L_EXT_GROUP_IMAGES}</field>
+		<field name="cat_id">1</field>
+		<field name="allow_group">1</field>
+		<field name="download_mode">1</field>
+		<field name="upload_icon"></field>
+		<field name="max_filesize">0</field>
+		<field name="allowed_forums"></field>
+		<field name="allow_in_pm">0</field>
+	</row>
+	<row>
+		<field name="group_id">2</field>
+		<field name="group_name">{L_EXT_GROUP_ARCHIVES}</field>
+		<field name="cat_id">0</field>
+		<field name="allow_group">1</field>
+		<field name="download_mode">1</field>
+		<field name="upload_icon"></field>
+		<field name="max_filesize">0</field>
+		<field name="allowed_forums"></field>
+		<field name="allow_in_pm">0</field>
+	</row>
+	<row>
+		<field name="group_id">3</field>
+		<field name="group_name">{L_EXT_GROUP_PLAIN_TEXT}</field>
+		<field name="cat_id">0</field>
+		<field name="allow_group">0</field>
+		<field name="download_mode">1</field>
+		<field name="upload_icon"></field>
+		<field name="max_filesize">0</field>
+		<field name="allowed_forums"></field>
+		<field name="allow_in_pm">0</field>
+	</row>
+	<row>
+		<field name="group_id">4</field>
+		<field name="group_name">{L_EXT_GROUP_DOCUMENTS}</field>
+		<field name="cat_id">0</field>
+		<field name="allow_group">0</field>
+		<field name="download_mode">1</field>
+		<field name="upload_icon"></field>
+		<field name="max_filesize">0</field>
+		<field name="allowed_forums"></field>
+		<field name="allow_in_pm">0</field>
+	</row>
+	<row>
+		<field name="group_id">5</field>
+		<field name="group_name">{L_EXT_GROUP_REAL_MEDIA}</field>
+		<field name="cat_id">3</field>
+		<field name="allow_group">0</field>
+		<field name="download_mode">1</field>
+		<field name="upload_icon"></field>
+		<field name="max_filesize">0</field>
+		<field name="allowed_forums"></field>
+		<field name="allow_in_pm">0</field>
+	</row>
+	<row>
+		<field name="group_id">6</field>
+		<field name="group_name">{L_EXT_GROUP_WINDOWS_MEDIA}</field>
+		<field name="cat_id">2</field>
+		<field name="allow_group">0</field>
+		<field name="download_mode">1</field>
+		<field name="upload_icon"></field>
+		<field name="max_filesize">0</field>
+		<field name="allowed_forums"></field>
+		<field name="allow_in_pm">0</field>
+	</row>
+	<row>
+		<field name="group_id">7</field>
+		<field name="group_name">{L_EXT_GROUP_FLASH_FILES}</field>
+		<field name="cat_id">5</field>
+		<field name="allow_group">0</field>
+		<field name="download_mode">1</field>
+		<field name="upload_icon"></field>
+		<field name="max_filesize">0</field>
+		<field name="allowed_forums"></field>
+		<field name="allow_in_pm">0</field>
+	</row>
+	<row>
+		<field name="group_id">8</field>
+		<field name="group_name">{L_EXT_GROUP_QUICKTIME_MEDIA}</field>
+		<field name="cat_id">6</field>
+		<field name="allow_group">0</field>
+		<field name="download_mode">1</field>
+		<field name="upload_icon"></field>
+		<field name="max_filesize">0</field>
+		<field name="allowed_forums"></field>
+		<field name="allow_in_pm">0</field>
+	</row>
+	<row>
+		<field name="group_id">9</field>
+		<field name="group_name">{L_EXT_GROUP_DOWNLOADABLE_FILES}</field>
+		<field name="cat_id">0</field>
+		<field name="allow_group">0</field>
+		<field name="download_mode">1</field>
+		<field name="upload_icon"></field>
+		<field name="max_filesize">0</field>
+		<field name="allowed_forums"></field>
+		<field name="allow_in_pm">0</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_extensions">
+	<row>
+		<field name="extension_id">1</field>
+		<field name="group_id">1</field>
+		<field name="extension">gif</field>
+	</row>
+	<row>
+		<field name="extension_id">2</field>
+		<field name="group_id">1</field>
+		<field name="extension">png</field>
+	</row>
+	<row>
+		<field name="extension_id">3</field>
+		<field name="group_id">1</field>
+		<field name="extension">jpeg</field>
+	</row>
+	<row>
+		<field name="extension_id">4</field>
+		<field name="group_id">1</field>
+		<field name="extension">jpg</field>
+	</row>
+	<row>
+		<field name="extension_id">5</field>
+		<field name="group_id">1</field>
+		<field name="extension">tif</field>
+	</row>
+	<row>
+		<field name="extension_id">6</field>
+		<field name="group_id">1</field>
+		<field name="extension">tiff</field>
+	</row>
+	<row>
+		<field name="extension_id">7</field>
+		<field name="group_id">1</field>
+		<field name="extension">tga</field>
+	</row>
+	<row>
+		<field name="extension_id">8</field>
+		<field name="group_id">2</field>
+		<field name="extension">gtar</field>
+	</row>
+	<row>
+		<field name="extension_id">9</field>
+		<field name="group_id">2</field>
+		<field name="extension">gz</field>
+	</row>
+	<row>
+		<field name="extension_id">10</field>
+		<field name="group_id">2</field>
+		<field name="extension">tar</field>
+	</row>
+	<row>
+		<field name="extension_id">11</field>
+		<field name="group_id">2</field>
+		<field name="extension">zip</field>
+	</row>
+	<row>
+		<field name="extension_id">12</field>
+		<field name="group_id">2</field>
+		<field name="extension">rar</field>
+	</row>
+	<row>
+		<field name="extension_id">13</field>
+		<field name="group_id">2</field>
+		<field name="extension">ace</field>
+	</row>
+	<row>
+		<field name="extension_id">14</field>
+		<field name="group_id">2</field>
+		<field name="extension">torrent</field>
+	</row>
+	<row>
+		<field name="extension_id">15</field>
+		<field name="group_id">2</field>
+		<field name="extension">tgz</field>
+	</row>
+	<row>
+		<field name="extension_id">16</field>
+		<field name="group_id">2</field>
+		<field name="extension">bz2</field>
+	</row>
+	<row>
+		<field name="extension_id">17</field>
+		<field name="group_id">2</field>
+		<field name="extension">7z</field>
+	</row>
+	<row>
+		<field name="extension_id">18</field>
+		<field name="group_id">3</field>
+		<field name="extension">txt</field>
+	</row>
+	<row>
+		<field name="extension_id">19</field>
+		<field name="group_id">3</field>
+		<field name="extension">c</field>
+	</row>
+	<row>
+		<field name="extension_id">20</field>
+		<field name="group_id">3</field>
+		<field name="extension">h</field>
+	</row>
+	<row>
+		<field name="extension_id">21</field>
+		<field name="group_id">3</field>
+		<field name="extension">cpp</field>
+	</row>
+	<row>
+		<field name="extension_id">22</field>
+		<field name="group_id">3</field>
+		<field name="extension">hpp</field>
+	</row>
+	<row>
+		<field name="extension_id">23</field>
+		<field name="group_id">3</field>
+		<field name="extension">diz</field>
+	</row>
+	<row>
+		<field name="extension_id">24</field>
+		<field name="group_id">3</field>
+		<field name="extension">csv</field>
+	</row>
+	<row>
+		<field name="extension_id">25</field>
+		<field name="group_id">3</field>
+		<field name="extension">ini</field>
+	</row>
+	<row>
+		<field name="extension_id">26</field>
+		<field name="group_id">3</field>
+		<field name="extension">log</field>
+	</row>
+	<row>
+		<field name="extension_id">27</field>
+		<field name="group_id">3</field>
+		<field name="extension">js</field>
+	</row>
+	<row>
+		<field name="extension_id">28</field>
+		<field name="group_id">3</field>
+		<field name="extension">xml</field>
+	</row>
+	<row>
+		<field name="extension_id">29</field>
+		<field name="group_id">4</field>
+		<field name="extension">xls</field>
+	</row>
+	<row>
+		<field name="extension_id">30</field>
+		<field name="group_id">4</field>
+		<field name="extension">xlsx</field>
+	</row>
+	<row>
+		<field name="extension_id">31</field>
+		<field name="group_id">4</field>
+		<field name="extension">xlsm</field>
+	</row>
+	<row>
+		<field name="extension_id">32</field>
+		<field name="group_id">4</field>
+		<field name="extension">xlsb</field>
+	</row>
+	<row>
+		<field name="extension_id">33</field>
+		<field name="group_id">4</field>
+		<field name="extension">doc</field>
+	</row>
+	<row>
+		<field name="extension_id">34</field>
+		<field name="group_id">4</field>
+		<field name="extension">docx</field>
+	</row>
+	<row>
+		<field name="extension_id">35</field>
+		<field name="group_id">4</field>
+		<field name="extension">docm</field>
+	</row>
+	<row>
+		<field name="extension_id">36</field>
+		<field name="group_id">4</field>
+		<field name="extension">dot</field>
+	</row>
+	<row>
+		<field name="extension_id">37</field>
+		<field name="group_id">4</field>
+		<field name="extension">dotx</field>
+	</row>
+	<row>
+		<field name="extension_id">38</field>
+		<field name="group_id">4</field>
+		<field name="extension">dotm</field>
+	</row>
+	<row>
+		<field name="extension_id">39</field>
+		<field name="group_id">4</field>
+		<field name="extension">pdf</field>
+	</row>
+	<row>
+		<field name="extension_id">40</field>
+		<field name="group_id">4</field>
+		<field name="extension">ai</field>
+	</row>
+	<row>
+		<field name="extension_id">41</field>
+		<field name="group_id">4</field>
+		<field name="extension">ps</field>
+	</row>
+	<row>
+		<field name="extension_id">42</field>
+		<field name="group_id">4</field>
+		<field name="extension">ppt</field>
+	</row>
+	<row>
+		<field name="extension_id">43</field>
+		<field name="group_id">4</field>
+		<field name="extension">pptx</field>
+	</row>
+	<row>
+		<field name="extension_id">44</field>
+		<field name="group_id">4</field>
+		<field name="extension">pptm</field>
+	</row>
+	<row>
+		<field name="extension_id">45</field>
+		<field name="group_id">4</field>
+		<field name="extension">odg</field>
+	</row>
+	<row>
+		<field name="extension_id">46</field>
+		<field name="group_id">4</field>
+		<field name="extension">odp</field>
+	</row>
+	<row>
+		<field name="extension_id">47</field>
+		<field name="group_id">4</field>
+		<field name="extension">ods</field>
+	</row>
+	<row>
+		<field name="extension_id">48</field>
+		<field name="group_id">4</field>
+		<field name="extension">odt</field>
+	</row>
+	<row>
+		<field name="extension_id">49</field>
+		<field name="group_id">4</field>
+		<field name="extension">rtf</field>
+	</row>
+	<row>
+		<field name="extension_id">50</field>
+		<field name="group_id">5</field>
+		<field name="extension">rm</field>
+	</row>
+	<row>
+		<field name="extension_id">51</field>
+		<field name="group_id">5</field>
+		<field name="extension">ram</field>
+	</row>
+	<row>
+		<field name="extension_id">52</field>
+		<field name="group_id">6</field>
+		<field name="extension">wma</field>
+	</row>
+	<row>
+		<field name="extension_id">53</field>
+		<field name="group_id">6</field>
+		<field name="extension">wmv</field>
+	</row>
+	<row>
+		<field name="extension_id">54</field>
+		<field name="group_id">7</field>
+		<field name="extension">swf</field>
+	</row>
+	<row>
+		<field name="extension_id">55</field>
+		<field name="group_id">8</field>
+		<field name="extension">mov</field>
+	</row>
+	<row>
+		<field name="extension_id">56</field>
+		<field name="group_id">8</field>
+		<field name="extension">m4v</field>
+	</row>
+	<row>
+		<field name="extension_id">57</field>
+		<field name="group_id">8</field>
+		<field name="extension">m4a</field>
+	</row>
+	<row>
+		<field name="extension_id">58</field>
+		<field name="group_id">8</field>
+		<field name="extension">mp4</field>
+	</row>
+	<row>
+		<field name="extension_id">59</field>
+		<field name="group_id">8</field>
+		<field name="extension">3gp</field>
+	</row>
+	<row>
+		<field name="extension_id">60</field>
+		<field name="group_id">8</field>
+		<field name="extension">3g2</field>
+	</row>
+	<row>
+		<field name="extension_id">61</field>
+		<field name="group_id">8</field>
+		<field name="extension">qt</field>
+	</row>
+	<row>
+		<field name="extension_id">62</field>
+		<field name="group_id">9</field>
+		<field name="extension">mpeg</field>
+	</row>
+	<row>
+		<field name="extension_id">63</field>
+		<field name="group_id">9</field>
+		<field name="extension">mpg</field>
+	</row>
+	<row>
+		<field name="extension_id">64</field>
+		<field name="group_id">9</field>
+		<field name="extension">mp3</field>
+	</row>
+	<row>
+		<field name="extension_id">65</field>
+		<field name="group_id">9</field>
+		<field name="extension">ogg</field>
+	</row>
+	<row>
+		<field name="extension_id">66</field>
+		<field name="group_id">9</field>
+		<field name="extension">ogm</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_forums">
+	<row>
+		<field name="forum_id">1</field>
+		<field name="parent_id">0</field>
+		<field name="left_id">1</field>
+		<field name="right_id">4</field>
+		<field name="forum_parents"></field>
+		<field name="forum_name">{L_FORUMS_FIRST_CATEGORY}</field>
+		<field name="forum_desc"></field>
+		<field name="forum_desc_bitfield"></field>
+		<field name="forum_desc_options">7</field>
+		<field name="forum_desc_uid"></field>
+		<field name="forum_link"></field>
+		<field name="forum_password"></field>
+		<field name="forum_style">0</field>
+		<field name="forum_image"></field>
+		<field name="forum_rules"></field>
+		<field name="forum_rules_link"></field>
+		<field name="forum_rules_bitfield"></field>
+		<field name="forum_rules_options">7</field>
+		<field name="forum_rules_uid"></field>
+		<field name="forum_topics_per_page">0</field>
+		<field name="forum_type">0</field>
+		<field name="forum_status">0</field>
+		<field name="forum_posts">1</field>
+		<field name="forum_topics">1</field>
+		<field name="forum_topics_real">1</field>
+		<field name="forum_last_post_id">1</field>
+		<field name="forum_last_poster_id">2</field>
+		<field name="forum_last_post_subject"></field>
+		<field name="forum_last_post_time">972086460</field>
+		<field name="forum_last_poster_name">Admin</field>
+		<field name="forum_last_poster_colour">AA0000</field>
+		<field name="forum_flags">32</field>
+		<field name="display_on_index">1</field>
+		<field name="enable_indexing">1</field>
+		<field name="enable_icons">1</field>
+		<field name="enable_prune">0</field>
+		<field name="prune_next">0</field>
+		<field name="prune_days">0</field>
+		<field name="prune_viewed">0</field>
+		<field name="prune_freq">0</field>
+	</row>
+	<row>
+		<field name="forum_id">2</field>
+		<field name="parent_id">1</field>
+		<field name="left_id">2</field>
+		<field name="right_id">3</field>
+		<field name="forum_parents"></field>
+		<field name="forum_name">{L_FORUMS_TEST_FORUM_TITLE}</field>
+		<field name="forum_desc">{L_FORUMS_TEST_FORUM_DESC}</field>
+		<field name="forum_desc_bitfield"></field>
+		<field name="forum_desc_options">7</field>
+		<field name="forum_desc_uid"></field>
+		<field name="forum_link"></field>
+		<field name="forum_password"></field>
+		<field name="forum_style">0</field>
+		<field name="forum_image"></field>
+		<field name="forum_rules"></field>
+		<field name="forum_rules_link"></field>
+		<field name="forum_rules_bitfield"></field>
+		<field name="forum_rules_options">7</field>
+		<field name="forum_rules_uid"></field>
+		<field name="forum_topics_per_page">0</field>
+		<field name="forum_type">1</field>
+		<field name="forum_status">0</field>
+		<field name="forum_posts">1</field>
+		<field name="forum_topics">1</field>
+		<field name="forum_topics_real">1</field>
+		<field name="forum_last_post_id">1</field>
+		<field name="forum_last_poster_id">2</field>
+		<field name="forum_last_post_subject">{L_TOPICS_TOPIC_TITLE}</field>
+		<field name="forum_last_post_time">972086460</field>
+		<field name="forum_last_poster_name">Admin</field>
+		<field name="forum_last_poster_colour">AA0000</field>
+		<field name="forum_flags">32</field>
+		<field name="display_on_index">1</field>
+		<field name="enable_indexing">1</field>
+		<field name="enable_icons">1</field>
+		<field name="enable_prune">0</field>
+		<field name="prune_next">0</field>
+		<field name="prune_days">0</field>
+		<field name="prune_viewed">0</field>
+		<field name="prune_freq">0</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_forums_access">
+	</table_data>
+	<table_data name="phpbb_forums_track">
+	</table_data>
+	<table_data name="phpbb_forums_watch">
+	</table_data>
+	<table_data name="phpbb_groups">
+	<row>
+		<field name="group_id">1</field>
+		<field name="group_type">3</field>
+		<field name="group_founder_manage">0</field>
+		<field name="group_name">GUESTS</field>
+		<field name="group_desc"></field>
+		<field name="group_desc_bitfield"></field>
+		<field name="group_desc_options">7</field>
+		<field name="group_desc_uid"></field>
+		<field name="group_display">0</field>
+		<field name="group_avatar"></field>
+		<field name="group_avatar_type">0</field>
+		<field name="group_avatar_width">0</field>
+		<field name="group_avatar_height">0</field>
+		<field name="group_rank">0</field>
+		<field name="group_colour"></field>
+		<field name="group_sig_chars">0</field>
+		<field name="group_receive_pm">0</field>
+		<field name="group_message_limit">0</field>
+		<field name="group_legend">0</field>
+	</row>
+	<row>
+		<field name="group_id">2</field>
+		<field name="group_type">3</field>
+		<field name="group_founder_manage">0</field>
+		<field name="group_name">REGISTERED</field>
+		<field name="group_desc"></field>
+		<field name="group_desc_bitfield"></field>
+		<field name="group_desc_options">7</field>
+		<field name="group_desc_uid"></field>
+		<field name="group_display">0</field>
+		<field name="group_avatar"></field>
+		<field name="group_avatar_type">0</field>
+		<field name="group_avatar_width">0</field>
+		<field name="group_avatar_height">0</field>
+		<field name="group_rank">0</field>
+		<field name="group_colour"></field>
+		<field name="group_sig_chars">0</field>
+		<field name="group_receive_pm">0</field>
+		<field name="group_message_limit">0</field>
+		<field name="group_legend">0</field>
+	</row>
+	<row>
+		<field name="group_id">3</field>
+		<field name="group_type">3</field>
+		<field name="group_founder_manage">0</field>
+		<field name="group_name">REGISTERED_COPPA</field>
+		<field name="group_desc"></field>
+		<field name="group_desc_bitfield"></field>
+		<field name="group_desc_options">7</field>
+		<field name="group_desc_uid"></field>
+		<field name="group_display">0</field>
+		<field name="group_avatar"></field>
+		<field name="group_avatar_type">0</field>
+		<field name="group_avatar_width">0</field>
+		<field name="group_avatar_height">0</field>
+		<field name="group_rank">0</field>
+		<field name="group_colour"></field>
+		<field name="group_sig_chars">0</field>
+		<field name="group_receive_pm">0</field>
+		<field name="group_message_limit">0</field>
+		<field name="group_legend">0</field>
+	</row>
+	<row>
+		<field name="group_id">4</field>
+		<field name="group_type">3</field>
+		<field name="group_founder_manage">0</field>
+		<field name="group_name">GLOBAL_MODERATORS</field>
+		<field name="group_desc"></field>
+		<field name="group_desc_bitfield"></field>
+		<field name="group_desc_options">7</field>
+		<field name="group_desc_uid"></field>
+		<field name="group_display">0</field>
+		<field name="group_avatar"></field>
+		<field name="group_avatar_type">0</field>
+		<field name="group_avatar_width">0</field>
+		<field name="group_avatar_height">0</field>
+		<field name="group_rank">0</field>
+		<field name="group_colour">00AA00</field>
+		<field name="group_sig_chars">0</field>
+		<field name="group_receive_pm">0</field>
+		<field name="group_message_limit">0</field>
+		<field name="group_legend">1</field>
+	</row>
+	<row>
+		<field name="group_id">5</field>
+		<field name="group_type">3</field>
+		<field name="group_founder_manage">1</field>
+		<field name="group_name">ADMINISTRATORS</field>
+		<field name="group_desc"></field>
+		<field name="group_desc_bitfield"></field>
+		<field name="group_desc_options">7</field>
+		<field name="group_desc_uid"></field>
+		<field name="group_display">0</field>
+		<field name="group_avatar"></field>
+		<field name="group_avatar_type">0</field>
+		<field name="group_avatar_width">0</field>
+		<field name="group_avatar_height">0</field>
+		<field name="group_rank">0</field>
+		<field name="group_colour">AA0000</field>
+		<field name="group_sig_chars">0</field>
+		<field name="group_receive_pm">0</field>
+		<field name="group_message_limit">0</field>
+		<field name="group_legend">1</field>
+	</row>
+	<row>
+		<field name="group_id">6</field>
+		<field name="group_type">3</field>
+		<field name="group_founder_manage">0</field>
+		<field name="group_name">BOTS</field>
+		<field name="group_desc"></field>
+		<field name="group_desc_bitfield"></field>
+		<field name="group_desc_options">7</field>
+		<field name="group_desc_uid"></field>
+		<field name="group_display">0</field>
+		<field name="group_avatar"></field>
+		<field name="group_avatar_type">0</field>
+		<field name="group_avatar_width">0</field>
+		<field name="group_avatar_height">0</field>
+		<field name="group_rank">0</field>
+		<field name="group_colour">9E8DA7</field>
+		<field name="group_sig_chars">0</field>
+		<field name="group_receive_pm">0</field>
+		<field name="group_message_limit">0</field>
+		<field name="group_legend">0</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_icons">
+	<row>
+		<field name="icons_id">1</field>
+		<field name="icons_url">misc/fire.gif</field>
+		<field name="icons_width">16</field>
+		<field name="icons_height">16</field>
+		<field name="icons_order">1</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="icons_id">2</field>
+		<field name="icons_url">smile/redface.gif</field>
+		<field name="icons_width">16</field>
+		<field name="icons_height">16</field>
+		<field name="icons_order">9</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="icons_id">3</field>
+		<field name="icons_url">smile/mrgreen.gif</field>
+		<field name="icons_width">16</field>
+		<field name="icons_height">16</field>
+		<field name="icons_order">10</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="icons_id">4</field>
+		<field name="icons_url">misc/heart.gif</field>
+		<field name="icons_width">16</field>
+		<field name="icons_height">16</field>
+		<field name="icons_order">4</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="icons_id">5</field>
+		<field name="icons_url">misc/star.gif</field>
+		<field name="icons_width">16</field>
+		<field name="icons_height">16</field>
+		<field name="icons_order">2</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="icons_id">6</field>
+		<field name="icons_url">misc/radioactive.gif</field>
+		<field name="icons_width">16</field>
+		<field name="icons_height">16</field>
+		<field name="icons_order">3</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="icons_id">7</field>
+		<field name="icons_url">misc/thinking.gif</field>
+		<field name="icons_width">16</field>
+		<field name="icons_height">16</field>
+		<field name="icons_order">5</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="icons_id">8</field>
+		<field name="icons_url">smile/info.gif</field>
+		<field name="icons_width">16</field>
+		<field name="icons_height">16</field>
+		<field name="icons_order">8</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="icons_id">9</field>
+		<field name="icons_url">smile/question.gif</field>
+		<field name="icons_width">16</field>
+		<field name="icons_height">16</field>
+		<field name="icons_order">6</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="icons_id">10</field>
+		<field name="icons_url">smile/alert.gif</field>
+		<field name="icons_width">16</field>
+		<field name="icons_height">16</field>
+		<field name="icons_order">7</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_lang">
+	</table_data>
+	<table_data name="phpbb_log">
+	</table_data>
+	<table_data name="phpbb_moderator_cache">
+	</table_data>
+	<table_data name="phpbb_modules">
+	</table_data>
+	<table_data name="phpbb_poll_options">
+	</table_data>
+	<table_data name="phpbb_poll_votes">
+	</table_data>
+	<table_data name="phpbb_posts">
+	<row>
+		<field name="post_id">1</field>
+		<field name="topic_id">1</field>
+		<field name="forum_id">2</field>
+		<field name="poster_id">2</field>
+		<field name="icon_id">0</field>
+		<field name="poster_ip">127.0.0.1</field>
+		<field name="post_time">972086460</field>
+		<field name="post_approved">1</field>
+		<field name="post_reported">0</field>
+		<field name="enable_bbcode">1</field>
+		<field name="enable_smilies">1</field>
+		<field name="enable_magic_url">1</field>
+		<field name="enable_sig">1</field>
+		<field name="post_username"></field>
+		<field name="post_subject">{L_TOPICS_TOPIC_TITLE}</field>
+		<field name="post_text">{L_DEFAULT_INSTALL_POST}</field>
+		<field name="post_checksum">5dd683b17f641daf84c040bfefc58ce9</field>
+		<field name="post_attachment">0</field>
+		<field name="bbcode_bitfield"></field>
+		<field name="bbcode_uid"></field>
+		<field name="post_postcount">1</field>
+		<field name="post_edit_time">0</field>
+		<field name="post_edit_reason"></field>
+		<field name="post_edit_user">0</field>
+		<field name="post_edit_count">0</field>
+		<field name="post_edit_locked">0</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_privmsgs">
+	</table_data>
+	<table_data name="phpbb_privmsgs_folder">
+	</table_data>
+	<table_data name="phpbb_privmsgs_rules">
+	</table_data>
+	<table_data name="phpbb_privmsgs_to">
+	</table_data>
+	<table_data name="phpbb_profile_fields">
+	</table_data>
+	<table_data name="phpbb_profile_fields_data">
+	</table_data>
+	<table_data name="phpbb_profile_fields_lang">
+	</table_data>
+	<table_data name="phpbb_profile_lang">
+	</table_data>
+	<table_data name="phpbb_ranks">
+	<row>
+		<field name="rank_id">1</field>
+		<field name="rank_title">{L_RANKS_SITE_ADMIN_TITLE}</field>
+		<field name="rank_min">0</field>
+		<field name="rank_special">1</field>
+		<field name="rank_image"></field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_reports">
+	</table_data>
+	<table_data name="phpbb_reports_reasons">
+	<row>
+		<field name="reason_id">1</field>
+		<field name="reason_title">warez</field>
+		<field name="reason_description">{L_REPORT_WAREZ}</field>
+		<field name="reason_order">1</field>
+	</row>
+	<row>
+		<field name="reason_id">2</field>
+		<field name="reason_title">spam</field>
+		<field name="reason_description">{L_REPORT_SPAM}</field>
+		<field name="reason_order">2</field>
+	</row>
+	<row>
+		<field name="reason_id">3</field>
+		<field name="reason_title">off_topic</field>
+		<field name="reason_description">{L_REPORT_OFF_TOPIC}</field>
+		<field name="reason_order">3</field>
+	</row>
+	<row>
+		<field name="reason_id">4</field>
+		<field name="reason_title">other</field>
+		<field name="reason_description">{L_REPORT_OTHER}</field>
+		<field name="reason_order">4</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_search_results">
+	</table_data>
+	<table_data name="phpbb_search_wordlist">
+	</table_data>
+	<table_data name="phpbb_search_wordmatch">
+	</table_data>
+	<table_data name="phpbb_sessions">
+	</table_data>
+	<table_data name="phpbb_sessions_keys">
+	</table_data>
+	<table_data name="phpbb_sitelist">
+	</table_data>
+	<table_data name="phpbb_smilies">
+	<row>
+		<field name="smiley_id">1</field>
+		<field name="code">:D</field>
+		<field name="emotion">{L_SMILIES_VERY_HAPPY}</field>
+		<field name="smiley_url">icon_e_biggrin.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">17</field>
+		<field name="smiley_order">1</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">2</field>
+		<field name="code">:-D</field>
+		<field name="emotion">{L_SMILIES_VERY_HAPPY}</field>
+		<field name="smiley_url">icon_e_biggrin.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">17</field>
+		<field name="smiley_order">2</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">3</field>
+		<field name="code">:grin:</field>
+		<field name="emotion">{L_SMILIES_VERY_HAPPY}</field>
+		<field name="smiley_url">icon_e_biggrin.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">17</field>
+		<field name="smiley_order">3</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">4</field>
+		<field name="code">:)</field>
+		<field name="emotion">{L_SMILIES_SMILE}</field>
+		<field name="smiley_url">icon_e_smile.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">17</field>
+		<field name="smiley_order">4</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">5</field>
+		<field name="code">:-)</field>
+		<field name="emotion">{L_SMILIES_SMILE}</field>
+		<field name="smiley_url">icon_e_smile.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">17</field>
+		<field name="smiley_order">5</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">6</field>
+		<field name="code">:smile:</field>
+		<field name="emotion">{L_SMILIES_SMILE}</field>
+		<field name="smiley_url">icon_e_smile.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">17</field>
+		<field name="smiley_order">6</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">7</field>
+		<field name="code">;)</field>
+		<field name="emotion">{L_SMILIES_WINK}</field>
+		<field name="smiley_url">icon_e_wink.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">17</field>
+		<field name="smiley_order">7</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">8</field>
+		<field name="code">;-)</field>
+		<field name="emotion">{L_SMILIES_WINK}</field>
+		<field name="smiley_url">icon_e_wink.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">17</field>
+		<field name="smiley_order">8</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">9</field>
+		<field name="code">:wink:</field>
+		<field name="emotion">{L_SMILIES_WINK}</field>
+		<field name="smiley_url">icon_e_wink.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">17</field>
+		<field name="smiley_order">9</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">10</field>
+		<field name="code">:(</field>
+		<field name="emotion">{L_SMILIES_SAD}</field>
+		<field name="smiley_url">icon_e_sad.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">17</field>
+		<field name="smiley_order">10</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">11</field>
+		<field name="code">:-(</field>
+		<field name="emotion">{L_SMILIES_SAD}</field>
+		<field name="smiley_url">icon_e_sad.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">17</field>
+		<field name="smiley_order">11</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">12</field>
+		<field name="code">:sad:</field>
+		<field name="emotion">{L_SMILIES_SAD}</field>
+		<field name="smiley_url">icon_e_sad.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">17</field>
+		<field name="smiley_order">12</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">13</field>
+		<field name="code">:o</field>
+		<field name="emotion">{L_SMILIES_SURPRISED}</field>
+		<field name="smiley_url">icon_e_surprised.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">19</field>
+		<field name="smiley_order">13</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">14</field>
+		<field name="code">:-o</field>
+		<field name="emotion">{L_SMILIES_SURPRISED}</field>
+		<field name="smiley_url">icon_e_surprised.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">19</field>
+		<field name="smiley_order">14</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">15</field>
+		<field name="code">:eek:</field>
+		<field name="emotion">{L_SMILIES_SURPRISED}</field>
+		<field name="smiley_url">icon_e_surprised.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">19</field>
+		<field name="smiley_order">15</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">16</field>
+		<field name="code">:shock:</field>
+		<field name="emotion">{L_SMILIES_SHOCKED}</field>
+		<field name="smiley_url">icon_eek.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">16</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">17</field>
+		<field name="code">:?</field>
+		<field name="emotion">{L_SMILIES_CONFUSED}</field>
+		<field name="smiley_url">icon_e_confused.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">17</field>
+		<field name="smiley_order">17</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">18</field>
+		<field name="code">:-?</field>
+		<field name="emotion">{L_SMILIES_CONFUSED}</field>
+		<field name="smiley_url">icon_e_confused.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">17</field>
+		<field name="smiley_order">18</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">19</field>
+		<field name="code">:???:</field>
+		<field name="emotion">{L_SMILIES_CONFUSED}</field>
+		<field name="smiley_url">icon_e_confused.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">17</field>
+		<field name="smiley_order">19</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">20</field>
+		<field name="code">8-)</field>
+		<field name="emotion">{L_SMILIES_COOL}</field>
+		<field name="smiley_url">icon_cool.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">20</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">21</field>
+		<field name="code">:cool:</field>
+		<field name="emotion">{L_SMILIES_COOL}</field>
+		<field name="smiley_url">icon_cool.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">21</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">22</field>
+		<field name="code">:lol:</field>
+		<field name="emotion">{L_SMILIES_LAUGHING}</field>
+		<field name="smiley_url">icon_lol.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">22</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">23</field>
+		<field name="code">:x</field>
+		<field name="emotion">{L_SMILIES_MAD}</field>
+		<field name="smiley_url">icon_mad.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">23</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">24</field>
+		<field name="code">:-x</field>
+		<field name="emotion">{L_SMILIES_MAD}</field>
+		<field name="smiley_url">icon_mad.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">24</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">25</field>
+		<field name="code">:mad:</field>
+		<field name="emotion">{L_SMILIES_MAD}</field>
+		<field name="smiley_url">icon_mad.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">25</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">26</field>
+		<field name="code">:P</field>
+		<field name="emotion">{L_SMILIES_RAZZ}</field>
+		<field name="smiley_url">icon_razz.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">26</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">27</field>
+		<field name="code">:-P</field>
+		<field name="emotion">{L_SMILIES_RAZZ}</field>
+		<field name="smiley_url">icon_razz.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">27</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">28</field>
+		<field name="code">:razz:</field>
+		<field name="emotion">{L_SMILIES_RAZZ}</field>
+		<field name="smiley_url">icon_razz.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">28</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">29</field>
+		<field name="code">:oops:</field>
+		<field name="emotion">{L_SMILIES_EMARRASSED}</field>
+		<field name="smiley_url">icon_redface.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">29</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">30</field>
+		<field name="code">:cry:</field>
+		<field name="emotion">{L_SMILIES_CRYING}</field>
+		<field name="smiley_url">icon_cry.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">30</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">31</field>
+		<field name="code">:evil:</field>
+		<field name="emotion">{L_SMILIES_EVIL}</field>
+		<field name="smiley_url">icon_evil.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">31</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">32</field>
+		<field name="code">:twisted:</field>
+		<field name="emotion">{L_SMILIES_TWISTED_EVIL}</field>
+		<field name="smiley_url">icon_twisted.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">32</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">33</field>
+		<field name="code">:roll:</field>
+		<field name="emotion">{L_SMILIES_ROLLING_EYES}</field>
+		<field name="smiley_url">icon_rolleyes.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">33</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">34</field>
+		<field name="code">:!:</field>
+		<field name="emotion">{L_SMILIES_EXCLAMATION}</field>
+		<field name="smiley_url">icon_exclaim.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">34</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">35</field>
+		<field name="code">:?:</field>
+		<field name="emotion">{L_SMILIES_QUESTION}</field>
+		<field name="smiley_url">icon_question.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">35</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">36</field>
+		<field name="code">:idea:</field>
+		<field name="emotion">{L_SMILIES_IDEA}</field>
+		<field name="smiley_url">icon_idea.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">36</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">37</field>
+		<field name="code">:arrow:</field>
+		<field name="emotion">{L_SMILIES_ARROW}</field>
+		<field name="smiley_url">icon_arrow.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">37</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">38</field>
+		<field name="code">:|</field>
+		<field name="emotion">{L_SMILIES_NEUTRAL}</field>
+		<field name="smiley_url">icon_neutral.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">38</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">39</field>
+		<field name="code">:-|</field>
+		<field name="emotion">{L_SMILIES_NEUTRAL}</field>
+		<field name="smiley_url">icon_neutral.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">39</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">40</field>
+		<field name="code">:mrgreen:</field>
+		<field name="emotion">{L_SMILIES_MR_GREEN}</field>
+		<field name="smiley_url">icon_mrgreen.gif</field>
+		<field name="smiley_width">15</field>
+		<field name="smiley_height">15</field>
+		<field name="smiley_order">40</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">41</field>
+		<field name="code">:geek:</field>
+		<field name="emotion">{L_SMILIES_GEEK}</field>
+		<field name="smiley_url">icon_e_geek.gif</field>
+		<field name="smiley_width">17</field>
+		<field name="smiley_height">17</field>
+		<field name="smiley_order">41</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	<row>
+		<field name="smiley_id">42</field>
+		<field name="code">:ugeek:</field>
+		<field name="emotion">{L_SMILIES_UBER_GEEK}</field>
+		<field name="smiley_url">icon_e_ugeek.gif</field>
+		<field name="smiley_width">19</field>
+		<field name="smiley_height">18</field>
+		<field name="smiley_order">42</field>
+		<field name="display_on_posting">1</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_styles">
+	<row>
+		<field name="style_id">1</field>
+		<field name="style_name">prosilver</field>
+		<field name="style_copyright">&amp;copy; phpBB Group</field>
+		<field name="style_active">1</field>
+		<field name="template_id">1</field>
+		<field name="theme_id">1</field>
+		<field name="imageset_id">1</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_styles_imageset">
+	<row>
+		<field name="imageset_id">1</field>
+		<field name="imageset_name">prosilver</field>
+		<field name="imageset_copyright">&amp;copy; phpBB Group</field>
+		<field name="imageset_path">prosilver</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_styles_imageset_data">
+	<row>
+		<field name="image_id">1</field>
+		<field name="image_name">site_logo</field>
+		<field name="image_filename">site_logo.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">52</field>
+		<field name="image_width">139</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">2</field>
+		<field name="image_name">forum_link</field>
+		<field name="image_filename">forum_link.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">3</field>
+		<field name="image_name">forum_read</field>
+		<field name="image_filename">forum_read.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">4</field>
+		<field name="image_name">forum_read_locked</field>
+		<field name="image_filename">forum_read_locked.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">5</field>
+		<field name="image_name">forum_read_subforum</field>
+		<field name="image_filename">forum_read_subforum.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">6</field>
+		<field name="image_name">forum_unread</field>
+		<field name="image_filename">forum_unread.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">7</field>
+		<field name="image_name">forum_unread_locked</field>
+		<field name="image_filename">forum_unread_locked.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">8</field>
+		<field name="image_name">forum_unread_subforum</field>
+		<field name="image_filename">forum_unread_subforum.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">9</field>
+		<field name="image_name">topic_moved</field>
+		<field name="image_filename">topic_moved.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">10</field>
+		<field name="image_name">topic_read</field>
+		<field name="image_filename">topic_read.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">11</field>
+		<field name="image_name">topic_read_mine</field>
+		<field name="image_filename">topic_read_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">12</field>
+		<field name="image_name">topic_read_hot</field>
+		<field name="image_filename">topic_read_hot.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">13</field>
+		<field name="image_name">topic_read_hot_mine</field>
+		<field name="image_filename">topic_read_hot_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">14</field>
+		<field name="image_name">topic_read_locked</field>
+		<field name="image_filename">topic_read_locked.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">15</field>
+		<field name="image_name">topic_read_locked_mine</field>
+		<field name="image_filename">topic_read_locked_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">16</field>
+		<field name="image_name">topic_unread</field>
+		<field name="image_filename">topic_unread.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">17</field>
+		<field name="image_name">topic_unread_mine</field>
+		<field name="image_filename">topic_unread_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">18</field>
+		<field name="image_name">topic_unread_hot</field>
+		<field name="image_filename">topic_unread_hot.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">19</field>
+		<field name="image_name">topic_unread_hot_mine</field>
+		<field name="image_filename">topic_unread_hot_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">20</field>
+		<field name="image_name">topic_unread_locked</field>
+		<field name="image_filename">topic_unread_locked.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">21</field>
+		<field name="image_name">topic_unread_locked_mine</field>
+		<field name="image_filename">topic_unread_locked_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">22</field>
+		<field name="image_name">sticky_read</field>
+		<field name="image_filename">sticky_read.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">23</field>
+		<field name="image_name">sticky_read_mine</field>
+		<field name="image_filename">sticky_read_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">24</field>
+		<field name="image_name">sticky_read_locked</field>
+		<field name="image_filename">sticky_read_locked.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">25</field>
+		<field name="image_name">sticky_read_locked_mine</field>
+		<field name="image_filename">sticky_read_locked_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">26</field>
+		<field name="image_name">sticky_unread</field>
+		<field name="image_filename">sticky_unread.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">27</field>
+		<field name="image_name">sticky_unread_mine</field>
+		<field name="image_filename">sticky_unread_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">28</field>
+		<field name="image_name">sticky_unread_locked</field>
+		<field name="image_filename">sticky_unread_locked.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">29</field>
+		<field name="image_name">sticky_unread_locked_mine</field>
+		<field name="image_filename">sticky_unread_locked_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">30</field>
+		<field name="image_name">announce_read</field>
+		<field name="image_filename">announce_read.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">31</field>
+		<field name="image_name">announce_read_mine</field>
+		<field name="image_filename">announce_read_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">32</field>
+		<field name="image_name">announce_read_locked</field>
+		<field name="image_filename">announce_read_locked.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">33</field>
+		<field name="image_name">announce_read_locked_mine</field>
+		<field name="image_filename">announce_read_locked_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">34</field>
+		<field name="image_name">announce_unread</field>
+		<field name="image_filename">announce_unread.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">35</field>
+		<field name="image_name">announce_unread_mine</field>
+		<field name="image_filename">announce_unread_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">36</field>
+		<field name="image_name">announce_unread_locked</field>
+		<field name="image_filename">announce_unread_locked.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">37</field>
+		<field name="image_name">announce_unread_locked_mine</field>
+		<field name="image_filename">announce_unread_locked_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">38</field>
+		<field name="image_name">global_read</field>
+		<field name="image_filename">announce_read.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">39</field>
+		<field name="image_name">global_read_mine</field>
+		<field name="image_filename">announce_read_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">40</field>
+		<field name="image_name">global_read_locked</field>
+		<field name="image_filename">announce_read_locked.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">41</field>
+		<field name="image_name">global_read_locked_mine</field>
+		<field name="image_filename">announce_read_locked_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">42</field>
+		<field name="image_name">global_unread</field>
+		<field name="image_filename">announce_unread.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">43</field>
+		<field name="image_name">global_unread_mine</field>
+		<field name="image_filename">announce_unread_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">44</field>
+		<field name="image_name">global_unread_locked</field>
+		<field name="image_filename">announce_unread_locked.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">45</field>
+		<field name="image_name">global_unread_locked_mine</field>
+		<field name="image_filename">announce_unread_locked_mine.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">46</field>
+		<field name="image_name">pm_read</field>
+		<field name="image_filename">topic_read.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">47</field>
+		<field name="image_name">pm_unread</field>
+		<field name="image_filename">topic_unread.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">27</field>
+		<field name="image_width">27</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">48</field>
+		<field name="image_name">icon_back_top</field>
+		<field name="image_filename">icon_back_top.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">11</field>
+		<field name="image_width">11</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">49</field>
+		<field name="image_name">icon_contact_aim</field>
+		<field name="image_filename">icon_contact_aim.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">20</field>
+		<field name="image_width">20</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">50</field>
+		<field name="image_name">icon_contact_email</field>
+		<field name="image_filename">icon_contact_email.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">20</field>
+		<field name="image_width">20</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">51</field>
+		<field name="image_name">icon_contact_icq</field>
+		<field name="image_filename">icon_contact_icq.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">20</field>
+		<field name="image_width">20</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">52</field>
+		<field name="image_name">icon_contact_jabber</field>
+		<field name="image_filename">icon_contact_jabber.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">20</field>
+		<field name="image_width">20</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">53</field>
+		<field name="image_name">icon_contact_msnm</field>
+		<field name="image_filename">icon_contact_msnm.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">20</field>
+		<field name="image_width">20</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">54</field>
+		<field name="image_name">icon_contact_www</field>
+		<field name="image_filename">icon_contact_www.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">20</field>
+		<field name="image_width">20</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">55</field>
+		<field name="image_name">icon_contact_yahoo</field>
+		<field name="image_filename">icon_contact_yahoo.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">20</field>
+		<field name="image_width">20</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">56</field>
+		<field name="image_name">icon_post_delete</field>
+		<field name="image_filename">icon_post_delete.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">20</field>
+		<field name="image_width">20</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">57</field>
+		<field name="image_name">icon_post_info</field>
+		<field name="image_filename">icon_post_info.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">20</field>
+		<field name="image_width">20</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">58</field>
+		<field name="image_name">icon_post_report</field>
+		<field name="image_filename">icon_post_report.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">20</field>
+		<field name="image_width">20</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">59</field>
+		<field name="image_name">icon_post_target</field>
+		<field name="image_filename">icon_post_target.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">9</field>
+		<field name="image_width">11</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">60</field>
+		<field name="image_name">icon_post_target_unread</field>
+		<field name="image_filename">icon_post_target_unread.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">9</field>
+		<field name="image_width">11</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">61</field>
+		<field name="image_name">icon_topic_attach</field>
+		<field name="image_filename">icon_topic_attach.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">10</field>
+		<field name="image_width">7</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">62</field>
+		<field name="image_name">icon_topic_latest</field>
+		<field name="image_filename">icon_topic_latest.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">9</field>
+		<field name="image_width">11</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">63</field>
+		<field name="image_name">icon_topic_newest</field>
+		<field name="image_filename">icon_topic_newest.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">9</field>
+		<field name="image_width">11</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">64</field>
+		<field name="image_name">icon_topic_reported</field>
+		<field name="image_filename">icon_topic_reported.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">14</field>
+		<field name="image_width">16</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">65</field>
+		<field name="image_name">icon_topic_unapproved</field>
+		<field name="image_filename">icon_topic_unapproved.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">14</field>
+		<field name="image_width">16</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">66</field>
+		<field name="image_name">icon_user_warn</field>
+		<field name="image_filename">icon_user_warn.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">20</field>
+		<field name="image_width">20</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">67</field>
+		<field name="image_name">subforum_read</field>
+		<field name="image_filename">subforum_read.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">9</field>
+		<field name="image_width">11</field>
+		<field name="imageset_id">1</field>
+	</row>
+	<row>
+		<field name="image_id">68</field>
+		<field name="image_name">subforum_unread</field>
+		<field name="image_filename">subforum_unread.gif</field>
+		<field name="image_lang"></field>
+		<field name="image_height">9</field>
+		<field name="image_width">11</field>
+		<field name="imageset_id">1</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_styles_template">
+	<row>
+		<field name="template_id">1</field>
+		<field name="template_name">prosilver</field>
+		<field name="template_copyright">&amp;copy; phpBB Group</field>
+		<field name="template_path">prosilver</field>
+		<field name="bbcode_bitfield">lNg=</field>
+		<field name="template_storedb">0</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_styles_template_data">
+	</table_data>
+	<table_data name="phpbb_styles_theme">
+	<row>
+		<field name="theme_id">1</field>
+		<field name="theme_name">prosilver</field>
+		<field name="theme_copyright">&amp;copy; phpBB Group</field>
+		<field name="theme_path">prosilver</field>
+		<field name="theme_storedb">1</field>
+		<field name="theme_mtime">0</field>
+		<field name="theme_data"></field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_topics">
+	<row>
+		<field name="topic_id">1</field>
+		<field name="forum_id">2</field>
+		<field name="icon_id">0</field>
+		<field name="topic_attachment">0</field>
+		<field name="topic_approved">1</field>
+		<field name="topic_reported">0</field>
+		<field name="topic_title">{L_TOPICS_TOPIC_TITLE}</field>
+		<field name="topic_poster">2</field>
+		<field name="topic_time">972086460</field>
+		<field name="topic_time_limit">0</field>
+		<field name="topic_views">0</field>
+		<field name="topic_replies">0</field>
+		<field name="topic_replies_real">0</field>
+		<field name="topic_status">0</field>
+		<field name="topic_type">0</field>
+		<field name="topic_first_post_id">1</field>
+		<field name="topic_first_poster_name">Admin</field>
+		<field name="topic_first_poster_colour">AA0000</field>
+		<field name="topic_last_post_id">1</field>
+		<field name="topic_last_poster_id">2</field>
+		<field name="topic_last_poster_name">Admin</field>
+		<field name="topic_last_poster_colour">AA0000</field>
+		<field name="topic_last_post_subject">{L_TOPICS_TOPIC_TITLE}</field>
+		<field name="topic_last_post_time">972086460</field>
+		<field name="topic_last_view_time">972086460</field>
+		<field name="topic_moved_id">0</field>
+		<field name="topic_bumped">0</field>
+		<field name="topic_bumper">0</field>
+		<field name="poll_title"></field>
+		<field name="poll_start">0</field>
+		<field name="poll_length">0</field>
+		<field name="poll_max_options">1</field>
+		<field name="poll_last_vote">0</field>
+		<field name="poll_vote_change">0</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_topics_posted">
+	<row>
+		<field name="user_id">2</field>
+		<field name="topic_id">1</field>
+		<field name="topic_posted">1</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_topics_track">
+	</table_data>
+	<table_data name="phpbb_topics_watch">
+	</table_data>
+	<table_data name="phpbb_user_group">
+	<row>
+		<field name="group_id">1</field>
+		<field name="user_id">1</field>
+		<field name="group_leader">0</field>
+		<field name="user_pending">0</field>
+	</row>
+	<row>
+		<field name="group_id">2</field>
+		<field name="user_id">2</field>
+		<field name="group_leader">0</field>
+		<field name="user_pending">0</field>
+	</row>
+	<row>
+		<field name="group_id">4</field>
+		<field name="user_id">2</field>
+		<field name="group_leader">0</field>
+		<field name="user_pending">0</field>
+	</row>
+	<row>
+		<field name="group_id">5</field>
+		<field name="user_id">2</field>
+		<field name="group_leader">1</field>
+		<field name="user_pending">0</field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_users">
+	<row>
+		<field name="user_id">1</field>
+		<field name="user_type">2</field>
+		<field name="group_id">1</field>
+		<field name="user_permissions"></field>
+		<field name="user_perm_from">0</field>
+		<field name="user_ip"></field>
+		<field name="user_regdate">0</field>
+		<field name="username">Anonymous</field>
+		<field name="username_clean">anonymous</field>
+		<field name="user_password"></field>
+		<field name="user_passchg">0</field>
+		<field name="user_pass_convert">0</field>
+		<field name="user_email"></field>
+		<field name="user_email_hash">0</field>
+		<field name="user_birthday"></field>
+		<field name="user_lastvisit">0</field>
+		<field name="user_lastmark">0</field>
+		<field name="user_lastpost_time">0</field>
+		<field name="user_lastpage"></field>
+		<field name="user_last_confirm_key"></field>
+		<field name="user_last_search">0</field>
+		<field name="user_warnings">0</field>
+		<field name="user_last_warning">0</field>
+		<field name="user_login_attempts">0</field>
+		<field name="user_inactive_reason">0</field>
+		<field name="user_inactive_time">0</field>
+		<field name="user_posts">0</field>
+		<field name="user_lang">en</field>
+		<field name="user_timezone">0.00</field>
+		<field name="user_dst">0</field>
+		<field name="user_dateformat">d M Y H:i</field>
+		<field name="user_style">1</field>
+		<field name="user_rank">0</field>
+		<field name="user_colour"></field>
+		<field name="user_new_privmsg">0</field>
+		<field name="user_unread_privmsg">0</field>
+		<field name="user_last_privmsg">0</field>
+		<field name="user_message_rules">0</field>
+		<field name="user_full_folder">-3</field>
+		<field name="user_emailtime">0</field>
+		<field name="user_topic_show_days">0</field>
+		<field name="user_topic_sortby_type">t</field>
+		<field name="user_topic_sortby_dir">d</field>
+		<field name="user_post_show_days">0</field>
+		<field name="user_post_sortby_type">t</field>
+		<field name="user_post_sortby_dir">a</field>
+		<field name="user_notify">0</field>
+		<field name="user_notify_pm">1</field>
+		<field name="user_notify_type">0</field>
+		<field name="user_allow_pm">1</field>
+		<field name="user_allow_viewonline">1</field>
+		<field name="user_allow_viewemail">1</field>
+		<field name="user_allow_massemail">0</field>
+		<field name="user_options">895</field>
+		<field name="user_avatar"></field>
+		<field name="user_avatar_type">0</field>
+		<field name="user_avatar_width">0</field>
+		<field name="user_avatar_height">0</field>
+		<field name="user_sig"></field>
+		<field name="user_sig_bbcode_uid"></field>
+		<field name="user_sig_bbcode_bitfield"></field>
+		<field name="user_from"></field>
+		<field name="user_icq"></field>
+		<field name="user_aim"></field>
+		<field name="user_yim"></field>
+		<field name="user_msnm"></field>
+		<field name="user_jabber"></field>
+		<field name="user_website"></field>
+		<field name="user_occ"></field>
+		<field name="user_interests"></field>
+		<field name="user_actkey"></field>
+		<field name="user_newpasswd"></field>
+		<field name="user_form_salt"></field>
+	</row>
+	<row>
+		<field name="user_id">2</field>
+		<field name="user_type">3</field>
+		<field name="group_id">5</field>
+		<field name="user_permissions"></field>
+		<field name="user_perm_from">0</field>
+		<field name="user_ip"></field>
+		<field name="user_regdate">0</field>
+		<field name="username">Admin</field>
+		<field name="username_clean">admin</field>
+		<field name="user_password">21232f297a57a5a743894a0e4a801fc3</field>
+		<field name="user_passchg">0</field>
+		<field name="user_pass_convert">0</field>
+		<field name="user_email">admin@yourdomain.com</field>
+		<field name="user_email_hash">0</field>
+		<field name="user_birthday"></field>
+		<field name="user_lastvisit">0</field>
+		<field name="user_lastmark">0</field>
+		<field name="user_lastpost_time">0</field>
+		<field name="user_lastpage"></field>
+		<field name="user_last_confirm_key"></field>
+		<field name="user_last_search">0</field>
+		<field name="user_warnings">0</field>
+		<field name="user_last_warning">0</field>
+		<field name="user_login_attempts">0</field>
+		<field name="user_inactive_reason">0</field>
+		<field name="user_inactive_time">0</field>
+		<field name="user_posts">1</field>
+		<field name="user_lang">en</field>
+		<field name="user_timezone">0.00</field>
+		<field name="user_dst">0</field>
+		<field name="user_dateformat">d M Y H:i</field>
+		<field name="user_style">1</field>
+		<field name="user_rank">1</field>
+		<field name="user_colour">AA0000</field>
+		<field name="user_new_privmsg">0</field>
+		<field name="user_unread_privmsg">0</field>
+		<field name="user_last_privmsg">0</field>
+		<field name="user_message_rules">0</field>
+		<field name="user_full_folder">-3</field>
+		<field name="user_emailtime">0</field>
+		<field name="user_topic_show_days">0</field>
+		<field name="user_topic_sortby_type">t</field>
+		<field name="user_topic_sortby_dir">d</field>
+		<field name="user_post_show_days">0</field>
+		<field name="user_post_sortby_type">t</field>
+		<field name="user_post_sortby_dir">a</field>
+		<field name="user_notify">0</field>
+		<field name="user_notify_pm">1</field>
+		<field name="user_notify_type">0</field>
+		<field name="user_allow_pm">1</field>
+		<field name="user_allow_viewonline">1</field>
+		<field name="user_allow_viewemail">1</field>
+		<field name="user_allow_massemail">1</field>
+		<field name="user_options">895</field>
+		<field name="user_avatar"></field>
+		<field name="user_avatar_type">0</field>
+		<field name="user_avatar_width">0</field>
+		<field name="user_avatar_height">0</field>
+		<field name="user_sig"></field>
+		<field name="user_sig_bbcode_uid"></field>
+		<field name="user_sig_bbcode_bitfield"></field>
+		<field name="user_from"></field>
+		<field name="user_icq"></field>
+		<field name="user_aim"></field>
+		<field name="user_yim"></field>
+		<field name="user_msnm"></field>
+		<field name="user_jabber"></field>
+		<field name="user_website"></field>
+		<field name="user_occ"></field>
+		<field name="user_interests"></field>
+		<field name="user_actkey"></field>
+		<field name="user_newpasswd"></field>
+		<field name="user_form_salt"></field>
+	</row>
+	</table_data>
+	<table_data name="phpbb_warnings">
+	</table_data>
+	<table_data name="phpbb_words">
+	</table_data>
+	<table_data name="phpbb_zebra">
+	</table_data>
+</database>
+</mysqldump>
