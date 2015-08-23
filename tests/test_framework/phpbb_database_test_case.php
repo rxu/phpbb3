@@ -148,6 +148,12 @@ abstract class phpbb_database_test_case extends PHPUnit_Extensions_Database_Test
 		return $this->fixture_xml_data;
 	}
 
+	public function createMySQLXMLDataSet($path)
+	{
+		$this->fixture_xml_data = parent::createMySQLXMLDataSet($path);
+		return $this->fixture_xml_data;
+	}
+
 	public function get_test_case_helpers()
 	{
 		if (!$this->test_case_helpers)
