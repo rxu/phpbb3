@@ -18,6 +18,7 @@ class phpbb_dbal_database_update_test extends phpbb_database_test_case
 	protected $db;
 	protected $db_tools;
 	protected $migrator;
+	protected $migrations;
 
 	public function getDataSet()
 	{
@@ -98,6 +99,11 @@ class phpbb_dbal_database_update_test extends phpbb_database_test_case
 			'php',
 			null
 		);
+
+		$this->migrations = $this->extension_manager
+			->get_finder()
+			->core_path('phpbb/db/migration/data/')
+			->get_classes();
 	}
 
     public function getConnection()
@@ -111,14 +117,23 @@ class phpbb_dbal_database_update_test extends phpbb_database_test_case
 		return $this->createDefaultDBConnection($manager->get_pdo(), 'testdb');
     }
 
-	public function test_update()
+	public function get_migrations_list()
 	{
-		$migrations = $this->extension_manager
-			->get_finder()
-			->core_path('phpbb/db/migration/data/')
-			->get_classes();
+		$data = array();
+		foreach($this->migrations as $key => $migration)
+		{
+			$data = array_merge($data, array(array($key => $migration)));
+		}
+		
+		return $data;
+	}
 
-		$this->migrator->set_migrations($migrations);
+	/**
+	* @dataProvider get_migrations_list
+	*/
+	public function test_update($migration)
+	{
+		$this->migrator->set_migrations($this->migrations);
 
 		$update_start_time = time();
 
