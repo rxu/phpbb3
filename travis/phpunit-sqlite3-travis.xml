@@ -17,6 +17,7 @@
 			<exclude>../tests/functional</exclude>
 			<exclude>../tests/lint_test.php</exclude>
 			<exclude>../tests/ui</exclude>
+			<exclude>../tests/dbal/database_update_test.php</exclude>
 		</testsuite>
 		<testsuite name="phpBB Functional Tests">
 			<directory suffix="_test.php" phpVersion="5.3.19" phpVersionOperator=">=">../tests/functional</directory>
