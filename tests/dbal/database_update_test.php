@@ -127,6 +127,7 @@ class phpbb_dbal_database_update_test extends phpbb_database_test_case
 			try
 			{
 				$this->migrator->update();
+				$this->assertFalse($this->migrator->finished());
 			}
 			catch (\phpbb\db\migration\exception $e)
 			{
