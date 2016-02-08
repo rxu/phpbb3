@@ -98,7 +98,15 @@ function gen_rand_string_friendly($num_chars = 8)
 function unique_id($extra = 'c')
 {
 	static $dss_seeded = false;
-	global $config;
+	global $phpbb_container, $phpbb_installer_container;
+
+	$container = (isset($phpbb_installer_container)) ? $phpbb_installer_container : $phpbb_container;
+	$config = $container->get('config');
+
+	if (!isset($config['rand_seed']))
+	{
+		$config['rand_seed'] = $config['rand_seed_last_update'] = '0';
+	}
 
 	$val = $config['rand_seed'] . microtime();
 	$val = md5($val);
