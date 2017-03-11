@@ -170,15 +170,10 @@ abstract class base implements template
 	}
 
 	/**
-	* {@inheritdoc}
-	*/
-	public function alter_block_array($blockname, array $vararray, $key = false, $mode = 'insert')
-	{
-		return $this->context->alter_block_array($blockname, $vararray, $key, $mode);
-	}
-
-	/**
-	* {@inheritdoc}
+	* Calls hook if any is defined.
+	*
+	* @param string $handle Template handle being displayed.
+	* @param string $method Method name of the caller.
 	*/
 	public function find_key_index($blockname, $key)
 	{
