@@ -168,15 +168,4 @@ abstract class base implements template
 	{
 		return $this->context->alter_block_array($block_selector, $vararray, $key, $mode);
 	}
-
-	/**
-	* Calls hook if any is defined.
-	*
-	* @param string $handle Template handle being displayed.
-	* @param string $method Method name of the caller.
-	*/
-	public function find_key_index($blockname, $key)
-	{
-		return $this->context->find_key_index($blockname, $key);
-	}
 }
