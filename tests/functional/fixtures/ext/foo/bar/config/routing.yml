@@ -33,3 +33,11 @@ foo_tests_index_controller:
 foo_tests_dotdot_index_controller:
     path: /tests/../index
     defaults: { _controller: foo_bar.controller:redirect }
+
+foo_tests_include_js:
+    path: /foo/includejs
+    defaults: { _controller: foo_bar.controller:includejs }
+
+foo_tests_include_css:
+    path: /foo/includecss
+    defaults: { _controller: foo_bar.controller:includecss }

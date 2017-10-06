@@ -106,4 +106,14 @@ class controller
 
 		return $this->helper->render('redirect_body.html');
 	}
+
+	public function includejs()
+	{
+		return $this->helper->render('includejs_test.html');
+	}
+
+	public function includecss()
+	{
+		return $this->helper->render('includecss_test.html');
+	}
 }

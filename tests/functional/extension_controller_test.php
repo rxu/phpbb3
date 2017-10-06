@@ -178,4 +178,26 @@ class phpbb_functional_extension_controller_test extends phpbb_functional_test_c
 
 		$this->phpbb_extension_manager->purge('foo/bar');
 	}
+
+	/**
+	* Check INCLUDEJS with a controller
+	*/
+	public function test_controller_includejs()
+	{
+		$this->phpbb_extension_manager->enable('foo/bar');
+		$crawler = self::request('GET', 'app.php/foo/includejs');
+		$this->assertContains('<script type="text/javascript" src="./../../ext/foo/bar/styles/prosilver/template/test_includejs.js', $this->get_content());
+		$this->phpbb_extension_manager->purge('foo/bar');
+	}
+
+	/**
+	* Check INCLUDECSS with a controller
+	*/
+	public function test_controller_includecss()
+	{
+		$this->phpbb_extension_manager->enable('foo/bar');
+		$crawler = self::request('GET', 'app.php/foo/includecss');
+		$this->assertContains('<link href="./../../ext/foo/bar/styles/prosilver/theme/test_includecss.css', $this->get_content());
+		$this->phpbb_extension_manager->purge('foo/bar');
+	}
 }
