@@ -637,7 +637,7 @@ class session
 			$db->sql_freeresult($result);
 		}
 
-		if ($this->data['user_id'] != ANONYMOUS && !$bot)
+		if (!$bot && $this->data['user_id'] != ANONYMOUS)
 		{
 			$this->data['session_last_visit'] = (isset($this->data['session_time']) && $this->data['session_time']) ? $this->data['session_time'] : (($this->data['user_lastvisit']) ? $this->data['user_lastvisit'] : time());
 		}
