@@ -3,30 +3,8 @@ dist: xenial
 
 matrix:
   include:
-    - php: 7.1
-      env: DB=none;NOTESTS=1
-    - php: 7.1
-      env: DB=mariadb
-    - php: 7.1
-      env: DB=postgres
-    - php: 7.1
-      env: DB=sqlite3
-    - php: 7.1
-      env: DB=mysqli;SLOWTESTS=1
-    - php: 7.1
-      env: DB=mysqli # MyISAM
-    - php: 7.2
+    - php: 8.0snapshot
       env: DB=mysqli
-    - php: 7.3
-      env: DB=mysqli
-    - php: 7.4
-      env: DB=mysqli
-    - php: 7.4
-      env: DB=mysqli;MYSQL8=1
-    - php: nightly
-      env: DB=mysqli
-  allow_failures:
-    - php: nightly
   fast_finish: true
 
 services:
