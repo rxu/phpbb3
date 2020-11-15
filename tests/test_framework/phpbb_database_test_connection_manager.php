@@ -386,7 +386,7 @@ class phpbb_database_test_connection_manager
 				$table_data
 			);
 
-			foreach ($queries as $query)
+			foreach ($queries as $i => $query)
 			{
 				if ($query === 'begin')
 				{
@@ -394,7 +394,14 @@ class phpbb_database_test_connection_manager
 				}
 				else if ($query === 'commit' && $this->pdo->inTransaction())
 				{
-					$this->pdo->commit();
+					try
+					{
+						$this->pdo->commit();
+					}
+					catch (Exception $e)
+					{
+						echo "Failed: " . $e->getMessage() . " on query: " . $queries[$i-1];
+					}
 				}
 				else
 				{
