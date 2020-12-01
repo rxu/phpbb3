@@ -447,7 +447,7 @@ class phpbb_test_case_helpers
 		$cache_key_renderer = $prefix . '_renderer';
 		$container->set('cache.driver', $cache);
 
-		if (!$container->isFrozen())
+		if (!$container->isCompiled())
 		{
 			$container->setParameter('cache.dir', $cache_dir);
 		}

@@ -17,6 +17,7 @@ use phpbb\config\config;
 use phpbb\exception\exception_interface;
 use phpbb\language\language;
 use phpbb\user;
+use Symfony\Component\Console\Command\Command as symfony_command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
@@ -154,7 +155,7 @@ class check extends \phpbb\console\command\command
 					$this->display_versions($io, $updates_available);
 				}
 
-				return 1;
+				return symfony_command::FAILURE;
 			}
 			else
 			{
@@ -163,14 +164,14 @@ class check extends \phpbb\console\command\command
 					$io->success($this->language->lang('UPDATE_NOT_NEEDED'));
 				}
 
-				return 0;
+				return symfony_command::SUCCESS;
 			}
 		}
 		catch (\RuntimeException $e)
 		{
 			$io->error($this->language->lang('EXTENSION_NOT_INSTALLED', $ext_name));
 
-			return 1;
+			return symfony_command::FAILURE;
 		}
 	}
 
@@ -206,7 +207,7 @@ class check extends \phpbb\console\command\command
 				$this->display_versions($io, $updates_available);
 			}
 
-			return 1;
+			return symfony_command::FAILURE;
 		}
 		else
 		{
@@ -215,7 +216,7 @@ class check extends \phpbb\console\command\command
 				$io->success($this->language->lang('UPDATE_NOT_NEEDED'));
 			}
 
-			return 0;
+			return symfony_command::SUCCESS;
 		}
 	}
 
@@ -291,7 +292,7 @@ class check extends \phpbb\console\command\command
 			$this->language->lang('LATEST_VERSION'),
 		], $rows);
 
-		return 0;
+		return symfony_command::SUCCESS;
 	}
 
 	/**
