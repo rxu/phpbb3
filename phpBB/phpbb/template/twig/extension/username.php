@@ -13,9 +13,7 @@
 
 namespace phpbb\template\twig\extension;
 
-use Twig\Extension\AbstractExtension;
-
-class username extends AbstractExtension
+class username extends \Twig\Extension\AbstractExtension
 {
 	/**
 	 * Get the name of this extension

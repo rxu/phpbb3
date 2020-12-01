@@ -54,7 +54,7 @@
 		"symfony/twig-bridge": "~5.2",
 		"symfony/yaml": "~5.2",
 		"symfony/mime": "~5.2",
-		"twig/twig": "^1.0 || ^2.0"
+		"twig/twig": "^2.0 || ^3.1"
 	},
 	"require-dev": {
 		"fabpot/goutte": "~3.2",
