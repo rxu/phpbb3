@@ -58,7 +58,7 @@
 	},
 	"require-dev": {
 		"fabpot/goutte": "~3.2",
-		"laravel/homestead": "~11.0",
+		"laravel/homestead": "~9.0",
 		"phing/phing": "~2.4",
 		"misantron/dbunit": "~5.0",
 		"phpunit/phpunit": "^8.5 || ^9.2",
