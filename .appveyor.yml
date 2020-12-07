@@ -72,7 +72,7 @@ before_test:
       # Get MSSQL driver
       if ($env:db -eq "mssql") {
         cd c:\tools\php\ext
-        $DLLVersion = "5.3.0"
+        $DLLVersion = "5.8.1"
         $VCVersion = If ([System.Version]"$($env:php)" -ge [System.Version]"7.2") {"vc15"} Else {"vc14"}
         curl -o php_sqlsrv-$($DLLVersion)-$($env:php -replace '([0-9])[.]([0-9])[.]?([0-9]+)?','$1.$2')-nts-vc14-x64.zip https://windows.php.net/downloads/pecl/releases/sqlsrv/$($:DLLVersion)/php_sqlsrv-$($DLLVersion)-$($env:php -replace '([0-9])[.]([0-9])[.]?([0-9]+)?','$1.$2')-nts-$($VCVersion)-x64.zip
         7z x -y php_sqlsrv-$($DLLVersion)-$($env:php -replace '([0-9])[.]([0-9])[.]?([0-9]+)?','$1.$2')-nts-vc14-x64.zip > $null
