@@ -9,15 +9,21 @@ environment:
   COMPOSER_AUTH:
     secure: '{"github-oauth": {"github.com": "zvq38wk7sRe87Y9W2OCYXcK7WKQDsig7GRIUDHGmxm6ZQRK8JswPbi8JoJQbFhM+"}}'
   matrix:
+#  - db: mssql
+#    db_version: sql2012sp1
+#    php: 7.1
+#  - db: mssql
+#    db_version: sql2014
+#    php: 7.1
   - db: mssql
     db_version: sql2012sp1
-    php: 7.1
+    php: 7.2
   - db: mssql
     db_version: sql2014
-    php: 7.1
+    php: 7.3
   - db: mssql
     db_version: sql2016
-    php: 7.2
+    php: 7.4
 #  - db: mssql
 #    db_version: sql2017
 #    php: 7.1
