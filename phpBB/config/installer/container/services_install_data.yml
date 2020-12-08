@@ -1,6 +1,4 @@
 services:
-    _defaults: { public: true }
-
     installer.install_data.add_bots:
         class: phpbb\install\module\install_data\task\add_bots
         arguments:
