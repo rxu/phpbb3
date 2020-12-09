@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff9d06bcc1430fd5079c590448729cd9",
+    "content-hash": "45b61db7878951605196ab9add2fa598",
     "packages": [
         {
             "name": "bantu/ini-get-wrapper",
@@ -4636,16 +4636,16 @@
         },
         {
             "name": "laravel/homestead",
-            "version": "v9.4.1",
+            "version": "v10.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/homestead.git",
-                "reference": "97bdd90b2408a73651d3665083933e422e0720e5"
+                "reference": "a56135e7ff057ad46a005b67ff98a8316403def0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/homestead/zipball/97bdd90b2408a73651d3665083933e422e0720e5",
-                "reference": "97bdd90b2408a73651d3665083933e422e0720e5",
+                "url": "https://api.github.com/repos/laravel/homestead/zipball/a56135e7ff057ad46a005b67ff98a8316403def0",
+                "reference": "a56135e7ff057ad46a005b67ff98a8316403def0",
                 "shasum": ""
             },
             "require": {
@@ -4673,15 +4673,15 @@
             "authors": [
                 {
                     "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
+                    "email": "taylor@laravel.com"
                 }
             ],
             "description": "A virtual machine for web artisans.",
             "support": {
                 "issues": "https://github.com/laravel/homestead/issues",
-                "source": "https://github.com/laravel/homestead/tree/master"
+                "source": "https://github.com/laravel/homestead/tree/v10.17.0"
             },
-            "time": "2019-11-27T00:15:26+00:00"
+            "time": "2020-12-01T00:47:27+00:00"
         },
         {
             "name": "misantron/dbunit",
