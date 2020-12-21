@@ -5,6 +5,7 @@ on:
         branches:
             - 3.3.x
             - master
+            - task/github-actions
     pull_request:
         branches:
             - 3.3.x
@@ -277,6 +278,65 @@ jobs:
               run: |
                   phpBB/vendor/bin/phpunit --configuration .github/phpunit-$DB-github.xml --verbose --stop-on-error
 
+    oracle-tests:
+        runs-on: ubuntu-18.04
+        strategy:
+            matrix:
+                include:
+                    -   php: '7.4'
+                        db: "oci"
+
+        name: PHP ${{ matrix.php }} - ${{ matrix.db }}
+
+        services:
+            oracle:
+                image: deepdiver/docker-oracle-xe-11g
+                ports:
+                    - "1521:1521"
+
+            redis:
+                image: redis
+                options: >-
+                    --health-cmd "redis-cli ping"
+                    --health-interval 10s
+                    --health-timeout 5s
+                    --health-retries 5
+                ports:
+                    - 6379:6379
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: ${{ matrix.php }}
+                  extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, mysqli, sqlite, pdo_sqlite, intl, gd, exif, iconv, sqlsrv, pdo_sqlsrv, ldap, oci8, pdo_oci
+                  coverage: none
+
+            - name: Setup environment for phpBB
+              env:
+                  DB: ${{ matrix.db }}
+                  PHP_VERSION: ${{ matrix.php }}
+                  NOTESTS: '0'
+              run: |
+                  .github/setup-phpbb.sh $DB $PHP_VERSION ${NOTESTS:-0}
+
+            - name: Setup database
+              env:
+                  DB: ${{ matrix.db }}
+                  MYISAM: '0'
+              run: |
+                  .github/setup-database.sh $DB $MYISAM
+
+            - name: Run unit tests
+              env:
+                  DB: ${{ matrix.db }}
+              run: |
+                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-$DB-github.xml --verbose --stop-on-error
+
+
     # Other database types, namely sqlite3 and mssql
     other-tests:
         runs-on: ubuntu-18.04
@@ -318,7 +378,6 @@ jobs:
                     --health-retries 5
                 ports:
                     - 6379:6379
-
 
         steps:
             - name: Checkout repository
