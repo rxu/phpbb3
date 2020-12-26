@@ -46,7 +46,9 @@ abstract class phpbb_console_user_base extends phpbb_database_test_case
 
 		$config = $this->config = new \phpbb\config\config(array(
 			'board_timezone'	=> 'UTC',
+			'default_dateformat'=> 'D M d, Y g:i a',
 			'default_lang'		=> 'en',
+			'default_style'		=> 1,
 			'email_enable'		=> false,
 			'min_name_chars'	=> 3,
 			'max_name_chars'	=> 10,
