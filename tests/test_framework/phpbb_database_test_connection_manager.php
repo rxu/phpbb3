@@ -82,6 +82,16 @@ class phpbb_database_test_connection_manager
 				}
 			break;
 
+			case 'oci':
+				// Connect using the Oracle Instant Client
+				// oci:dbname=//localhost:1521/mydb
+
+				if ($use_db)
+				{
+					$dsn .= 'dbname=//' . $this->config['dbhost'] . ':' . $this->config['dbport'] . '/' . $this->config['dbname'];
+				}
+			break;
+
 			default:
 				if (!empty($this->config['dbport']) && !is_numeric($this->config['dbport']) && $this->dbms['PDO'] != 'pgsql')
 				{
