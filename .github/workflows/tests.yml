@@ -291,6 +291,8 @@ jobs:
         services:
             oracle:
                 image: deepdiver/docker-oracle-xe-11g
+                options: >-
+                    --name oci_docker
                 ports:
                     - "1521:1521"
 
@@ -330,11 +332,20 @@ jobs:
               run: |
                   .github/setup-database.sh $DB $MYISAM
 
+            - name: Adjust OCI config
+              run: |
+                  docker exec oci_docker sh -c 'echo "create user phpbb identified by phpbb;" | sqlplus system/oracle@localhost'
+                  docker exec oci_docker sh -c 'echo "alter user phpbb default tablespace users temporary tablespace tem quota unlimited on users;" | sqlplus system/oracle@localhost'
+                  docker exec oci_docker sh -c 'echo "grant all privileges to phpbb;" | sqlplus system/oracle@localhost'
+                  docker exec oci_docker sh -c 'echo "alter system set processes = 1000 scope=spfile;" | sqlplus phpbb/phpbb@localhost:1521/xe'
+                  docker exec oci_docker sh -c 'echo "alter system set sessions = 1000 scope=spfile;" | sqlplus phpbb/phpbb@localhost:1521/xe'
+                  docker exec oci_docker sh -c '/etc/init.d/oracle-xe restart'
+
             - name: Run unit tests
               env:
                   DB: ${{ matrix.db }}
               run: |
-                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-$DB-github.xml --verbose --stop-on-error
+                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-$DB-github.xml --verbose
 
 
     # Other database types, namely sqlite3 and mssql
