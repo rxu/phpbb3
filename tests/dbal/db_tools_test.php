@@ -63,7 +63,7 @@ class phpbb_dbal_db_tools_test extends phpbb_database_test_case
 				'c_vchar_uni'			=> array('VCHAR_UNI', 'foo'),
 				'c_vchar_uni_size'	=> array('VCHAR_UNI:4', 'foo'),
 				'c_vchar_ci'			=> array('VCHAR_CI', 'foo'),
-				'c_varbinary'			=> array('VARBINARY', 'foo'),
+				'c_varbinary'			=> array('VARBINARY', '0cc175b9c0'),
 			),
 			'PRIMARY_KEY'	=> 'c_id',
 			'KEYS'			=> array(
@@ -102,34 +102,34 @@ class phpbb_dbal_db_tools_test extends phpbb_database_test_case
 	static protected function get_default_values()
 	{
 		return array(
-			'c_int_size' => 0,
-			'c_bint' => 0,
-			'c_uint' => 0,
-			'c_uint_size' => 0,
-			'c_tint_size' => 0,
-			'c_usint' => 0,
-			'c_bool' => 0,
-			'c_vchar' => '',
-			'c_vchar_size' => '',
+			'c_int_size' => 4,
+			'c_bint' => 4,
+			'c_uint' => 4,
+			'c_uint_size' => 4,
+			'c_tint_size' => 4,
+			'c_usint' => 4,
+			'c_bool' => 1,
+			'c_vchar' => 'foo',
+			'c_vchar_size' => 'foo',
 			'c_vchar_null' => null,
-			'c_char_size' => 'abcd',
-			'c_xstext' => '',
-			'c_stext' => '',
-			'c_text' => '',
-			'c_mtext' => '',
-			'c_xstext_uni' => '',
-			'c_stext_uni' => '',
-			'c_text_uni' => '',
-			'c_mtext_uni' => '',
-			'c_timestamp' => 0,
-			'c_decimal' => 0,
-			'c_decimal_size' => 0,
-			'c_pdecimal' => 0,
-			'c_pdecimal_size' => 0,
-			'c_vchar_uni' => '',
-			'c_vchar_uni_size' => '',
-			'c_vchar_ci' => '',
-			'c_varbinary' => '',
+			'c_char_size' => 'foo',
+			'c_xstext' => 'foo',
+			'c_stext' => 'foo',
+			'c_text' => 'foo',
+			'c_mtext' => 'foo',
+			'c_xstext_uni' => 'foo',
+			'c_stext_uni' => 'foo',
+			'c_text_uni' => 'foo',
+			'c_mtext_uni' => 'foo',
+			'c_timestamp' => 4,
+			'c_decimal' => 4.2,
+			'c_decimal_size' => 4.2,
+			'c_pdecimal' => 4.2,
+			'c_pdecimal_size' => 4.2,
+			'c_vchar_uni' => 'foo',
+			'c_vchar_uni_size' => 'foo',
+			'c_vchar_ci' => 'foo',
+			'c_varbinary' => '0cc175b9c0',
 		);
 	}
 
@@ -460,7 +460,7 @@ class phpbb_dbal_db_tools_test extends phpbb_database_test_case
 		// Index name and table suffix have > maximum index length chars in total.
 		$very_long_index_name = str_repeat('i', $max_index_length);
 		$this->assertFalse($this->tools->sql_index_exists($table_name, $very_long_index_name));
-		$this->assertTrue($this->tools->sql_create_index($table_name, $very_long_index_name, array('c_timestamp')));
+		$this->assertTrue($this->tools->sql_create_index($table_name, $very_long_index_name, array('c_bint')));
 		$this->assertTrue($this->tools->sql_index_exists($table_name, $very_long_index_name));
 
 		$this->tools->sql_table_drop($table_name);
@@ -469,6 +469,6 @@ class phpbb_dbal_db_tools_test extends phpbb_database_test_case
 		$too_long_index_name = str_repeat('i', $max_index_length + 1);
 		$this->assertFalse($this->tools->sql_index_exists('prefix_table_name', $too_long_index_name));
 		$this->setExpectedTriggerError(E_USER_ERROR);
-		$this->tools->sql_create_index('prefix_table_name', $too_long_index_name, array('c_timestamp'));
+		$this->tools->sql_create_index('prefix_table_name', $too_long_index_name, array('c_uint'));
 	}
 }

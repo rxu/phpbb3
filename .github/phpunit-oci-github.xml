@@ -10,11 +10,11 @@
          verbose="true"
          bootstrap="../tests/bootstrap.php">
 	<testsuites>
-		<testsuite name="phpBB Test Suite">
+<!--		<testsuite name="phpBB Test Suite">
 			<directory suffix="_test.php">../tests</directory>
 			<exclude>../tests/functional</exclude>
 			<exclude>../tests/lint_test.php</exclude>
-		</testsuite>
+		</testsuite> -->
 		<testsuite name="phpBB Functional Tests">
 			<directory suffix="_test.php">../tests/functional</directory>
 		</testsuite>
@@ -31,8 +31,8 @@
 		<server name="PHPBB_TEST_DBHOST" value="localhost" />
 		<server name="PHPBB_TEST_DBPORT" value="1521" />
 		<server name="PHPBB_TEST_DBNAME" value="xe" />
-		<server name="PHPBB_TEST_DBUSER" value="phpbb" />
-		<server name="PHPBB_TEST_DBPASSWD" value="phpbb" />
+		<server name="PHPBB_TEST_DBUSER" value="autotest" />
+		<server name="PHPBB_TEST_DBPASSWD" value="owncloud" />
 		<server name="PHPBB_TEST_REDIS_HOST" value="localhost" />
 		<server name="PHPBB_TEST_MEMCACHED_HOST" value="localhost" />
 		<server name="PHPBB_TEST_TABLE_PREFIX" value="phpbb_"/>

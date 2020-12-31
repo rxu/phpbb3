@@ -49,6 +49,9 @@ class viewforum_paging_test extends phpbb_functional_test_case
 		));
 	}
 
+	/**
+	 * @depends test_setup_forums
+	 */
 	public function test_create_posts()
 	{
 		$this->login();
@@ -103,6 +106,9 @@ class viewforum_paging_test extends phpbb_functional_test_case
 		));
 	}
 
+	/**
+	 * @depends test_create_posts
+	 */
 	public function test_viewforum_first_page()
 	{
 		$this->load_ids(array(
@@ -140,6 +146,7 @@ class viewforum_paging_test extends phpbb_functional_test_case
 				'Viewforum Pagination Test #2',
 			),
 		));
+
 		$crawler = self::request('GET', 'viewforum.php?f=' . $this->data['forums']['Viewforum Pagination Test #1'] . '&start=3');
 
 		// Test the topics that are displayed

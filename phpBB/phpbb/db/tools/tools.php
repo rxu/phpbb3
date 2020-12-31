@@ -230,12 +230,22 @@ class tools implements tools_interface
 	function sql_table_exists($table_name)
 	{
 		$this->db->sql_return_on_error(true);
-		$result = $this->db->sql_query_limit('SELECT * FROM ' . $table_name, 1);
+
+		if ($this->db->get_sql_layer() == 'oracle')
+		{
+			$this->db->sql_query('SELECT table_name FROM user_tables WHERE table_name = ' . $this->db->sql_quote(strtoupper($table_name)));
+			$result = $this->db->sql_fetchfield('table_name');
+		}
+		else
+		{
+			$result = $this->db->sql_query_limit('SELECT * FROM ' . $table_name, 1);
+		}
+
 		$this->db->sql_return_on_error(false);
 
 		if ($result)
 		{
-			$this->db->sql_freeresult($result);
+			$this->db->sql_freeresult();
 			return true;
 		}
 

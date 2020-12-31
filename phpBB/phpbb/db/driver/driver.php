@@ -981,10 +981,10 @@ abstract class driver implements driver_interface
 			// Show complete SQL error and path to administrators only
 			// Additionally show complete error on installation or if extended debug mode is enabled
 			// The DEBUG constant is for development only!
-			if ((isset($auth) && $auth->acl_get('a_')) || defined('IN_INSTALL') || $this->debug_sql_explain)
-			{
+//			if ((isset($auth) && $auth->acl_get('a_')) || defined('IN_INSTALL') || $this->debug_sql_explain)
+//			{
 				$message .= ($sql) ? '<br /><br />SQL<br /><br />' . htmlspecialchars($sql) : '';
-			}
+/*			}
 			else
 			{
 				// If error occurs in initiating the session we need to use a pre-defined language string
@@ -1005,7 +1005,7 @@ abstract class driver implements driver_interface
 					}
 				}
 			}
-
+*/
 			if ($this->transaction)
 			{
 				$this->sql_transaction('rollback');
@@ -1019,7 +1019,7 @@ abstract class driver implements driver_interface
 
 				trigger_error(false, E_USER_ERROR);
 			}
-
+$message .= get_backtrace();
 			trigger_error($message, E_USER_ERROR);
 		}
 

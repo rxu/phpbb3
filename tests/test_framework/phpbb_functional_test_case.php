@@ -587,6 +587,7 @@ class phpbb_functional_test_case extends phpbb_test_case
 		else
 		{
 			$db->sql_multi_insert(STYLES_TABLE, array(array(
+				'style_id' => $style_id,
 				'style_name' => $style_path,
 				'style_copyright' => '',
 				'style_active' => 1,

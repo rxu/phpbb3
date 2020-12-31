@@ -31,6 +31,12 @@ class db extends \phpbb\config\config
 	protected $db;
 
 	/**
+	 * Database Tools object
+	 * @var \phpbb\db\tools\tools_interface
+	 */
+	protected $db_tools;
+
+	/**
 	* Name of the database table used for configuration.
 	* @var string
 	*/
@@ -46,8 +52,11 @@ class db extends \phpbb\config\config
 	public function __construct(\phpbb\db\driver\driver_interface $db, \phpbb\cache\driver\driver_interface $cache, $table)
 	{
 		$this->db = $db;
+		$this->db_tools = new \phpbb\db\tools\tools($this->db);
 		$this->cache = $cache;
 		$this->table = $table;
+
+		$config = $cached_config = [];
 
 		if (($config = $cache->get('config')) !== false)
 		{
@@ -62,10 +71,8 @@ class db extends \phpbb\config\config
 			}
 			$this->db->sql_freeresult($result);
 		}
-		else
+		else if ($this->db_tools->sql_table_exists($this->table))
 		{
-			$config = $cached_config = array();
-
 			$sql = 'SELECT config_name, config_value, is_dynamic
 				FROM ' . $this->table;
 			$result = $this->db->sql_query($sql);
@@ -84,7 +91,7 @@ class db extends \phpbb\config\config
 			$cache->put('config', $cached_config);
 		}
 
-		parent::__construct($config);
+		parent::__construct($config ?: []);
 	}
 
 	/**

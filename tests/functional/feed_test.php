@@ -85,6 +85,9 @@ class phpbb_functional_feed_test extends phpbb_functional_test_case
 		self::assertContainsLang('AUTH_UPDATED', $crawler->filter('.successbox')->text());
 	}
 
+	/**
+	 * @depends test_setup_config_before_state
+	 */
 	public function test_dump_board_state()
 	{
 		$crawler = self::request('GET', 'app.php/feed/forums', array(), false);
@@ -130,6 +133,9 @@ class phpbb_functional_feed_test extends phpbb_functional_test_case
 		self::$init_values['admin']['topics_active_value'] = $crawler->filterXPath('//entry')->count();
 	}
 
+	/**
+	 * @depends test_dump_board_state
+	 */
 	public function test_setup_forums()
 	{
 		$this->login();
@@ -187,6 +193,9 @@ class phpbb_functional_feed_test extends phpbb_functional_test_case
 		self::submit($form);
 	}
 
+	/**
+	 * @depends test_setup_forums
+	 */
 	public function test_setup_config_after_forums()
 	{
 		$this->login();
@@ -204,15 +213,20 @@ class phpbb_functional_feed_test extends phpbb_functional_test_case
 		$form = $crawler->selectButton('Submit')->form();
 
 		// News/Exclude's forums config
-		$form['feed_news_id']->select(array($this->data['forums']['Feeds #news']));
-		$form['feed_exclude_id']->select(array($this->data['forums']['Feeds #exclude']));
+		$form['feed_news_id']->select($this->data['forums']['Feeds #news']);
+		$form['feed_exclude_id']->select($this->data['forums']['Feeds #exclude']);
 
 		$crawler = self::submit($form);
 		self::assertContainsLang('CONFIG_UPDATED', $crawler->filter('.successbox')->text());
 	}
 
+	/**
+	 * @depends test_setup_config_after_forums
+	 */
 	public function test_feeds_empty()
 	{
+		$crawler = self::request('GET', 'app.php/feed/forums', array(), false);
+
 		$this->load_ids(array(
 			'forums' => array(
 				'Feeds #1',

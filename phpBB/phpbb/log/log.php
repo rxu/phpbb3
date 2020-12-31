@@ -872,7 +872,9 @@ class log implements \phpbb\log\log_interface
 			$sql_keywords = ' ' . $statement_operator . ' (';
 			if (!empty($operations))
 			{
-				$sql_keywords .= $this->db->sql_in_set($table_alias . 'log_operation', $operations) . ' OR ';
+				// Oracle does not allow CLOB in WHERE clause, hence convert to varchar
+				$log_operation = ($this->db->get_sql_layer() == 'oracle') ? 'CAST(' . ($table_alias . 'log_operation') . ' as VARCHAR2(255))' : ($table_alias . 'log_operation');
+				$sql_keywords .= $this->db->sql_in_set($log_operation, $operations) . ' OR ';
 			}
 			$sql_lower = $this->db->sql_lower_text($table_alias . 'log_data');
 			$sql_keywords .= " $sql_lower " . implode(" OR $sql_lower ", $keywords) . ')';

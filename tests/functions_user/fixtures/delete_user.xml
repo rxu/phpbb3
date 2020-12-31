@@ -505,11 +505,14 @@
 		</row>
 	</table>
 	<table name="phpbb_sessions_keys">
+        <column>key_id</column>
 		<column>user_id</column>
 		<row>
+            <value>a87ff679a2f3e71d9181a67b7542122c</value>
 			<value>2</value>
 		</row>
 		<row>
+            <value>a87ff679a2f3e71d9181a67b7542122d</value>
 			<value>3</value>
 		</row>
 	</table>

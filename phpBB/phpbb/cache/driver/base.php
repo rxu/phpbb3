@@ -115,7 +115,7 @@ abstract class base implements \phpbb\cache\driver\driver_interface
 	*/
 	function sql_exists($query_id)
 	{
-		return isset($this->sql_rowset[$query_id]);
+		return isset($this->sql_rowset[(string) $query_id]);
 	}
 
 	/**
@@ -123,9 +123,9 @@ abstract class base implements \phpbb\cache\driver\driver_interface
 	*/
 	function sql_fetchrow($query_id)
 	{
-		if ($this->sql_row_pointer[$query_id] < count($this->sql_rowset[$query_id]))
+		if ($this->sql_row_pointer[(string) $query_id] < count($this->sql_rowset[(string) $query_id]))
 		{
-			return $this->sql_rowset[$query_id][$this->sql_row_pointer[$query_id]++];
+			return $this->sql_rowset[(string) $query_id][$this->sql_row_pointer[(string) $query_id]++];
 		}
 
 		return false;
@@ -136,9 +136,9 @@ abstract class base implements \phpbb\cache\driver\driver_interface
 	*/
 	function sql_fetchfield($query_id, $field)
 	{
-		if ($this->sql_row_pointer[$query_id] < count($this->sql_rowset[$query_id]))
+		if ($this->sql_row_pointer[(string) $query_id] < count($this->sql_rowset[(string) $query_id]))
 		{
-			return (isset($this->sql_rowset[$query_id][$this->sql_row_pointer[$query_id]][$field])) ? $this->sql_rowset[$query_id][$this->sql_row_pointer[$query_id]++][$field] : false;
+			return (isset($this->sql_rowset[(string) $query_id][$this->sql_row_pointer[(string) $query_id]][$field])) ? $this->sql_rowset[(string) $query_id][$this->sql_row_pointer[(string) $query_id]++][$field] : false;
 		}
 
 		return false;
@@ -149,7 +149,7 @@ abstract class base implements \phpbb\cache\driver\driver_interface
 	*/
 	function sql_rowseek($rownum, $query_id)
 	{
-		if ($rownum >= count($this->sql_rowset[$query_id]))
+		if ($rownum >= count($this->sql_rowset[(string) $query_id]))
 		{
 			return false;
 		}
@@ -163,13 +163,13 @@ abstract class base implements \phpbb\cache\driver\driver_interface
 	*/
 	function sql_freeresult($query_id)
 	{
-		if (!isset($this->sql_rowset[$query_id]))
+		if (!isset($this->sql_rowset[(string) $query_id]))
 		{
 			return false;
 		}
 
-		unset($this->sql_rowset[$query_id]);
-		unset($this->sql_row_pointer[$query_id]);
+		unset($this->sql_rowset[(string) $query_id]);
+		unset($this->sql_row_pointer[(string) $query_id]);
 
 		return true;
 	}

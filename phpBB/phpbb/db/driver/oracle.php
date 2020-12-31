@@ -412,7 +412,7 @@ class oracle extends \phpbb\db\driver\driver
 					@oci_bind_by_name($this->query_result, $key, $array[$key], -1);
 				}
 
-				$success = @oci_execute($this->query_result, OCI_DEFAULT);
+				$success = @oci_execute($this->query_result, OCI_NO_AUTO_COMMIT);
 
 				if (!$success)
 				{
@@ -471,6 +471,10 @@ class oracle extends \phpbb\db\driver\driver
 	{
 		$this->query_result = false;
 
+		// TODO: Add ordering by ROWID to make the query deterministic
+		// See https://blogs.oracle.com/oraclemagazine/on-rownum-and-limiting-results
+		// Currently SQL query below does not work as expected.
+
 		$query = 'SELECT * FROM (SELECT /*+ FIRST_ROWS */ rownum AS xrownum, a.* FROM (' . $query . ') a WHERE rownum <= ' . ($offset + $total) . ') WHERE xrownum >= ' . $offset;
 
 		return $this->sql_query($query, $cache_ttl);
@@ -496,9 +500,9 @@ class oracle extends \phpbb\db\driver\driver
 			$query_id = $this->query_result;
 		}
 
-		if ($cache && $cache->sql_exists($query_id))
+		if ($cache && $cache->sql_exists((string) $query_id))
 		{
-			return $cache->sql_fetchrow($query_id);
+			return $cache->sql_fetchrow((string) $query_id);
 		}
 
 		if ($query_id)
@@ -544,9 +548,9 @@ class oracle extends \phpbb\db\driver\driver
 			$query_id = $this->query_result;
 		}
 
-		if ($cache && $cache->sql_exists($query_id))
+		if ($cache && $cache->sql_exists((string) $query_id))
 		{
-			return $cache->sql_rowseek($rownum, $query_id);
+			return $cache->sql_rowseek($rownum, (string) $query_id);
 		}
 
 		if (!$query_id)
@@ -619,9 +623,9 @@ class oracle extends \phpbb\db\driver\driver
 			$query_id = $this->query_result;
 		}
 
-		if ($cache && !is_object($query_id) && $cache->sql_exists($query_id))
+		if ($cache && !is_object($query_id) && $cache->sql_exists((string) $query_id))
 		{
-			return $cache->sql_freeresult($query_id);
+			return $cache->sql_freeresult((int) $query_id);
 		}
 
 		if (isset($this->open_queries[(int) $query_id]))
@@ -671,7 +675,7 @@ class oracle extends \phpbb\db\driver\driver
 
 	function _sql_bit_or($column_name, $bit, $compare = '')
 	{
-		return 'BITOR(' . $column_name . ', ' . (1 << $bit) . ')' . (($compare) ? ' ' . $compare : '');
+		return '(' . $column_name . ' + ' . (1 << $bit) . ' - BITAND(' . $column_name . ', ' . (1 << $bit) . '))' . (($compare) ? ' ' . $compare : '');
 	}
 
 	/**
@@ -819,6 +823,6 @@ class oracle extends \phpbb\db\driver\driver
 	*/
 	function sql_quote($msg)
 	{
-		return '"' . $msg . '"';
+		return '\'' . $msg . '\'';
 	}
 }
