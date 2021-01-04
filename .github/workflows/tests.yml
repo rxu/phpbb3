@@ -59,12 +59,8 @@ jobs:
                   .github/check-executable-files.sh ./
 
             - name: Check commit message
-              env:
-                  BRANCH: ${{ github.event.pull_request.base.ref }}
-                  PR_SHA: ${{ github.event.pull_request.head.sha }}
-              if: ${{ github.event.pull_request.head.sha != '' && github.event.pull_request.base.ref != '' }}
               run: |
-                  git remote set-branches --add origin $BRANCH && git fetch && git-tools/commit-msg-hook-range.sh origin/$BRANCH..$PR_SHA
+                  git remote set-branches --add origin $GITHUB_BASE_REF && git fetch && git-tools/commit-msg-hook-range.sh origin/$GITHUB_BASE_REF..$GITHUB_SHA
 
     # Tests for MySQL and MariaDB
     mysql-tests:
