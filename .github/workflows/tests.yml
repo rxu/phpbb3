@@ -5,10 +5,12 @@ on:
         branches:
             - 3.3.x
             - master
+            - ticket/16675-1
     pull_request:
         branches:
             - 3.3.x
             - master
+            - ticket/16675-1
 
 jobs:
     # Basic checks, e.g. parse errors, commit messages, etc.
@@ -79,10 +81,13 @@ jobs:
             - name: Check commit message
               env:
                   BRANCH: ${{ github.event.pull_request.base.sha }}
-                  PR_SHA: ${{ github.event.pull_request.head.sha }}
-              if: github.event.pull_request.head.sha != '' && github.event.pull_request.base.sha != ''
+                  PR_SHA: ${{ github.event.after }}
               run: |
-                  git-tools/commit-msg-hook-range.sh $BRANCH..$PR_SHA
+                   if ! [[ "$BRANCH" =~ ^[0-9a-f]{5,40} ]]; then
+                      BRANCH=`git rev-list --merges -n 1 HEAD`
+                      echo "BRANCH=$BRANCH" >> $GITHUB_ENV
+                   fi
+                   git-tools/commit-msg-hook-range.sh $BRANCH..$PR_SHA
 
     # Tests for MySQL and MariaDB
     mysql-tests:
