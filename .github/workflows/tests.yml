@@ -81,13 +81,12 @@ jobs:
             - name: Check commit message
               env:
                   BRANCH: ${{ github.event.pull_request.base.sha }}
-                  PR_SHA: ${{ github.event.after }}
               run: |
                    if ! [[ "$BRANCH" =~ ^[0-9a-f]{5,40} ]]; then
                       BRANCH=$(git rev-list --merges -n 1 HEAD)
                       echo "BRANCH=$BRANCH" >> $GITHUB_ENV
                    fi
-                   git-tools/commit-msg-hook-range.sh $BRANCH..$PR_SHA
+                   git-tools/commit-msg-hook-range.sh $BRANCH..$GITHUB_SHA
 
     # Tests for MySQL and MariaDB
     mysql-tests:
