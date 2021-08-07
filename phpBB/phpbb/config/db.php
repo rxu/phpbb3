@@ -15,6 +15,7 @@ namespace phpbb\config;
 
 use phpbb\cache\driver\driver_interface as cache_interface;
 use phpbb\db\driver\driver_interface as db_interface;
+use phpbb\db\tools\tools as db_tools;
 
 /**
 * Configuration container class
@@ -64,6 +65,8 @@ class db extends config
 	 */
 	public function initialise(cache_interface $cache)
 	{
+		$db_tools = new db_tools($this->db);
+
 		if (($config = $cache->get('config')) !== false)
 		{
 			$sql = 'SELECT config_name, config_value
@@ -77,7 +80,7 @@ class db extends config
 			}
 			$this->db->sql_freeresult($result);
 		}
-		else
+		else if ($db_tools->sql_table_exists($this->table))
 		{
 			$config = $cached_config = array();
 
@@ -99,7 +102,7 @@ class db extends config
 			$cache->put('config', $cached_config);
 		}
 
-		$this->config = $config;
+		$this->config = $config ?: [];
 	}
 
 	/**

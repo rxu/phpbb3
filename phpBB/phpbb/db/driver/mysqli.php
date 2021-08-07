@@ -76,7 +76,7 @@ class mysqli extends \phpbb\db\driver\mysql_base
 			 * See https://wiki.php.net/rfc/mysqli_default_errmode
 			 * Since phpBB implements own SQL errors handling, explicitly set it back to MYSQLI_REPORT_OFF
 			 */
-			mysqli_report(MYSQLI_REPORT_OFF);
+			// mysqli_report(MYSQLI_REPORT_OFF);
 
 			@mysqli_query($this->db_connect_id, "SET NAMES 'utf8'");
 
