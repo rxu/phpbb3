@@ -230,7 +230,19 @@ class tools implements tools_interface
 	function sql_table_exists($table_name)
 	{
 		$this->db->sql_return_on_error(true);
-		$result = $this->db->sql_query_limit('SELECT * FROM ' . $table_name, 1);
+
+		switch ($this->db->get_sql_layer())
+		{
+			case 'mysqli':
+				$sql = 'SHOW TABLES LIKE ' . $this->db->sql_quote($table_name);
+				$result = $this->db->sql_query($sql);
+			break;
+
+			default:
+				$result = $this->db->sql_query_limit('SELECT * FROM ' . $table_name, 1);
+			break;
+		}
+
 		$this->db->sql_return_on_error(false);
 
 		if ($result)
