@@ -15,7 +15,6 @@ namespace phpbb\config;
 
 use phpbb\cache\driver\driver_interface as cache_interface;
 use phpbb\db\driver\driver_interface as db_interface;
-use phpbb\db\tools\tools as db_tools;
 
 /**
 * Configuration container class

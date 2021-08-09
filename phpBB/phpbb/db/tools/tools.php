@@ -229,29 +229,34 @@ class tools implements tools_interface
 	 */
 	function sql_table_exists($table_name)
 	{
-		$this->db->sql_return_on_error(true);
-
 		switch ($this->db->get_sql_layer())
 		{
 			case 'mysqli':
-				$sql = 'SHOW TABLES LIKE ' . $this->db->sql_quote($table_name);
-				$result = $this->db->sql_query($sql);
+			case 'mssql':
+				$sql = "SELECT table_name
+					FROM information_schema.tables
+					WHERE table_name LIKE '" . $this->db->sql_escape($table_name) . "'";
 			break;
 
-			default:
-				$result = $this->db->sql_query_limit('SELECT * FROM ' . $table_name, 1);
+			case 'sqlite3':
+				$sql = "SELECT name AS table_name
+					FROM sqlite_master
+					WHERE type='table'
+					AND name = '" . $this->db->sql_escape($table_name) . "'";
+			break;
+
+			case 'oracle':
+				$sql = "SELECT table_name
+					FROM user_tables
+					WHERE table_name = '" . $this->db->sql_escape($table_name) . "'";
 			break;
 		}
 
-		$this->db->sql_return_on_error(false);
+		$result = $this->db->sql_query_limit($sql, 1);
+		$table_exists = $table_name == $this->db->sql_fetchfield('table_name');
+		$this->db->sql_freeresult($result);
 
-		if ($result)
-		{
-			$this->db->sql_freeresult($result);
-			return true;
-		}
-
-		return false;
+		return $table_exists;
 	}
 
 	/**
