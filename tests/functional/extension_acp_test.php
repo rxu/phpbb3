@@ -43,8 +43,6 @@ class phpbb_functional_extension_acp_test extends phpbb_functional_test_case
 
 		$this->purge_cache();
 
-		$this->get_db();
-
 		// Clear the phpbb_ext table
 		$this->db->sql_query('DELETE FROM phpbb_ext');
 
@@ -74,8 +72,6 @@ class phpbb_functional_extension_acp_test extends phpbb_functional_test_case
 			),
 		);
 		$this->db->sql_multi_insert('phpbb_ext', $insert_rows);
-
-		sleep(2);
 
 		$this->login();
 		$this->admin_login();
