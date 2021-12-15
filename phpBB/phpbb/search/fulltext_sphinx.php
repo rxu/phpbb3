@@ -152,7 +152,7 @@ class fulltext_sphinx
 			$this->config->set('fulltext_sphinx_id', unique_id());
 		}
 		$this->id = $this->config['fulltext_sphinx_id'];
-		$this->indexes = 'index_phpbb_' . $this->id . '_delta;index_phpbb_' . $this->id . '_main';
+		$this->indexes = 'index_phpbb_' . $this->id . '_main;index_phpbb_' . $this->id . '_delta';
 
 		if (!class_exists('SphinxClient'))
 		{
@@ -844,7 +844,14 @@ class fulltext_sphinx
 
 		if ($mode == 'edit')
 		{
-			$this->sphinx->UpdateAttributes($this->indexes, array('forum_id', 'poster_id'), array((int) $post_id => array((int) $forum_id, (int) $poster_id)));
+			$this->sphinx->UpdateAttributes($this->indexes, ['forum_id', 'poster_id', 'post_subject', 'post_text'], [
+				(int) $post_id => [
+					(int) $forum_id,
+					(int) $poster_id,
+					(string) $subject,
+					(string) $message,
+				]
+			]);
 		}
 		else if ($mode != 'post' && $post_id)
 		{

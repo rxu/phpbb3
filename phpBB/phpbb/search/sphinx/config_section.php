@@ -17,12 +17,11 @@ namespace phpbb\search\sphinx;
 * \phpbb\search\sphinx\config_section
 * Represents a single section inside the sphinx configuration
 */
-class config_section
+class config_section extends config_item
 {
-	private $name;
 	private $comment;
 	private $end_comment;
-	private $variables = array();
+	private $variables = [];
 
 	/**
 	* Construct a new section
@@ -41,18 +40,6 @@ class config_section
 	}
 
 	/**
-	* Add a variable object to the list of variables in this section
-	*
-	* @param	\phpbb\search\sphinx\config_variable	$variable	The variable object
-	*
-	* @access	public
-	*/
-	function add_variable($variable)
-	{
-		$this->variables[] = $variable;
-	}
-
-	/**
 	* Adds a comment after the closing bracket in the textual representation
 	*
 	* @param	string	$end_comment
@@ -62,18 +49,6 @@ class config_section
 	function set_end_comment($end_comment)
 	{
 		$this->end_comment = $end_comment;
-	}
-
-	/**
-	* Getter for the name of this section
-	*
-	* @return	string	Section's name
-	*
-	* @access	public
-	*/
-	function get_name()
-	{
-		return $this->name;
 	}
 
 	/**
@@ -90,11 +65,13 @@ class config_section
 		for ($i = 0, $size = count($this->variables); $i < $size; $i++)
 		{
 			// Make sure this is a variable object and not a comment
-			if (($this->variables[$i] instanceof \phpbb\search\sphinx\config_variable) && $this->variables[$i]->get_name() == $name)
+			if ($this->variables[$i]->get_name() == $name)
 			{
 				return $this->variables[$i];
 			}
 		}
+
+		return null;
 	}
 
 	/**
@@ -109,7 +86,7 @@ class config_section
 		for ($i = 0, $size = count($this->variables); $i < $size; $i++)
 		{
 			// Make sure this is a variable object and not a comment
-			if (($this->variables[$i] instanceof \phpbb\search\sphinx\config_variable) && $this->variables[$i]->get_name() == $name)
+			if ($this->variables[$i]->get_name() == $name)
 			{
 				array_splice($this->variables, $i, 1);
 				$i--;
@@ -128,7 +105,7 @@ class config_section
 	*/
 	function create_variable($name, $value)
 	{
-		$this->variables[] = new \phpbb\search\sphinx\config_variable($name, $value, '');
+		$this->variables[] = new config_variable($name, $value);
 		return $this->variables[count($this->variables) - 1];
 	}
 

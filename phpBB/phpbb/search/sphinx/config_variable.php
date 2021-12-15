@@ -17,9 +17,8 @@ namespace phpbb\search\sphinx;
 * \phpbb\search\sphinx\config_variable
 * Represents a single variable inside the sphinx configuration
 */
-class config_variable
+class config_variable extends config_item
 {
-	private $name;
 	private $value;
 	private $comment;
 
@@ -33,23 +32,11 @@ class config_variable
 	*
 	* @access	public
 	*/
-	function __construct($name, $value, $comment)
+	function __construct($name, $value, $comment = '')
 	{
 		$this->name = $name;
 		$this->value = $value;
 		$this->comment = $comment;
-	}
-
-	/**
-	* Getter for the variable's name
-	*
-	* @return	string	The variable object's name
-	*
-	* @access	public
-	*/
-	function get_name()
-	{
-		return $this->name;
 	}
 
 	/**
@@ -73,6 +60,6 @@ class config_variable
 	*/
 	function to_string()
 	{
-		return "\t" . $this->name . ' = ' . str_replace("\n", " \\\n", $this->value) . ' ' . $this->comment . "\n";
+		return "\t" . $this->name . ' = ' . str_replace("\n", " \\\n", $this->value) . ($this->comment ? ' ' . $this->comment  : '') . "\n";
 	}
 }
