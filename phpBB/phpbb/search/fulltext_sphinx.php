@@ -852,6 +852,7 @@ class fulltext_sphinx
 					(string) $message,
 				]
 			]);
+			$this->sphinx->FlushAttributes();
 		}
 		else if ($mode != 'post' && $post_id)
 		{
@@ -884,6 +885,7 @@ class fulltext_sphinx
 			if (count($post_updates))
 			{
 				$this->sphinx->UpdateAttributes($this->indexes, array('topic_last_post_time'), $post_updates);
+				$this->sphinx->FlushAttributes();
 			}
 		}
 	}
