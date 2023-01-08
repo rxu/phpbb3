@@ -16,8 +16,8 @@ sudo apt-get install -q -y sphinxsearch
 
 DIR=$(dirname "$0")
 
-SPHINX_DAEMON_HOST="localhost"
-SPHINX_DAEMON_PORT="9312"
+#SPHINX_DAEMON_HOST="localhost"
+SPHINX_DAEMON_PORT="0.0.0.0:9312"
 SPHINX_CONF="$DIR/sphinx.conf"
 SPHINX_DATA_DIR="/var/run/sphinxsearch"
 SPHINX_LOG="$SPHINX_DATA_DIR/log/searchd.log"
@@ -130,6 +130,9 @@ indexer
 searchd
 {
 	listen = $SPHINX_DAEMON_PORT
+	listen = 127.0.0.1:9312
+	listen = localhost:9312
+	listen = 9306
 	log = $SPHINX_LOG
 	query_log = $SPHINX_QUERY_LOG
 	read_timeout = 5
@@ -142,3 +145,4 @@ searchd
 sudo mv "$SPHINX_CONF" "/etc/sphinxsearch/sphinx.conf"
 sudo sed -i "s/START=no/START=yes/g" "/etc/default/sphinxsearch"
 sudo chmod 777 "/var/run/sphinxsearch"
+sudo service sphinxsearch start

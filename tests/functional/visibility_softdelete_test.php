@@ -599,17 +599,8 @@ class phpbb_functional_visibility_softdelete_test extends phpbb_functional_test_
 		), 'after restoring #2');
 
 		// Assert new topic title is indexed as well
-		$output = [];
-		$retval = null;
-/*		exec('sudo -S service sphinxsearch stop', $output, $retval); // Attemtp to stop sphinxsearch service in case it's running
-		exec('sudo -S indexer --all', $output, $retval); // Run sphinxsearch indexer
-		exec('sudo -S service sphinxsearch start', $output, $retval); // Attempt to start sphinxsearch service again*/
 		$this->add_lang('search');
 		self::request('GET', "search.php?keywords=bang&sid={$this->sid}");
-		exec('sudo cat /var/run/sphinxsearch/log/searchd.log', $output, $retval); // Attempt to start sphinxsearch service again
-		exec('sudo cat /var/run/sphinxsearch/log/sphinx-query.log', $output, $retval); // Attempt to start sphinxsearch service again
-		fwrite(STDERR, print_r($output, true));
-
 		$this->assertStringContainsString(sprintf($this->lang['FOUND_SEARCH_MATCHES'][1], 1), self::get_content());
 	}
 

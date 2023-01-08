@@ -130,14 +130,19 @@ abstract class phpbb_functional_search_base extends phpbb_functional_test_case
 					SET config_value = '" . $this->db->sql_escape('gokw5rvjvvxp8kgj') . "'
 					WHERE config_name = '" . $this->db->sql_escape('fulltext_sphinx_id') . "'";
 				$this->db->sql_query($sql);
+				$this->purge_cache();
+
+			//	$values["config[fulltext_sphinx_host]"] = '127.0.0.1';
+			//	$values["config[fulltext_sphinx_port]"] = '9306';
 			}
 
+			// $form["config[search_type]"]->select($this->search_backend);
 			$form->setValues($values);
 			$crawler = self::submit($form);
-			$this->purge_cache();
 
 			$form = $crawler->selectButton($this->lang('YES'))->form();
 			$values = $form->getValues();
+			$this->assertTrue($values["config[search_type]"] == $this->search_backend);
 			$crawler = self::submit($form);
 
 			// check if search backend is not supported
@@ -147,9 +152,10 @@ abstract class phpbb_functional_search_base extends phpbb_functional_test_case
 				$this->delete_topic($topic_by_author['topic_id']);
 				$this->delete_topic($topic_multiple_results_count1['topic_id']);
 				$this->delete_topic($topic_multiple_results_count2['topic_id']);
-				$this->markTestSkipped("Search backend is not supported/running");
+				$this->markTestSkipped("Search backend {$this->search_backend} is not supported/running");
 			}
 
+			$this->assertContainsLang('SWITCHED_SEARCH_BACKEND', $crawler->text());
 			$this->create_search_index();
 		}
 
