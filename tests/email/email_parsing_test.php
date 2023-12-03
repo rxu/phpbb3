@@ -70,6 +70,7 @@ class phpbb_email_parsing_test extends phpbb_test_case
 		$phpbb_container->set('assets.bag', $assets_bag);
 
 		$context = new \phpbb\template\context();
+		$dispatcher = new \phpbb\event\dispatcher();
 		$twig = new \phpbb\template\twig\environment(
 			$assets_bag,
 			$config,
@@ -78,7 +79,7 @@ class phpbb_email_parsing_test extends phpbb_test_case
 			$cache_path,
 			null,
 			new \phpbb\template\twig\loader(''),
-			new \phpbb\event\dispatcher(),
+			$dispatcher,
 			array(
 				'cache'			=> false,
 				'debug'			=> false,
@@ -86,7 +87,7 @@ class phpbb_email_parsing_test extends phpbb_test_case
 				'autoescape'	=> false,
 			)
 		);
-		$twig_extension = new \phpbb\template\twig\extension($context, $twig, $lang);
+		$twig_extension = new \phpbb\template\twig\extension($context, $twig, $lang, $dispatcher);
 		$phpbb_container->set('template.twig.extensions.phpbb', $twig_extension);
 
 		$twig_extensions_collection = new \phpbb\di\service_collection($phpbb_container);
