@@ -61,8 +61,8 @@ class phpbb_functional_extension_template_event_order_test extends phpbb_functio
 		$quick_links_menu = $crawler->filter('ul[role="menu"]')->eq(0);
 		$quick_links_menu_nodes_count = (int) $quick_links_menu->filter('li')->count();
 		// Ensure foo/foo template event goes before foo/bar one
-		$this->assertStringContainsString('FOO_FOO_QUICK_LINK', $quick_links_menu->filter('li')->eq($quick_links_menu_nodes_count - 2)->filter('span')->text());
-		$this->assertStringContainsString('FOO_BAR_QUICK_LINK', $quick_links_menu->filter('li')->eq($quick_links_menu_nodes_count - 1)->filter('span')->text());
+		$this->assertStringContainsString('FOO_FOO_QUICK_LINK', $quick_links_menu->filter('li')->eq($quick_links_menu_nodes_count - 4)->filter('span')->text());
+		$this->assertStringContainsString('FOO_BAR_QUICK_LINK', $quick_links_menu->filter('li')->eq($quick_links_menu_nodes_count - 3)->filter('span')->text());
 
 		// Change template events order to default, put foo/bar event before foo/foo one
 		$this->phpbb_extension_manager->disable('foo/bar');
@@ -77,8 +77,8 @@ class phpbb_functional_extension_template_event_order_test extends phpbb_functio
 		$quick_links_menu = $crawler->filter('ul[role="menu"]')->eq(0);
 		$quick_links_menu_nodes_count = (int) $quick_links_menu->filter('li')->count();
 		// Ensure foo/foo template event goes before foo/bar one
-		$this->assertStringContainsString('FOO_BAR_QUICK_LINK', $quick_links_menu->filter('li')->eq($quick_links_menu_nodes_count - 2)->filter('span')->text());
-		$this->assertStringContainsString('FOO_FOO_QUICK_LINK', $quick_links_menu->filter('li')->eq($quick_links_menu_nodes_count - 1)->filter('span')->text());
+		$this->assertStringContainsString('FOO_BAR_QUICK_LINK', $quick_links_menu->filter('li')->eq($quick_links_menu_nodes_count - 4)->filter('span')->text());
+		$this->assertStringContainsString('FOO_FOO_QUICK_LINK', $quick_links_menu->filter('li')->eq($quick_links_menu_nodes_count - 3)->filter('span')->text());
 
 		$this->phpbb_extension_manager->purge('foo/bar');
 		$this->phpbb_extension_manager->purge('foo/foo');
