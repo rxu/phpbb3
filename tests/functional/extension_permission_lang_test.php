@@ -46,13 +46,8 @@ class phpbb_functional_extension_permission_lang_test extends phpbb_functional_t
 		$this->login();
 		$this->admin_login();
 		$this->add_lang('acp/permissions');
-	}
 
-	protected function tearDown(): void
-	{
-		$this->uninstall_ext('foo/bar');
-
-		parent::tearDown();
+		$this->phpbb_extension_manager = $this->get_extension_manager();
 	}
 
 	protected static function setup_extensions()

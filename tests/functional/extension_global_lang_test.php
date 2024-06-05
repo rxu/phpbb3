@@ -43,6 +43,8 @@ class phpbb_functional_extension_global_lang_test extends phpbb_functional_test_
 	{
 		parent::setUp();
 
+		$this->phpbb_extension_manager = $this->get_extension_manager();
+
 		$this->get_db();
 		$this->purge_cache();
 	}
