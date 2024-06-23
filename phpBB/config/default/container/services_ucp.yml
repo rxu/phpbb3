@@ -8,6 +8,7 @@ services:
             - '@controller.helper'
             - '@language'
             - '@log'
+            - '@messenger.method.email'
             - '@passwords.manager'
             - '@request'
             - '@template'
@@ -15,7 +16,6 @@ services:
             - '%tables.users%'
             - '%core.root_path%'
             - '%core.php_ext%'
-            - '@messenger.method_collection'
 
     phpbb.ucp.controller.webpush:
         class: phpbb\ucp\controller\webpush
