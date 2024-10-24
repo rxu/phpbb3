@@ -129,7 +129,7 @@ indexer
 }
 searchd
 {
-	listen = $SPHINX_DAEMON_PORT
+	listen = $SPHINX_DAEMON_HOST:$SPHINX_DAEMON_PORT
 	log = $SPHINX_LOG
 	query_log = $SPHINX_QUERY_LOG
 	read_timeout = 5

@@ -105,7 +105,7 @@ class config
 				// that way they're not deleted when reassembling the file from the sections
 				if (!$line || $line[0] == '#')
 				{
-					$this->sections[] = new \phpbb\search\sphinx\config_comment($config_file[$i]);
+					$this->sections[] = new \phpbb\search\sphinx\config_comment($config_data[$i]);
 					continue;
 				}
 				else
@@ -154,7 +154,7 @@ class config
 					// of this section so they're not deleted on reassembly
 					if (!$line || $line[0] == '#')
 					{
-						$section->add_variable(new \phpbb\search\sphinx\config_comment($config_file[$i]));
+						$section->add_variable(new \phpbb\search\sphinx\config_comment($config_data[$i]));
 						continue;
 					}
 
@@ -170,7 +170,7 @@ class config
 						}
 						else
 						{
-							$section->add_variable(new \phpbb\search\sphinx\config_comment($config_file[$i]));
+							$section->add_variable(new \phpbb\search\sphinx\config_comment($config_data[$i]));
 							continue;
 						}
 					}
@@ -257,7 +257,7 @@ class config
 
 				// If we did not find anything meaningful up to here, then just treat it
 				// as a comment
-				$comment = ($skip_first) ? "\t" . substr(ltrim($config_file[$i]), 1) : $config_file[$i];
+				$comment = ($skip_first) ? "\t" . substr(ltrim($config_data[$i]), 1) : $config_data[$i];
 				$section->add_variable(new \phpbb\search\sphinx\config_comment($comment));
 			}
 		}

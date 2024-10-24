@@ -222,7 +222,8 @@ abstract class phpbb_functional_search_base extends phpbb_functional_test_case
 
 		// Ensure search index has been actually created
 		$crawler = self::request('GET', 'adm/index.php?i=acp_search&mode=index&sid=' . $this->sid);
-		$posts_indexed = (int) $crawler->filter('#acp_search_index_' . $search_type . ' td')->eq(1)->text();
+		$is_sphinx = strpos($search_type, 'sphinx');
+		$posts_indexed = (int) $crawler->filter('#acp_search_index_' . $search_type . ' td')->eq(!$is_sphinx ? 1 : 5)->text();
 		$this->assertTrue($posts_indexed > 0);
 	}
 
