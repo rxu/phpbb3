@@ -14,6 +14,14 @@ services:
         tags:
             - { name: kernel.event_subscriber }
 
+    kernel_request_subscriber:
+        class: phpbb\event\kernel_request_subscriber
+        arguments:
+            - '@auth'
+            - '@user'
+        tags:
+            - { name: kernel.event_subscriber }
+
     kernel_terminate_subscriber:
         class: phpbb\event\kernel_terminate_subscriber
         tags:
