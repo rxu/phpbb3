@@ -130,6 +130,8 @@ jobs:
                       db: "mysql:5.7"
                     - php: '8.4'
                       db: "mysql:5.7"
+                    - php: '8.5'
+                      db: "mysql:9.2"
 
         name: PHP ${{ matrix.php }} - ${{ matrix.db_alias != '' && matrix.db_alias || matrix.db }}
 
