@@ -231,6 +231,8 @@ abstract class phpbb_functional_search_base extends phpbb_functional_test_case
 			$this->markTestSkipped("Sphinx search doesn't use phpBB search results caching");
 		}
 
+		$cache = $this->get_cache_driver();
+
 		$this->purge_cache();
 		$this->login();
 		$this->admin_login();
@@ -243,6 +245,17 @@ abstract class phpbb_functional_search_base extends phpbb_functional_test_case
 		$posts_count = (int) $matches[1];
 
 		$this->assertStringContainsString("Search found $posts_count matches", $posts_found_text, $this->search_backend);
+
+		// Get search results cache varname
+		$finder = new \Symfony\Component\Finder\Finder();
+		$finder
+			->name('data_search_results_*.php')
+			->files()
+			->in($phpbb_root_path . 'cache/' . PHPBB_ENVIRONMENT);
+		$iterator = $finder->getIterator();
+		$iterator->rewind();
+		$cache_filename = $iterator->current();
+		$cache_varname = substr($cache_filename->getBasename('.php'), 4);
 
 		// Set this value to cache less results than total count
 		$sql = 'UPDATE ' . CONFIG_TABLE . '
@@ -311,6 +324,10 @@ abstract class phpbb_functional_search_base extends phpbb_functional_test_case
 			}
 		);
 
+		$post_ids_cached = $cache->get($cache_varname);
+		var_dump($post_ids_cached);
+
+
 		// Browse the rest of search results pages with new sort direction
 		$pages = range(2, $last_page);
 		foreach ($pages as $page_number)
@@ -324,21 +341,13 @@ abstract class phpbb_functional_search_base extends phpbb_functional_test_case
 					return ($node->attr('class') == 'button');
 				}
 			);
+
+		$post_ids_cached = $cache->get($cache_varname);
+		var_dump($post_ids_cached);
+
 		}
 
-		// Get search results cache varname
-		$finder = new \Symfony\Component\Finder\Finder();
-		$finder
-			->name('data_search_results_*.php')
-			->files()
-			->in($phpbb_root_path . 'cache/' . PHPBB_ENVIRONMENT);
-		$iterator = $finder->getIterator();
-		$iterator->rewind();
-		$cache_filename = $iterator->current();
-		$cache_varname = substr($cache_filename->getBasename('.php'), 4);
-
 		// Get cached post ids data
-		$cache = $this->get_cache_driver();
 		$post_ids_cached = $cache->get($cache_varname);
 		
 		$cached_results_count = count($post_ids_cached) - 2; // Don't count '-1' and '-2' indexes

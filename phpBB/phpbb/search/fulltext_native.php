@@ -1260,7 +1260,7 @@ class fulltext_native extends \phpbb\search\base
 					$sql_fora
 					$sql_sort_join
 					$sql_time
-				ORDER BY $sql_sort";
+				ORDER BY $sql_sort, p.post_id" . (($sort_dir == 'a') ? ' ASC' : ' DESC');
 			$field = 'post_id';
 		}
 		else
