@@ -262,6 +262,7 @@ abstract class phpbb_functional_search_base extends phpbb_functional_test_case
 
 		// Now actually test caching search results
 		$this->purge_cache();
+		sleep(1);
 
 		// Default sort direction is 'd' (descending), browse  the 1st page
 		$crawler = self::request('GET', 'search.php?author_id=2&sr=posts');
@@ -311,9 +312,11 @@ abstract class phpbb_functional_search_base extends phpbb_functional_test_case
 		);
 
 		// Browse the rest of search results pages with new sort direction
-		foreach (range(2, $last_page) as $page_number)
+		$pages = range(2, $last_page);
+		foreach ($pages as $page_number)
 		{
-			$crawler = self::$client->click($pagination->selectLink($page_number)->link());
+			sleep(1);
+			$crawler = self::$client->click($pagination->selectLink((string) $page_number)->link());
 			$pagination = $crawler->filter('.pagination')->eq(0);
 			$pagination = $pagination->filter('li > a')->reduce(
 				function ($node, $i)

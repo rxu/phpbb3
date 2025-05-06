@@ -6,6 +6,7 @@ on:
             - 3.3.x
             - master
             - 'prep-release-*'
+            - 'ticket/*'
         tags:
             - 'release-*'
     pull_request:
@@ -232,7 +233,7 @@ jobs:
                   DB: ${{steps.database-type.outputs.db}}
               if: ${{ matrix.SLOWTESTS != 1 && matrix.NOTESTS != 1 }}
               run: |
-                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-$DB-github.xml --verbose --stop-on-error
+                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-$DB-github.xml --verbose --stop-on-error --group functional
 
             - name: Slow tests
               env:
@@ -363,7 +364,7 @@ jobs:
               env:
                   DB: ${{steps.database-type.outputs.db}}
               run: |
-                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-$DB-github.xml --verbose --stop-on-error
+                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-$DB-github.xml --verbose --stop-on-error --group functional
 
     # Other database types, namely sqlite3 and mssql
     other-tests:
@@ -470,7 +471,7 @@ jobs:
               env:
                   DB: ${{steps.database-type.outputs.db}}
               run: |
-                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-$DB-github.xml --verbose --stop-on-error
+                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-$DB-github.xml --verbose --stop-on-error --group functional
 
     # Test with IIS & PostgreSQL on Windows
     windows-tests:

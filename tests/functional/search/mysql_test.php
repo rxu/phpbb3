@@ -33,4 +33,16 @@ class phpbb_functional_search_mysql_test extends phpbb_functional_search_base
 		$db->sql_query($sql);
 		$db->sql_return_on_error(false);
 	}
+
+	public function test_search_backend()
+	{
+		if ($this->db->sql_layer != 'mysqli') // MySQL Fulltext only runs on MySQL/MariaDB
+		{
+			$this->markTestIncomplete('MySQL Fulltext is not supported with other DBMS');
+		}
+		else
+		{
+			parent::test_search_backend();
+		}
+	}
 }

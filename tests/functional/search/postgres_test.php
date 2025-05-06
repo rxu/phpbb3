@@ -20,4 +20,16 @@ class phpbb_functional_search_postgres_test extends phpbb_functional_search_base
 {
 	protected $search_backend = '\phpbb\search\fulltext_postgres';
 
+
+	public function test_search_backend()
+	{
+		if ($this->db->sql_layer != 'postgres') // PostgreSQL Fulltext only runs on PostgreSQL
+		{
+			$this->markTestIncomplete('PostgreSQL Fulltext is not supported with other DBMS');
+		}
+		else
+		{
+			parent::test_search_backend();
+		}
+	}
 }
