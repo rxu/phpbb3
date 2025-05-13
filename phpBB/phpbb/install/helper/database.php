@@ -408,7 +408,7 @@ class database
 			switch ($dbms)
 			{
 				case 'sqlite3':
-					if (version_compare($db->sql_server_info(true), '3.6.15', '<'))
+					if (version_compare($db->sql_server_info(true), '3.8.3', '<'))
 					{
 						$errors[] = array(
 							'title' => 'INST_ERR_DB_NO_SQLITE3',
@@ -418,8 +418,7 @@ class database
 				case 'oracle':
 					$sql = "SELECT *
 						FROM NLS_DATABASE_PARAMETERS
-						WHERE PARAMETER = 'NLS_RDBMS_VERSION'
-							OR PARAMETER = 'NLS_CHARACTERSET'";
+						WHERE PARAMETER = 'NLS_RDBMS_VERSION'";
 					$result = $db->sql_query($sql);
 
 					$stats = [];
@@ -429,7 +428,7 @@ class database
 					}
 					$db->sql_freeresult($result);
 
-					if (version_compare($stats['NLS_RDBMS_VERSION'], '9.2', '<') && $stats['NLS_CHARACTERSET'] !== 'UTF8')
+					if (version_compare($stats['NLS_RDBMS_VERSION'], '11.2', '<'))
 					{
 						$errors[] = array(
 							'title' => 'INST_ERR_DB_NO_ORACLE',
