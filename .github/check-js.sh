@@ -14,6 +14,6 @@ set +x
 sudo npm install -g > /dev/null
 npm ci > /dev/null
 set -x
-node_modules/eslint/bin/eslint.js "phpBB/**/*.js"
-node_modules/eslint/bin/eslint.js "phpBB/**/*.js.twig"
-node_modules/eslint/bin/eslint.js "gulpfile.js"
+node_modules/eslint/bin/eslint.js --debug "phpBB/**/*.js"
+node_modules/eslint/bin/eslint.js --debug "phpBB/**/*.js.twig"
+node_modules/eslint/bin/eslint.js --debug "gulpfile.js"
