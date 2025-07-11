@@ -15,7 +15,6 @@ namespace phpbb\db\doctrine;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Platforms\PostgreSQLPlatform;
-use Doctrine\DBAL\Schema\Index;
 use Doctrine\DBAL\Schema\Sequence;
 use Doctrine\DBAL\Schema\Table;
 use Doctrine\DBAL\Schema\TableDiff;
@@ -196,7 +195,7 @@ class postgresql_platform extends PostgreSQLPlatform
 		return parent::getDropIndexSQL($index, $table);
 	}
 
- 	/**
+	/**
 	 * {@inheritDoc}
 	 */
 	private function tableName($table)
