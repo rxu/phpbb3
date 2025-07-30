@@ -14,6 +14,7 @@ use Symfony\Component\BrowserKit\CookieJar;
 use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpClient\NativeHttpClient;
+use Symfony\Component\HttpClient\RetryableHttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 require_once __DIR__ . '/mock/phpbb_mock_null_installer_task.php';
@@ -99,11 +100,22 @@ class phpbb_functional_test_case extends phpbb_test_case
 		$this->bootstrap();
 
 		self::$cookieJar = new CookieJar;
+		$http_client_default_options = [
+			'verify_peer' => false,
+			'verify_host' => false,
+			'timeout' => 120,
+			'max_duration' => 120,
+			'buffer' => false,
+			'extra' => [
+				'no_cache' => true,
+			],
+			'resolve' => [
+				'localhost' => '127.0.0.1',
+				'phpbb.test' => '127.0.0.1',
+			],
+		];
 		// Force native client on windows platform
-		self::$http_client = strtolower(substr(PHP_OS, 0, 3)) === 'win' ? new NativeHttpClient() : HttpClient::create();
-		self::$http_client->withOptions([
-			'timeout' => 60,
-		]);
+		self::$http_client = strtolower(substr(PHP_OS, 0, 3)) === 'win' ? new RetryableHttpClient(new NativeHttpClient($http_client_default_options)) : HttpClient::create($http_client_default_options);
 		self::$client = new HttpBrowser(self::$http_client, null, self::$cookieJar);
 
 		// Clear the language array so that things
