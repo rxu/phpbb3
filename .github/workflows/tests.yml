@@ -39,7 +39,7 @@ jobs:
               with:
                   php-version: ${{ matrix.php }}
                   extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, intl, gd, exif, iconv, pgsql, pdo_pgsql, sodium
-                  ini-values: upload_tmp_dir=${{ runner.temp }}, sys_temp_dir=${{ runner.temp }}
+                  ini-values: upload_tmp_dir=${{ runner.temp }}, sys_temp_dir=${{ runner.temp }}, opcache.enable_cli=1, opcache.enable=1, opcache.jit=1
                   coverage: none
 
             - name: Get Composer Cache Directory
@@ -114,6 +114,10 @@ jobs:
                   $env:PGPASSWORD = 'root'
                   psql -c 'ALTER SYSTEM SET hot_standby = on;' -U postgres
                   psql -c 'ALTER SYSTEM SET wal_level = minimal;' -U postgres
+                  psql -c 'ALTER SYSTEM SET shared_buffers = "6GB";' -U postgres
+                  psql -c 'ALTER SYSTEM SET work_mem = "500MB";' -U postgres
+                  psql -c 'ALTER SYSTEM SET max_connections = 500;' -U postgres
+                  psql -c 'ALTER SYSTEM SET maintenance_work_mem = "1GB";' -U postgres
                   psql -c 'DROP DATABASE IF EXISTS phpbb_tests;' -U postgres
                   psql -c 'create database phpbb_tests;' -U postgres
                   Set-MpPreference -ExclusionPath "${env:PGDATA}" # Exclude PGDATA directory from Windows Defender
@@ -133,4 +137,4 @@ jobs:
             - name: Run functional tests
               if: ${{ matrix.type == 'functional' }}
               run: |
-                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-psql-windows-github.xml --display-all-issues --teamcity --stop-on-error --group functional
+                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-psql-windows-github.xml --display-all-issues --stop-on-error --group functional
