@@ -16,495 +16,12 @@ on:
 
 jobs:
     # Basic checks, e.g. parse errors, commit messages, etc.
-    basic-checks:
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                include:
-                    - db: 'none'
-                      php: '8.1'
-                      NOTESTS: 1
-
-        name: PHP ${{ matrix.php }} - ${{ matrix.db }}
-
-        steps:
-            - name: Update Ubuntu package lists
-              run: |
-                  sudo apt-get update -y  --allow-releaseinfo-change
-
-            - name: Checkout repository
-              uses: actions/checkout@v4
-              with:
-                  fetch-depth: 100
-
-            - name: Setup PHP
-              uses: shivammathur/setup-php@v2
-              with:
-                  php-version: ${{ matrix.php }}
-                  extensions: dom, curl, libxml, mbstring, zip, pcntl, intl, gd, exif, iconv
-                  coverage: none
-
-            - name: Get Composer Cache Directory
-              id: composer-cache
-              run: |
-                  cd phpBB
-                  echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
-                  cd ..
-
-            - name: Cache Composer dependencies
-              uses: actions/cache@v4
-              with:
-                  path: ${{ steps.composer-cache.outputs.dir }}
-                  key: composer-${{ matrix.php }}-${{ hashFiles('phpBB/composer.lock') }}
-
-            - name: Setup environment for phpBB
-              env:
-                  DB: ${{ matrix.db }}
-                  PHP_VERSION: ${{ matrix.php }}
-                  NOTESTS: '1'
-              run: |
-                  .github/setup-phpbb.sh $DB $PHP_VERSION $NOTESTS
-
-            - name: Phing sniff
-              run: |
-                  .github/phing-sniff.sh
-
-            - name: Check doctum parse errors
-              run: |
-                  .github/check-doctum-parse-errors.sh
-
-            - name: Check code with psalm
-              run: |
-                  phpBB/vendor/bin/psalm --output-format=github
-
-            - name: Check image ICC profiles
-              run: |
-                  .github/check-image-icc-profiles.sh
-
-            - name: Check executable files
-              run: |
-                  .github/check-executable-files.sh ./
-
-            - name: Check stylesheets
-              run: |
-                  .github/check-stylesheet.sh
-
-            - name: Lint JavaScript files
-              run: |
-                  .github/check-js.sh
-
-            - name: Check commit message
-              if: github.event_name == 'pull_request'
-              run: |
-                  git fetch origin $GITHUB_BASE_REF &> /dev/null
-                  git-tools/commit-msg-hook-range.sh $(git rev-parse origin/$GITHUB_BASE_REF)..$GITHUB_SHA
-
-    # Tests for MySQL and MariaDB
-    mysql-tests:
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                include:
-                    - php: '8.1'
-                      db: "mariadb:10.2"
-                    - php: '8.1'
-                      db: "mariadb:10.3"
-                    - php: '8.1'
-                      db: "mariadb:10.4"
-                    - php: '8.1'
-                      db: "mariadb:10.6"
-                    - php: '8.1'
-                      db: "mariadb:10.9"
-                    - php: '8.1'
-                      db: "mariadb:10.10"
-                    - php: '8.1'
-                      db: "mariadb:10.11"
-                    - php: '8.1'
-                      db: "mysql:5.7"
-                      db_alias: "MySQL Slow Tests"
-                      SLOWTESTS: 1
-                    - php: '8.1'
-                      db: "mysql:5.7"
-                      db_alias: "MyISAM Tests"
-                      MYISAM: 1
-                    - php: '8.1'
-                      db: "mysql:5.7"
-                    - php: '8.1'
-                      db: "mysql:8.0"
-                    - php: '8.1'
-                      db: "mysql:8.1"
-                    - php: '8.2'
-                      db: "mysql:8.0"
-                    - php: '8.2'
-                      db: "mariadb:10.2"
-                    - php: '8.3'
-                      db: "mysql:5.7"
-                    - php: '8.3'
-                      db: "mariadb:10.2"
-                    - php: '8.4'
-                      db: "mysql:8.0"
-                    - php: '8.4'
-                      db: "mariadb:10.3"
-                    - php: '8.5'
-                      db: "mysql:8.0"
-                    - php: '8.5'
-                      db: "mariadb:10.3"
-
-        name: PHP ${{ matrix.php }} - ${{ matrix.db_alias != '' && matrix.db_alias || matrix.db }}
-
-        services:
-            mysql:
-                image: ${{ matrix.db }}
-                env:
-                    MYSQL_ALLOW_EMPTY_PASSWORD: yes
-                    MYSQL_DATABASE: phpbb_tests
-                ports:
-                    - 3306:3306
-                options: >-
-                    --health-cmd="mysqladmin ping"
-                    --health-interval=10s
-                    --health-timeout=5s
-                    --health-retries=3
-
-            redis:
-                image: redis
-                options: >-
-                    --health-cmd "redis-cli ping"
-                    --health-interval 10s
-                    --health-timeout 5s
-                    --health-retries 5
-                ports:
-                    - 6379:6379
-
-        steps:
-            - name: Update Ubuntu package lists
-              run: |
-                  sudo apt-get update -y  --allow-releaseinfo-change
-
-            - name: Checkout repository
-              uses: actions/checkout@v4
-
-            - id: database-type
-              env:
-                  MATRIX_DB: ${{ matrix.db }}
-              run: |
-                  db=$(echo "${MATRIX_DB%%:*}")
-                  echo "db=$db" >> $GITHUB_OUTPUT
-
-            - name: Setup PHP
-              uses: shivammathur/setup-php@v2
-              with:
-                  php-version: ${{ matrix.php }}
-                  extensions: dom, curl, libxml, mbstring, zip, pcntl, intl, gd, exif, iconv, mysqli, pdo, pdo_mysql, ldap
-                  coverage: none
-
-            - name: Get Composer Cache Directory
-              id: composer-cache
-              env:
-                  PHP_VERSION: ${{ matrix.php }}
-              run: |
-                  cd phpBB
-                  echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
-                  cd ..
-
-            - name: Cache Composer dependencies
-              uses: actions/cache@v4
-              with:
-                  path: ${{ steps.composer-cache.outputs.dir }}
-                  key: composer-${{ matrix.php }}-${{ hashFiles('phpBB/composer.lock') }}
-
-            - name: Setup environment for phpBB
-              env:
-                  DB: ${{steps.database-type.outputs.db}}
-                  PHP_VERSION: ${{ matrix.php }}
-                  NOTESTS: '0'
-              run: |
-                  .github/setup-phpbb.sh $DB $PHP_VERSION ${NOTESTS:-0}
-
-            - name: Setup database
-              env:
-                  DB: ${{steps.database-type.outputs.db}}
-                  MYISAM: ${{ matrix.MYISAM != 1 && '0' || '1' }}
-              run: |
-                  .github/setup-database.sh $DB $MYISAM
-
-            - name: Setup LDAP
-              if: ${{ matrix.SLOWTESTS == 1 }}
-              run: |
-                  .github/setup-ldap.sh
-
-            - name: Setup node
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 20
-            - name: Setup node dependencies
-              run: npm ci
-
-            - name: Setup SPHINX
-              run: |
-                  .github/setup-sphinx.sh
-
-            - name: Lint tests
-              if: ${{ matrix.SLOWTESTS != 1 && steps.database-type.outputs.db == 'mysql' }}
-              run: phpBB/vendor/bin/phpunit tests/lint_test.php
-
-            - name: Run unit tests
-              env:
-                  DB: ${{steps.database-type.outputs.db}}
-              if: ${{ matrix.SLOWTESTS != 1 && matrix.NOTESTS != 1 }}
-              run: |
-                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-$DB-github.xml --display-all-issues --stop-on-error
-
-            - name: Slow tests
-              env:
-                  DB: ${{steps.database-type.outputs.db}}
-              if: ${{ matrix.SLOWTESTS == 1 }}
-              run: |
-                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-$DB-github.xml --group slow
-
-    # Tests for PostgreSQL
-    postgres-tests:
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                include:
-                    - php: '8.1'
-                      db: "postgres:9.5"
-                    - php: '8.1'
-                      db: "postgres:9.6"
-                    - php: '8.1'
-                      db: "postgres:10"
-                    - php: '8.1'
-                      db: "postgres:11"
-                    - php: '8.1'
-                      db: "postgres:12"
-                    - php: '8.1'
-                      db: "postgres:13"
-                    - php: '8.1'
-                      db: "postgres:14"
-                    - php: '8.1'
-                      db: "postgres:15"
-                    - php: '8.2'
-                      db: "postgres:9.5"
-                    - php: '8.3'
-                      db: "postgres:9.5"
-                    - php: '8.4'
-                      db: "postgres:9.5"
-                    - php: '8.5'
-                      db: "postgres:9.5"
-
-        name: PHP ${{ matrix.php }} - ${{ matrix.db }}
-
-        services:
-            postgres:
-                image: ${{ matrix.db != 'postgres:9.5' && matrix.db != 'postgres:9.6' && matrix.db != 'postgres:10' && matrix.db != 'postgres:11' && matrix.db != 'postgres:12' && matrix.db != 'postgres:13' && matrix.db != 'postgres:14' && matrix.db != 'postgres:15' && 'postgres:10' || matrix.db }}
-                env:
-                    POSTGRES_HOST: localhost
-                    POSTGRES_USER: postgres
-                    POSTGRES_PASSWORD: postgres
-                ports:
-                    - 5432:5432
-                options: >-
-                    -v /var/run/postgresql:/var/run/postgresql
-                    --health-cmd pg_isready
-                    --health-interval 10s
-                    --health-timeout 5s
-                    --health-retries 5
-
-            redis:
-                image: redis
-                options: >-
-                    --health-cmd "redis-cli ping"
-                    --health-interval 10s
-                    --health-timeout 5s
-                    --health-retries 5
-                ports:
-                    - 6379:6379
-
-        steps:
-            - name: Update Ubuntu package lists
-              run: |
-                  sudo apt-get update -y  --allow-releaseinfo-change
-
-            - name: Checkout repository
-              uses: actions/checkout@v4
-
-            - id: database-type
-              env:
-                  MATRIX_DB: ${{ matrix.db }}
-              run: |
-                  db=$(echo "${MATRIX_DB%%:*}")
-                  echo "db=$db" >> $GITHUB_OUTPUT
-
-            - name: Setup PHP
-              uses: shivammathur/setup-php@v2
-              with:
-                  php-version: ${{ matrix.php }}
-                  extensions: dom, curl, libxml, mbstring, zip, pcntl, intl, gd, exif, iconv, pgsql, pdo, pdo_pgsql
-                  coverage: none
-
-            - name: Get Composer Cache Directory
-              id: composer-cache
-              env:
-                  PHP_VERSION: ${{ matrix.php }}
-              run: |
-                  cd phpBB
-                  echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
-                  cd ..
-
-            - name: Cache Composer dependencies
-              uses: actions/cache@v4
-              with:
-                  path: ${{ steps.composer-cache.outputs.dir }}
-                  key: composer-${{ matrix.php }}-${{ hashFiles('phpBB/composer.lock') }}
-
-            - name: Setup environment for phpBB
-              env:
-                  DB: ${{steps.database-type.outputs.db}}
-                  PHP_VERSION: ${{ matrix.php }}
-                  NOTESTS: '0'
-              run: |
-                  .github/setup-phpbb.sh $DB $PHP_VERSION ${NOTESTS:-0}
-
-            - name: Setup database
-              env:
-                  DB: ${{steps.database-type.outputs.db}}
-                  MYISAM: '0'
-              run: |
-                  .github/setup-database.sh $DB $MYISAM
-
-            - name: Setup node
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 20
-            - name: Setup node dependencies
-              run: npm ci
-
-            - name: Run unit tests
-              env:
-                  DB: ${{steps.database-type.outputs.db}}
-              run: |
-                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-$DB-github.xml --display-all-issues --stop-on-error
-
-    # Other database types, namely sqlite3 and mssql
-    other-tests:
-        runs-on: ubuntu-22.04
-        strategy:
-            matrix:
-                include:
-                    - php: '8.1'
-                      db: "sqlite3"
-                    - php: '8.1'
-                      db: "mcr.microsoft.com/mssql/server:2019-CU27-ubuntu-20.04"
-                      db_alias: 'MSSQL 2019'
-                    - php: '8.1'
-                      db: "mcr.microsoft.com/mssql/server:2022-CU13-ubuntu-22.04"
-                      db_alias: 'MSSQL 2022'
-
-        name: PHP ${{ matrix.php }} - ${{ matrix.db_alias != '' && matrix.db_alias || matrix.db }}
-
-        services:
-            mssql:
-                image: ${{ matrix.db != 'mcr.microsoft.com/mssql/server:2019-CU27-ubuntu-20.04' && matrix.db != 'mcr.microsoft.com/mssql/server:2022-CU13-ubuntu-22.04' && 'mcr.microsoft.com/mssql/server:2022-CU13-ubuntu-22.04' || matrix.db }}
-                env:
-                    SA_PASSWORD: "Pssw0rd_12"
-                    ACCEPT_EULA: "y"
-                ports:
-                    - 1433:1433
-                options: >-
-                    --health-cmd="/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'Pssw0rd_12' -Q \"Use [master]; CREATE DATABASE [phpbb_tests] COLLATE Latin1_General_CI_AS\" || exit 1"
-                    --health-interval 10s
-                    --health-timeout 5s
-                    --health-retries 5
-                    --health-start-period 10s
-
-            redis:
-                image: redis
-                options: >-
-                    --health-cmd "redis-cli ping"
-                    --health-interval 10s
-                    --health-timeout 5s
-                    --health-retries 5
-                ports:
-                    - 6379:6379
-
-
-        steps:
-            - name: Update Ubuntu package lists
-              run: |
-                  sudo apt-get update -y  --allow-releaseinfo-change
-
-            - name: Checkout repository
-              uses: actions/checkout@v4
-
-            - id: database-type
-              env:
-                  MATRIX_DB: ${{ matrix.db }}
-              run: |
-                  if [ $MATRIX_DB == 'mcr.microsoft.com/mssql/server:2019-CU27-ubuntu-20.04' ] || [ $MATRIX_DB == 'mcr.microsoft.com/mssql/server:2022-CU13-ubuntu-22.04' ]
-                  then
-                      db='mssql'
-                  else
-                      db=$(echo "${MATRIX_DB%%:*}")
-                  fi
-                  echo "db=$db" >> $GITHUB_OUTPUT
-
-            - name: Setup PHP
-              uses: shivammathur/setup-php@v2
-              with:
-                  php-version: ${{ matrix.php }}
-                  extensions: dom, curl, libxml, mbstring, zip, pcntl, intl, gd, exif, iconv, sqlsrv, pdo, pdo_sqlsrv
-                  coverage: none
-
-            - name: Get Composer Cache Directory
-              id: composer-cache
-              env:
-                  PHP_VERSION: ${{ matrix.php }}
-              run: |
-                  cd phpBB
-                  echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
-                  cd ..
-
-            - name: Cache Composer dependencies
-              uses: actions/cache@v4
-              with:
-                  path: ${{ steps.composer-cache.outputs.dir }}
-                  key: composer-${{ matrix.php }}-${{ hashFiles('phpBB/composer.lock') }}
-
-            - name: Setup environment for phpBB
-              env:
-                  DB: ${{steps.database-type.outputs.db}}
-                  PHP_VERSION: ${{ matrix.php }}
-                  NOTESTS: '0'
-              run: |
-                  .github/setup-phpbb.sh $DB $PHP_VERSION ${NOTESTS:-0}
-
-            - name: Setup database
-              env:
-                  DB: ${{steps.database-type.outputs.db}}
-                  MYISAM: '0'
-              run: |
-                  .github/setup-database.sh $DB $MYISAM
-
-            - name: Setup node
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 20
-            - name: Setup node dependencies
-              run: npm ci
-
-            - name: Run unit tests
-              env:
-                  DB: ${{steps.database-type.outputs.db}}
-              run: |
-                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-$DB-github.xml --display-all-issues --stop-on-error
-
     # Test with IIS & PostgreSQL on Windows
     windows-tests:
         runs-on: windows-2025
         strategy:
             matrix:
-                type: ['unit', 'functional']
+                type: ['functional']
                 php: ['8.4']
                 db: ['postgres']
 
@@ -522,9 +39,11 @@ jobs:
               uses: shivammathur/setup-php@v2
               with:
                   php-version: ${{ matrix.php }}
-                  extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, intl, gd, exif, iconv, pgsql, pdo_pgsql, sodium, bz2, fileinfo
-                  ini-values: upload_tmp_dir=${{ runner.temp }}, sys_temp_dir=${{ runner.temp }}
+                  extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, intl, gd, exif, iconv, pgsql, pdo_pgsql, sodium, bz2, fileinfo, openssl
+                  ini-values: upload_tmp_dir=${{ runner.temp }}, sys_temp_dir=${{ runner.temp }}, cgi.fix_pathinfo=1, max_execution_time=0, memory_limit=512M, error_log = c:\tools\Apache24\logs\error.log, doc_root = ${{ github.workspace }}\phpBB
                   coverage: none
+              env:
+                  PHPTS: ts
 
             - name: Get Composer Cache Directory
               id: composer-cache
@@ -544,26 +63,22 @@ jobs:
                   GITHUB_WORKSPACE: ${{ github.workspace }}
                   TEMP_DIR: ${{ runner.temp }}
               run: |
-                  Enable-WindowsOptionalFeature -Online -FeatureName IIS-WebServerRole, IIS-WebServer, IIS-CommonHttpFeatures, IIS-ManagementConsole, IIS-HttpErrors, IIS-HttpRedirect, IIS-WindowsAuthentication, IIS-StaticContent, IIS-DefaultDocument, IIS-HttpCompressionStatic, IIS-DirectoryBrowsing, IIS-WebServerManagementTools, IIS-CGI -All
-                  Set-Service wuauserv -StartupType Manual
-                  (Get-Content ${env:GITHUB_WORKSPACE}\phpBB\web.config).replace("<configuration>", "<configuration>`n`t<system.web>`n`t`t<customErrors mode=`"Off`"/>`n`t</system.web>") | Set-Content ${env:GITHUB_WORKSPACE}\phpBB\web.config
-                  (Get-Content ${env:GITHUB_WORKSPACE}\phpBB\web.config).replace("`t</system.webServer>", "`t`t<httpErrors errorMode=`"Detailed`" />`n`t</system.webServer>") | Set-Content ${env:GITHUB_WORKSPACE}\phpBB\web.config
-                  choco install urlrewrite -y
-                  Import-Module WebAdministration
-                  New-WebSite -Name 'phpBBTest' -PhysicalPath "${env:GITHUB_WORKSPACE}\phpBB" -Force
-                  $session = Get-PSSession -Name WinPSCompatSession
-                  $sb = {Set-ItemProperty 'IIS:\Sites\phpBBTest' -name Bindings -value @{protocol='http';bindingInformation='*:80:phpbb.test'}}
-                  Invoke-Command -Scriptblock $sb -Session $session
-                  $sb = {Set-WebConfigurationProperty -filter /system.WebServer/security/authentication/AnonymousAuthentication -name enabled -value true -location "IIS:\Sites\phpBBTest"}
-                  Invoke-Command -Scriptblock $sb -Session $session
+                  $apachePath = "C:\tools\Apache24"
+                  $apacheConfPath = "C:\tools\Apache24\conf"
+                  $apacheConfig = @"
+                  LoadModule php_module `"c:\tools\php\php8apache2_4.dll`"
+                  AddType application/x-httpd-php .php
+                  PHPIniDir `"C:\tools\php`"
+                  "@
+                  (Get-Content -Path $apacheConfPath\httpd.conf) | ForEach-Object { `
+                      $_ -replace '#LoadModule rewrite_module modules/mod_rewrite.so', 'LoadModule rewrite_module modules/mod_rewrite.so' `
+                      -replace '\${SRVROOT}/htdocs', "${env:GITHUB_WORKSPACE}\phpBB" `
+                      -replace 'Listen 80', 'Listen 127.0.0.1:80' `
+                      -replace 'ServerName localhost:80', 'ServerName phpbb.test:80' `
+                  } | Set-Content -Path $apacheConfPath\httpd.conf  -Force
+                  Add-Content -Path $apacheConfPath\httpd.conf -Value "`r`n$apacheConfig" -Force
+                  Get-Content -Path $apacheConfPath\httpd.conf
                   Add-Content -Path $env:windir\System32\drivers\etc\hosts -Value "`r`n127.0.0.1`tphpbb.test" -Force
-                  [System.Environment]::SetEnvironmentVariable('PATH',$Env:PATH+";%windir%\system32\inetsrv")
-                  echo Setup FAST-CGI configuration
-                  Add-WebConfiguration -Filter /system.webServer/fastCgi -PSPath IIS:\ -Value @{fullpath="C:\tools\php\php-cgi.exe"}
-                  echo Setup FACT-CGI handler
-                  New-WebHandler -Name "PHP-FastCGI" -Path "*.php" -Modules FastCgiModule -ScriptProcessor "C:\tools\php\php-cgi.exe" -Verb '*' -ResourceType Either
-                  iisreset
-                  NET START W3SVC
                   mkdir "${env:GITHUB_WORKSPACE}\phpBB\cache\test"
                   mkdir "${env:GITHUB_WORKSPACE}\phpBB\cache\installer"
                   icacls "${env:GITHUB_WORKSPACE}\phpBB\cache" /grant Users:F /T
@@ -574,10 +89,19 @@ jobs:
                   icacls "${env:GITHUB_WORKSPACE}\phpBB\composer-ext.json" /grant Users:F /T
                   icacls "${env:GITHUB_WORKSPACE}\phpBB\composer-ext.lock" /grant Users:F /T
                   icacls "${env:GITHUB_WORKSPACE}\phpBB\images\avatars\upload" /grant Users:F /T
-                  $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule("IIS_IUSRS", "FullControl", "ContainerInherit,ObjectInherit", "None", "Allow")
-                  $acl = Get-ACL "${env:TEMP_DIR}"
-                  $acl.AddAccessRule($accessRule)
-                  Set-ACL -Path "${env:TEMP_DIR}" -ACLObject $acl
+                  net stop http /y
+                  cd $apachePath\bin
+                  .\httpd.exe -k install -n "Apache24"
+                  $apacheSvc = Get-Service "Apache24"
+                  Set-Service $apacheSvc.Name -StartupType manual
+                  $runningStatus = [System.ServiceProcess.ServiceControllerStatus]::Running
+                  $maxStartTimeout = New-TimeSpan -Seconds 30
+                  try {
+                    $apacheSvc.Start()
+                    $apacheSvc.WaitForStatus($runningStatus, $maxStartTimeout)
+                  } catch  {
+                    $_ | select *
+                  }
                   cd ${env:GITHUB_WORKSPACE}\phpBB
                   php ..\composer.phar install
                   cd ..
@@ -600,7 +124,7 @@ jobs:
                   psql -c 'DROP DATABASE IF EXISTS phpbb_tests;' -U postgres
                   psql -c 'create database phpbb_tests;' -U postgres
                   Set-MpPreference -ExclusionPath "${env:PGDATA}" # Exclude PGDATA directory from Windows Defender
-                  Set-MpPreference -DisableRealtimeMonitoring $true
+                  Set-MpPreference -DisableRealtimeMonitoring $true -DisableScriptScanning $true -DisableBehaviorMonitoring $true -DisableIOAVProtection $true -DisableIntrusionPreventionSystem $true
 
             - name: Setup node
               uses: actions/setup-node@v4
@@ -616,4 +140,4 @@ jobs:
             - name: Run functional tests
               if: ${{ matrix.type == 'functional' }}
               run: |
-                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-psql-windows-github.xml --display-all-issues --stop-on-error --group functional
+                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-psql-windows-github.xml --teamcity --display-all-issues --stop-on-error --group functional

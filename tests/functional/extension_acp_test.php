@@ -332,6 +332,16 @@ class phpbb_functional_extension_acp_test extends phpbb_functional_test_case
 		$crawler = self::$client->click($extension_enable_link);
 		$form = $crawler->selectButton($this->lang('EXTENSION_ENABLE'))->form();
 		$crawler = self::submit($form);
+		$meta_refresh = $crawler->filter('meta[http-equiv="refresh"]');
+
+		// Wait for extension to be fully enabled
+		while (count($meta_refresh))
+		{
+			preg_match('#url=.+/(adm+.+)#', $meta_refresh->attr('content'), $match);
+			$url = $match[1];
+			$crawler = self::request('POST', $url);
+			$meta_refresh = $crawler->filter('meta[http-equiv="refresh"]');
+		}
 		$this->assertContainsLang('EXTENSION_ENABLE_SUCCESS', $crawler->filter('.successbox')->text());
 
 		// Update 'VigLink' enabled extension
