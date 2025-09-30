@@ -23,7 +23,7 @@ jobs:
             matrix:
                 type: ['functional']
                 php: ['8.4']
-                db: ['postgres']
+                db: ['sqlite3']
 
         name: Windows - ${{ matrix.type }} - PHP ${{ matrix.php }} - ${{ matrix.db }}
 
@@ -39,7 +39,7 @@ jobs:
               uses: shivammathur/setup-php@v2
               with:
                   php-version: ${{ matrix.php }}
-                  extensions: dom, curl, libxml, mbstring, zip, pdo, intl, gd, exif, iconv, pgsql, pdo_pgsql, sodium, bz2, fileinfo, openssl
+                  extensions: dom, curl, libxml, mbstring, zip, pdo, intl, gd, exif, iconv, sodium, bz2, fileinfo, openssl, sqlite3, pdo_sqlite
                   ini-values: upload_tmp_dir=${{ runner.temp }}, sys_temp_dir=${{ runner.temp }}, max_execution_time=0, memory_limit=512M, error_log = c:\tools\Apache24\logs\error.log, doc_root = ${{ github.workspace }}\phpBB
                   coverage: none
               env:
@@ -116,25 +116,17 @@ jobs:
                   cd ..
             - name: Setup database
               run: |
-                  (Get-Content -Path $env:PGDATA\postgresql.conf) | ForEach-Object { `
-                      $_ -replace "listen_addresses = '\*'", "listen_addresses = 'localhost'" `
-                      -replace "shared_buffers = 128MB", "shared_buffers = 512MB" `
-                      -replace "#hot_standby = on", "hot_standby = on" `
-                  } | Set-Content -Path $env:PGDATA\postgresql.conf  -Force
-                  $postgreSqlSvc = Get-Service "postgresql*"
-                  Set-Service $postgreSqlSvc.Name -StartupType manual
-                  $runningStatus = [System.ServiceProcess.ServiceControllerStatus]::Running
-                  $maxStartTimeout = New-TimeSpan -Seconds 30
-                  try {
-                    $postgreSqlSvc.Start()
-                    $postgreSqlSvc.WaitForStatus($runningStatus, $maxStartTimeout)
-                  } catch  {
-                    $_ | select *
-                  }
-                  [System.Environment]::SetEnvironmentVariable('PATH',$Env:PATH+";${env:PGBIN}")
-                  $env:PGPASSWORD = 'root'
-                  psql -c 'DROP DATABASE IF EXISTS phpbb_tests;' -U postgres
-                  psql -c 'create database phpbb_tests;' -U postgres
+                  $sqlite_version = "3500400" # Replace with your desired version
+                  $download_url = "https://www.sqlite.org/$(Get-Date -Format yyyy)/sqlite-tools-win-x64-${sqlite_version}.zip"
+                  Invoke-WebRequest -Uri $download_url -OutFile sqlite-tools.zip
+                  Expand-Archive -Path sqlite-tools.zip -DestinationPath C:\tools\sqlite
+                  echo "C:\tools\sqlite" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+                  # For User-level PATH
+                  [Environment]::SetEnvironmentVariable("Path", "$([Environment]::GetEnvironmentVariable("Path", "User"));C:\tools\sqlite", "User")
+                  # For System-level PATH (requires administrator privileges)
+                  [Environment]::SetEnvironmentVariable("Path", "$([Environment]::GetEnvironmentVariable("Path", "Machine"));C:\tools\sqlite", "Machine")
+                  $env:Path += ";C:\tools\sqlite"
+                  sqlite3 --version
 
             - name: Setup node
               uses: actions/setup-node@v4
@@ -150,4 +142,4 @@ jobs:
             - name: Run functional tests
               if: ${{ matrix.type == 'functional' }}
               run: |
-                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-psql-windows-github.xml --teamcity --display-all-issues --stop-on-error --group functional
+                  phpBB/vendor/bin/phpunit --configuration .github/phpunit-sqlite3-github.xml --teamcity --display-all-issues --stop-on-error --group functional
