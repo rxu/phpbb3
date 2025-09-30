@@ -140,7 +140,8 @@ class phpbb_test_case_helpers
 		{
 			$config = array_merge($config, array(
 				'dbms'		=> 'phpbb\db\driver\sqlite3',
-				'dbhost'	=> __DIR__ . '/../phpbb_unit_tests.sqlite3', // filename
+			//	'dbhost'	=> __DIR__ . '/../phpbb_unit_tests.sqlite3', // filename
+				'dbhost'	=> ':memory:', // filename
 				'dbport'	=> '',
 				'dbname'	=> '',
 				'dbuser'	=> '',
