@@ -39,8 +39,8 @@ jobs:
               uses: shivammathur/setup-php@v2
               with:
                   php-version: ${{ matrix.php }}
-                  extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, intl, gd, exif, iconv, pgsql, pdo_pgsql, sodium, bz2, fileinfo, openssl
-                  ini-values: upload_tmp_dir=${{ runner.temp }}, sys_temp_dir=${{ runner.temp }}, cgi.fix_pathinfo=1, max_execution_time=0, memory_limit=512M, error_log = c:\tools\Apache24\logs\error.log, doc_root = ${{ github.workspace }}\phpBB
+                  extensions: dom, curl, libxml, mbstring, zip, pdo, intl, gd, exif, iconv, pgsql, pdo_pgsql, sodium, bz2, fileinfo, openssl
+                  ini-values: upload_tmp_dir=${{ runner.temp }}, sys_temp_dir=${{ runner.temp }}, max_execution_time=0, memory_limit=512M, error_log = c:\tools\Apache24\logs\error.log, doc_root = ${{ github.workspace }}\phpBB
                   coverage: none
               env:
                   PHPTS: ts
@@ -65,19 +65,27 @@ jobs:
               run: |
                   $apachePath = "C:\tools\Apache24"
                   $apacheConfPath = "C:\tools\Apache24\conf"
+                  Set-MpPreference -DisableRealtimeMonitoring $true -DisableScriptScanning $true -DisableBehaviorMonitoring $true -DisableIOAVProtection $true -DisableIntrusionPreventionSystem $true
+                  Set-MpPreference -ExclusionPath "C:\tools" # Exclude PGDATA directory from Windows Defender
+                  Set-MpPreference -ExclusionPath $apacheConfPath # Exclude PGDATA directory from Windows Defender
+                  Set-MpPreference -ExclusionPath ${env:GITHUB_WORKSPACE} # Exclude phpBB directory from Windows Defender
+                  Set-MpPreference -ExclusionPath "${env:PGROOT}" # Exclude PGDATA directory from Windows Defender
+                  Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False # Disable firewall
                   $apacheConfig = @"
+                  AcceptFilter http none
+                  AcceptFilter https none
                   LoadModule php_module `"c:\tools\php\php8apache2_4.dll`"
                   AddType application/x-httpd-php .php
                   PHPIniDir `"C:\tools\php`"
                   "@
                   (Get-Content -Path $apacheConfPath\httpd.conf) | ForEach-Object { `
                       $_ -replace '#LoadModule rewrite_module modules/mod_rewrite.so', 'LoadModule rewrite_module modules/mod_rewrite.so' `
+                      -replace 'LoadModule status_module modules/mod_status.so', '#LoadModule status_module modules/mod_status.so' `
                       -replace '\${SRVROOT}/htdocs', "${env:GITHUB_WORKSPACE}\phpBB" `
                       -replace 'Listen 80', 'Listen 127.0.0.1:80' `
                       -replace 'ServerName localhost:80', 'ServerName phpbb.test:80' `
                   } | Set-Content -Path $apacheConfPath\httpd.conf  -Force
                   Add-Content -Path $apacheConfPath\httpd.conf -Value "`r`n$apacheConfig" -Force
-                  Get-Content -Path $apacheConfPath\httpd.conf
                   Add-Content -Path $env:windir\System32\drivers\etc\hosts -Value "`r`n127.0.0.1`tphpbb.test" -Force
                   mkdir "${env:GITHUB_WORKSPACE}\phpBB\cache\test"
                   mkdir "${env:GITHUB_WORKSPACE}\phpBB\cache\installer"
@@ -89,6 +97,7 @@ jobs:
                   icacls "${env:GITHUB_WORKSPACE}\phpBB\composer-ext.json" /grant Users:F /T
                   icacls "${env:GITHUB_WORKSPACE}\phpBB\composer-ext.lock" /grant Users:F /T
                   icacls "${env:GITHUB_WORKSPACE}\phpBB\images\avatars\upload" /grant Users:F /T
+                  Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6
                   net stop http /y
                   cd $apachePath\bin
                   .\httpd.exe -k install -n "Apache24"
@@ -107,6 +116,11 @@ jobs:
                   cd ..
             - name: Setup database
               run: |
+                  (Get-Content -Path $env:PGDATA\postgresql.conf) | ForEach-Object { `
+                      $_ -replace "listen_addresses = '\*'", "listen_addresses = 'localhost'" `
+                      -replace "shared_buffers = 128MB", "shared_buffers = 512MB" `
+                      -replace "#hot_standby = on", "hot_standby = on" `
+                  } | Set-Content -Path $env:PGDATA\postgresql.conf  -Force
                   $postgreSqlSvc = Get-Service "postgresql*"
                   Set-Service $postgreSqlSvc.Name -StartupType manual
                   $runningStatus = [System.ServiceProcess.ServiceControllerStatus]::Running
@@ -119,12 +133,8 @@ jobs:
                   }
                   [System.Environment]::SetEnvironmentVariable('PATH',$Env:PATH+";${env:PGBIN}")
                   $env:PGPASSWORD = 'root'
-                  psql -c 'ALTER SYSTEM SET hot_standby = on;' -U postgres
-                  psql -c 'ALTER SYSTEM SET wal_level = minimal;' -U postgres
                   psql -c 'DROP DATABASE IF EXISTS phpbb_tests;' -U postgres
                   psql -c 'create database phpbb_tests;' -U postgres
-                  Set-MpPreference -ExclusionPath "${env:PGDATA}" # Exclude PGDATA directory from Windows Defender
-                  Set-MpPreference -DisableRealtimeMonitoring $true -DisableScriptScanning $true -DisableBehaviorMonitoring $true -DisableIOAVProtection $true -DisableIntrusionPreventionSystem $true
 
             - name: Setup node
               uses: actions/setup-node@v4
