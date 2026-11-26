@@ -65,7 +65,7 @@ class stylesheet_assembler
 	 *                               "en/" for a language stylesheet)
 	 * @return string|null Assembled CSS, or null if no entry exists in the tree
 	 */
-	public function assemble(array $style_list, string $relative_dir = ''): ?string
+	public function assemble(array $style_list, string $relative_dir = ''): string|null
 	{
 		$result = $this->assemble_with_dependencies($style_list, $relative_dir);
 
@@ -83,7 +83,7 @@ class stylesheet_assembler
 	 * @return array|null Array with "content" and "files" (path => mtime) keys,
 	 *                    or null if no entry exists in the tree
 	 */
-	public function assemble_with_dependencies(array $style_list, string $relative_dir = ''): ?array
+	public function assemble_with_dependencies(array $style_list, string $relative_dir = ''): array|null
 	{
 		if (empty($style_list))
 		{
@@ -121,7 +121,7 @@ class stylesheet_assembler
 	 * @param string   $relative_file File path relative to the theme directory
 	 * @return array|null Array with "path", "content" and "hash" keys, or null
 	 */
-	public function resolve_component(array $style_list, string $relative_file): ?array
+	public function resolve_component(array $style_list, string $relative_file): array|null
 	{
 		$path = $this->locator->locate_theme_file($style_list, $relative_file);
 
@@ -152,7 +152,7 @@ class stylesheet_assembler
 	 * @param string   $relative_dir Normalised entry directory
 	 * @return array|null Array with "imports" and "literal" keys, or null
 	 */
-	protected function assemble_structure(array $style_list, string $relative_dir): ?array
+	protected function assemble_structure(array $style_list, string $relative_dir): array|null
 	{
 		if (empty($style_list))
 		{
@@ -253,7 +253,7 @@ class stylesheet_assembler
 	 * @param string $relative_dir Normalised entry directory
 	 * @return string|null Raw content, or null if the style has no entry
 	 */
-	protected function read_entry(string $style, string $relative_dir): ?string
+	protected function read_entry(string $style, string $relative_dir): string|null
 	{
 		$path = $this->locator->get_theme_dir($style) . $relative_dir . 'stylesheet.css';
 		$this->monitored_paths[] = $path;
@@ -337,7 +337,7 @@ class stylesheet_assembler
 	 * @param string $statement The "@import ...;" statement
 	 * @return array|null Array with "url" and "media" keys, or null
 	 */
-	protected function parse_import_statement(string $statement): ?array
+	protected function parse_import_statement(string $statement): array|null
 	{
 		$statement = trim($statement);
 
@@ -361,12 +361,12 @@ class stylesheet_assembler
 			$url = $this->strip_quotes(trim($match[1]));
 			$media = trim($match[2]);
 		}
-		elseif (preg_match('/^(["\'])(.*?)\1(.*)$/is', $body, $match))
+		else if (preg_match('/^(["\'])(.*?)\1(.*)$/is', $body, $match))
 		{
 			$url = $match[2];
 			$media = trim($match[3]);
 		}
-		elseif (preg_match('/^([^\s]+)(.*)$/s', $body, $match))
+		else if (preg_match('/^([^\s]+)(.*)$/s', $body, $match))
 		{
 			$url = $match[1];
 			$media = trim($match[2]);
@@ -434,7 +434,7 @@ class stylesheet_assembler
 	 * @param string $url Import URL
 	 * @return string|null Relative path, or null
 	 */
-	protected function resolve_import_path(string $url): ?string
+	protected function resolve_import_path(string $url): string|null
 	{
 		$path = preg_replace('/\?.*$/', '', $url);
 

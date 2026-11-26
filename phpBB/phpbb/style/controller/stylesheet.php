@@ -107,7 +107,7 @@ class stylesheet
 	 * @param string   $file       File path relative to the theme directory
 	 * @return string|null CSS content, or null when not found
 	 */
-	protected function get_content(array $style_list, string $file): ?string
+	protected function get_content(array $style_list, string $file): string|null
 	{
 		$basename = basename($file);
 		$relative_dir = dirname($file);
@@ -130,7 +130,7 @@ class stylesheet
 	 * @param string   $relative_dir Normalised entry directory
 	 * @return string|null Assembled CSS, or null when no entry exists
 	 */
-	protected function get_assembled_entry(array $style_list, string $relative_dir): ?string
+	protected function get_assembled_entry(array $style_list, string $relative_dir): string|null
 	{
 		$cache_key = '_css_' . md5(implode('|', $style_list) . '|' . $relative_dir);
 

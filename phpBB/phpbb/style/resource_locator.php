@@ -70,7 +70,7 @@ class resource_locator
 	 * @param string   $relative_file File path relative to the theme directory
 	 * @return string|null Full filesystem path, or null if not found
 	 */
-	public function locate_theme_file(array $style_list, string $relative_file): ?string
+	public function locate_theme_file(array $style_list, string $relative_file): string|null
 	{
 		foreach ($style_list as $style)
 		{
