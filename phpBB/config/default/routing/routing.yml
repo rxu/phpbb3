@@ -55,3 +55,6 @@ phpbb_ucp_routing:
 phpbb_storage_routing:
     resource: storage.yml
     prefix: /download
+
+phpbb_stylesheet_routing:
+    resource: stylesheets.yml

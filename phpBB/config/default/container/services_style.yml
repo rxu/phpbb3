@@ -1,0 +1,24 @@
+services:
+    phpbb.style.resource_locator:
+        class: phpbb\style\resource_locator
+        arguments:
+            - '%core.root_path%'
+            - 'styles/'
+
+    phpbb.style.style_provider:
+        class: phpbb\style\style_provider
+        arguments:
+            - '@dbal.conn'
+            - '%tables.styles%'
+
+    phpbb.style.stylesheet_assembler:
+        class: phpbb\style\stylesheet_assembler
+        arguments:
+            - '@phpbb.style.resource_locator'
+
+    phpbb.style.controller.stylesheet:
+        class: phpbb\style\controller\stylesheet
+        arguments:
+            - '@phpbb.style.style_provider'
+            - '@phpbb.style.stylesheet_assembler'
+            - '@cache.driver'

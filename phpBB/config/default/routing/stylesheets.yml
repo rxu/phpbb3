@@ -1,0 +1,6 @@
+phpbb_stylesheet_controller:
+    path: /css/{style}/{file}
+    defaults: { _controller: phpbb.style.controller.stylesheet:handle }
+    requirements:
+        style: '[a-zA-Z0-9_\-]+'
+        file: '.+\.css'
