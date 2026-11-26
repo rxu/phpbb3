@@ -6,6 +6,7 @@ on:
             - 3.3.x
             - master
             - 'prep-release-*'
+            - 'feature/*'
         tags:
             - 'release-*'
     pull_request:
