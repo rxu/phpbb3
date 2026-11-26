@@ -23,7 +23,7 @@ class phpbb_functional_stylesheets_test extends phpbb_functional_test_case
 		$response = self::$client->getResponse();
 
 		$this->assertSame(200, $response->getStatusCode());
-		$this->assertStringContainsString('text/css', $response->headers->get('Content-Type'));
+		$this->assertStringContainsString('text/css', $response->getHeader('Content-Type'));
 		$this->assertStringContainsString('@import url("normalize.css?hash=', self::get_content());
 	}
 
