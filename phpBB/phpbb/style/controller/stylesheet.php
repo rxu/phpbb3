@@ -15,6 +15,7 @@ namespace phpbb\style\controller;
 
 use phpbb\cache\driver\driver_interface;
 use phpbb\exception\http_exception;
+use phpbb\style\resource_locator;
 use phpbb\style\stylesheet_assembler;
 use phpbb\style\style_provider;
 use Symfony\Component\HttpFoundation\Request;
@@ -44,18 +45,23 @@ class stylesheet
 	/** @var driver_interface */
 	protected $cache;
 
+	/** @var resource_locator */
+	protected $locator;
+
 	/**
 	 * Constructor
 	 *
 	 * @param style_provider       $provider  Style tree provider
 	 * @param stylesheet_assembler $assembler Stylesheet assembler
 	 * @param driver_interface     $cache     Cache driver
+	 * @param resource_locator     $locator   Style resource locator
 	 */
-	public function __construct(style_provider $provider, stylesheet_assembler $assembler, driver_interface $cache)
+	public function __construct(style_provider $provider, stylesheet_assembler $assembler, driver_interface $cache, resource_locator $locator)
 	{
 		$this->provider = $provider;
 		$this->assembler = $assembler;
 		$this->cache = $cache;
+		$this->locator = $locator;
 	}
 
 	/**
@@ -90,12 +96,25 @@ class stylesheet
 		$response = new Response($content);
 		$response->headers->set('Content-Type', 'text/css; charset=UTF-8');
 		$response->setPublic();
-		$response->setMaxAge(3600);
-		$response->setEtag(md5($content));
-		$response->headers->addCacheControlDirective('must-revalidate', true);
 
-		// Respond with 304 Not Modified when the cached copy is still valid.
-		$response->isNotModified($request);
+		if (basename($file) === 'stylesheet.css')
+		{
+			// Entry points have a stable URL, but their content changes whenever
+			// a component changes, so they are revalidated.
+			$response->setMaxAge(3600);
+			$response->setEtag(md5($content));
+			$response->headers->addCacheControlDirective('must-revalidate', true);
+
+			// Respond with 304 Not Modified when the cached copy is still valid.
+			$response->isNotModified($request);
+		}
+		else
+		{
+			// Component files are content-addressed (their URL carries a content
+			// hash), so they can be cached indefinitely without revalidation.
+			$response->setMaxAge(31536000);
+			$response->headers->addCacheControlDirective('immutable', true);
+		}
 
 		return $response;
 	}
@@ -183,7 +202,7 @@ class stylesheet
 	 */
 	protected function is_valid_style(string $style): bool
 	{
-		return (bool) preg_match('#^[a-zA-Z0-9_\-]+$#', $style);
+		return $this->locator->is_safe_style_name($style);
 	}
 
 	/**

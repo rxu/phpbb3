@@ -200,4 +200,12 @@ class phpbb_style_stylesheet_assembler_test extends phpbb_style_test_case
 		$this->assertArrayHasKey($missing, $result['files']);
 		$this->assertSame(0, $result['files'][$missing]);
 	}
+
+	public function test_assemble_skips_unsafe_style_names()
+	{
+		$this->assertSame(
+			$this->assembler->assemble(['parent']),
+			$this->assembler->assemble(['..', '../etc', 'parent'])
+		);
+	}
 }

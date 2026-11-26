@@ -37,7 +37,7 @@ class phpbb_style_controller_stylesheet_test extends phpbb_style_test_case
 		$this->assembler = new \phpbb\style\stylesheet_assembler($this->locator);
 		$this->provider = $this->createMock(\phpbb\style\style_provider::class);
 		$this->cache = $this->createMock(\phpbb\cache\driver\driver_interface::class);
-		$this->controller = new \phpbb\style\controller\stylesheet($this->provider, $this->assembler, $this->cache);
+		$this->controller = new \phpbb\style\controller\stylesheet($this->provider, $this->assembler, $this->cache, $this->locator);
 	}
 
 	public function test_handle_serves_assembled_entry()
@@ -88,6 +88,15 @@ class phpbb_style_controller_stylesheet_test extends phpbb_style_test_case
 
 		$this->assert_http_404(function () {
 			$this->controller->handle(new Request(), 'parent', '../secret.css');
+		});
+	}
+
+	public function test_handle_throws_404_for_style_path_traversal()
+	{
+		$this->provider->method('get_style_list')->willReturn(['parent']);
+
+		$this->assert_http_404(function () {
+			$this->controller->handle(new Request(), '..', 'stylesheet.css');
 		});
 	}
 
@@ -152,6 +161,31 @@ class phpbb_style_controller_stylesheet_test extends phpbb_style_test_case
 
 		$this->assertStringContainsString('base.css?hash=', $response->getContent());
 		$this->assertStringNotContainsString('stale', $response->getContent());
+	}
+
+	public function test_handle_entry_uses_revalidating_cache_headers()
+	{
+		$this->provider->method('get_style_list')->willReturn(['parent']);
+		$this->cache->method('get')->willReturn(false);
+
+		$response = $this->controller->handle(new Request(), 'parent', 'stylesheet.css');
+
+		$cache_control = $response->headers->get('Cache-Control');
+		$this->assertStringContainsString('max-age=3600', $cache_control);
+		$this->assertStringContainsString('must-revalidate', $cache_control);
+		$this->assertNotNull($response->getEtag());
+	}
+
+	public function test_handle_component_uses_immutable_cache_headers()
+	{
+		$this->provider->method('get_style_list')->willReturn(['child_override', 'parent']);
+
+		$response = $this->controller->handle(new Request(), 'child_override', 'common.css');
+
+		$cache_control = $response->headers->get('Cache-Control');
+		$this->assertStringContainsString('max-age=31536000', $cache_control);
+		$this->assertStringContainsString('immutable', $cache_control);
+		$this->assertNull($response->getEtag());
 	}
 
 	protected function assert_http_404(callable $callback): void

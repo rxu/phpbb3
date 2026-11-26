@@ -255,6 +255,11 @@ class stylesheet_assembler
 	 */
 	protected function read_entry(string $style, string $relative_dir): string|null
 	{
+		if (!$this->locator->is_safe_style_name($style))
+		{
+			return null;
+		}
+
 		$path = $this->locator->get_theme_dir($style) . $relative_dir . 'stylesheet.css';
 		$this->monitored_paths[] = $path;
 
@@ -276,6 +281,11 @@ class stylesheet_assembler
 	 */
 	protected function get_inheritance_mode(string $style): string
 	{
+		if (!$this->locator->is_safe_style_name($style))
+		{
+			return self::MODE_MERGE;
+		}
+
 		$composer_path = $this->locator->get_style_dir($style) . 'composer.json';
 		$this->monitored_paths[] = $composer_path;
 

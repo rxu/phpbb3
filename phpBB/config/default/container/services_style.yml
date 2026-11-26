@@ -22,3 +22,4 @@ services:
             - '@phpbb.style.style_provider'
             - '@phpbb.style.stylesheet_assembler'
             - '@cache.driver'
+            - '@phpbb.style.resource_locator'

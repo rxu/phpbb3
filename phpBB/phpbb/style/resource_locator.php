@@ -60,11 +60,39 @@ class resource_locator
 	}
 
 	/**
+	 * Check whether a style name is a safe single path segment.
+	 *
+	 * Rejects anything that could escape the styles directory (empty, "." or
+	 * "..", path separators, the null byte and other control characters), but
+	 * otherwise accepts any name a filesystem directory may have (dots, spaces,
+	 * non-ASCII characters, …).
+	 *
+	 * @param string $name Style path component
+	 * @return bool True when safe
+	 */
+	public function is_safe_style_name(string $name): bool
+	{
+		if ($name === '' || $name === '.' || $name === '..')
+		{
+			return false;
+		}
+
+		if (str_contains($name, '/') || str_contains($name, '\\') || str_contains($name, "\0"))
+		{
+			return false;
+		}
+
+		// Reject any other control characters.
+		return !preg_match('/[\x00-\x1f\x7f]/', $name);
+	}
+
+	/**
 	 * Locate a theme file across a style inheritance tree.
 	 *
 	 * The style list must be ordered from the most specific style to the
 	 * least specific (child first, ancestors after). The first existing file
-	 * wins, mirroring the behaviour of template inheritance.
+	 * wins, mirroring the behaviour of template inheritance. Unsafe style
+	 * names are skipped.
 	 *
 	 * @param string[] $style_list    Style paths, most specific first
 	 * @param string   $relative_file File path relative to the theme directory
@@ -74,6 +102,11 @@ class resource_locator
 	{
 		foreach ($style_list as $style)
 		{
+			if (!$this->is_safe_style_name($style))
+			{
+				continue;
+			}
+
 			$path = $this->get_theme_dir($style) . $relative_file;
 
 			if (is_file($path))
@@ -101,6 +134,11 @@ class resource_locator
 
 		foreach ($style_list as $style)
 		{
+			if (!$this->is_safe_style_name($style))
+			{
+				continue;
+			}
+
 			$paths[] = $this->get_theme_dir($style) . $relative_file;
 		}
 
